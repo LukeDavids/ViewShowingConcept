@@ -1,0 +1,11 @@
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.pdb
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Binding.dll
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Core.dll
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Localization.dll
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Platform.dll
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.pdb
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.csprojResolveAssemblyReference.cache
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
+C:\Users\david\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
