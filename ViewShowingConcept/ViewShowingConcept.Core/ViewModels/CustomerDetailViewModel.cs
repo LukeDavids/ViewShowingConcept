@@ -8,6 +8,8 @@ namespace ViewShowingConcept.Core.ViewModels
     public class CustomerDetailViewModel 
         : BaseViewModel
     {
+        public CustomerDetailViewModel() { }
+
         private string _id;
         public string Id {
             get { return _id; }

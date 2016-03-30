@@ -9,6 +9,8 @@ namespace ViewShowingConcept.Core.ViewModels
     public class CustomerEditViewModel
         : BaseViewModel
     {
+        public CustomerEditViewModel() { }
+
         private string _id;
         public string Id
         {

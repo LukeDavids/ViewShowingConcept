@@ -8,6 +8,8 @@ namespace ViewShowingConcept.Core.ViewModels
     public class LoginViewModel
         : BaseViewModel
     {
+        public LoginViewModel() { }
+
         private string _username;
         public string Username
         {

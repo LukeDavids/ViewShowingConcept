@@ -10,6 +10,8 @@ namespace ViewShowingConcept.Core.ViewModels
     public class CustomerListViewModel
         : BaseViewModel
     {
+        public CustomerListViewModel() { }
+
         private List<Customer> _customers;
         public List<Customer> Customers {
             get { return _customers; }
