@@ -1,16 +1,18 @@
 using Android.App;
 using Android.OS;
 using Java.Lang;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels;
 
 namespace ViewShowingConcept.Android.Views
 {
     [Activity(Label = "View for ContainerView", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class ContainerView : MvxCachingFragmentCompatActivity
+    public class ContainerView : MvxCachingFragmentCompatActivity, IFragmentHost
     {
 
         private CustomerListFragment _customerListFragment;
@@ -91,6 +93,24 @@ namespace ViewShowingConcept.Android.Views
             _customerDetailFragment.SetMenuVisibility(false);
             _customerEditFragment.SetMenuVisibility(false);
             _loginFragment.SetMenuVisibility(false);
+        }
+
+        public bool Show(MvxViewModelRequest request)
+        {
+            // create view model
+            var loaderService = Mvx.Resolve<IMvxViewModelLoader>();
+            var viewModel = loaderService.LoadViewModel(request, null);
+
+            // decide which fragment to create based on the view-model type
+            var fragmentView = _loginFragment;
+
+            // load fragment into view
+            var ft = SupportFragmentManager.BeginTransaction();
+            ft.Replace(Resource.Id.content_frame, fragmentView);
+            ft.AddToBackStack(null);
+            ft.Commit();
+
+            return true;
         }
     }
 }

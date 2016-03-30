@@ -109,6 +109,9 @@
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Presenter\IFragmentHost.cs" />
+    <Compile Include="Presenter\ICustomPresenter.cs" />
+    <Compile Include="Presenter\CustomPresenter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />

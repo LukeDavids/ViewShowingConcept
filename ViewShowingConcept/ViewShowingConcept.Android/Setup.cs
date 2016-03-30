@@ -1,6 +1,8 @@
 using Android.Content;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
 using MvvmCross.Platform.Platform;
 
 namespace ViewShowingConcept.Android
@@ -19,6 +21,13 @@ namespace ViewShowingConcept.Android
         protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
+        }
+
+        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        {
+            var customPresenter = new CustomPresenter();
+            Mvx.RegisterSingleton<ICustomPresenter>(customPresenter);
+            return customPresenter;
         }
     }
 }
