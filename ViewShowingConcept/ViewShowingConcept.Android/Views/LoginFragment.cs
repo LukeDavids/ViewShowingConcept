@@ -3,7 +3,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
-using Onsight.Android.Views.Base;
+using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
 
 namespace ViewShowingConcept.Android.Views

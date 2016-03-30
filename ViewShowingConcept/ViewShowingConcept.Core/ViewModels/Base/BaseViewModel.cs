@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
+using ViewShowingConcept.Core.Config;
 using ViewShowingConcept.Core.Enums;
 
 namespace ViewShowingConcept.Core.ViewModels.Base
@@ -8,10 +9,10 @@ namespace ViewShowingConcept.Core.ViewModels.Base
     public class BaseViewModel : MvxViewModel
     {
 
-        public virtual void Init(string currentEntityId)
-        {
-            if (string.IsNullOrEmpty(currentEntityId)) return;
-        }
+        //public virtual void Init(string currentEntityId)
+        //{
+        //    if (string.IsNullOrEmpty(currentEntityId)) return;
+        //}
 
         private bool _isBusy;
         private SubView _currentSubView;
@@ -27,7 +28,7 @@ namespace ViewShowingConcept.Core.ViewModels.Base
         public void ShowSubView(SubView subView, string parameter)
         {
             CurrentSubView = subView;
-            //if (CurrentSession.BuildPlatform != BuildPlatform.iOS) return;
+            if (CurrentSession.BuildPlatform != BuildPlatform.iOS) return;
             switch (CurrentSubView)
             {
                 case SubView.CustomerDetails:

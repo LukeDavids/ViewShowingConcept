@@ -1,7 +1,3 @@
-Onsight.Android.Views.Base.BaseView, ViewShowingConcept.Android;md5790f7c4da717417072f2aad45dbe6ce2.BaseView
-Onsight.Android.Views.Base.BaseView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5790f7c4da717417072f2aad45dbe6ce2.BaseView
-Onsight.Android.Views.Base.BaseView;md5790f7c4da717417072f2aad45dbe6ce2.BaseView
-onsight.android.views.base.BaseView;md5790f7c4da717417072f2aad45dbe6ce2.BaseView
 ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 ViewShowingConcept.Android.SplashScreen;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
@@ -26,6 +22,10 @@ ViewShowingConcept.Android.Views.ContainerView, ViewShowingConcept.Android;md526
 ViewShowingConcept.Android.Views.ContainerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
 ViewShowingConcept.Android.Views.ContainerView;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
 viewshowingconcept.android.views.ContainerView;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
+ViewShowingConcept.Android.Views.Base.BaseView, ViewShowingConcept.Android;md5686914bec1dd720f019be98cb06dedc7.BaseView
+ViewShowingConcept.Android.Views.Base.BaseView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5686914bec1dd720f019be98cb06dedc7.BaseView
+ViewShowingConcept.Android.Views.Base.BaseView;md5686914bec1dd720f019be98cb06dedc7.BaseView
+viewshowingconcept.android.views.base.BaseView;md5686914bec1dd720f019be98cb06dedc7.BaseView
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView, MvvmCross.Binding.Droid;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView

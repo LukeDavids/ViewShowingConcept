@@ -2,7 +2,7 @@ package ViewShowingConcept.android.views;
 
 
 public class CustomerDetailFragment
-	extends md5790f7c4da717417072f2aad45dbe6ce2.BaseView
+	extends md5686914bec1dd720f019be98cb06dedc7.BaseView
 	implements
 		mono.android.IGCUserPeer
 {
