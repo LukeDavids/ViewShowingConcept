@@ -9,6 +9,7 @@ using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
+using MvvmCross.Platform;
 using ViewShowingConcept.Android.Views.Base;
 
 namespace ViewShowingConcept.Android.Views

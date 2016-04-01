@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using MvvmCross.Core.ViewModels;
 using System.Windows.Input;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
@@ -11,6 +12,7 @@ namespace ViewShowingConcept.Core.ViewModels
         : BaseViewModel, ISubView
     {
         public LoginViewModel() {
+            Debug.WriteLine(" -----------------------------------login view model ");
             Username = "user";
             Password = "password";
         }
@@ -47,6 +49,7 @@ namespace ViewShowingConcept.Core.ViewModels
 
         public void ShowLoginView()
         {
+            Debug.WriteLine("======================================== show login command");
             if (Username.Equals("user") && Password.Equals("password"))
             {
                 ShowSubView(SubView.CustomerList);

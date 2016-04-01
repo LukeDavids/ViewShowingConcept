@@ -10,10 +10,10 @@
         android:layout_height="wrap_content"
         android:text="Username:" />
     <EditText
+      android:id="@+id/username"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"
-        local:MvxBind="Text Username" />
+        android:layout_height="wrap_content" 
+        local:MvxBind="Text Username"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,13 +22,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:hint="Password"
-        android:text="password"
         local:MvxBind="Text Password" />
     <Button
         android:id="@+id/loginButton" 
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:text="Login"
-        local:MvxBind="Click ShowLoginViewCommand" />
+         />
 </LinearLayout>

@@ -25,8 +25,7 @@ namespace ViewShowingConcept.Android.Views
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             return this.BindingInflate(Resource.Layout.CustomerListView, null);
         }
-
-        public bool IsMenuVisible { get; set; }
+        
         public MvxFragment Fragment { get; set; }
     }
 }

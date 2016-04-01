@@ -1,4 +1,3 @@
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\ViewShowingConcept.Android.csprojResolveAssemblyReference.cache
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Android.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Android.pdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Android.ViewShowingConcept.Android.apk
@@ -23,6 +22,7 @@ C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\View
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\MvvmCross.Localization.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\MvvmCross.Platform.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\Newtonsoft.Json.xml
+C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\ViewShowingConcept.Android.csprojResolveAssemblyReference.cache
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\ViewShowingConcept.Android.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\ViewShowingConcept.Android.pdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\android\bin\ViewShowingConcept.Android.ViewShowingConcept.Android.apk
@@ -40,6 +40,5 @@ C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\View
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\values\style.xml
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\R.cs.flag
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\uploadflags.txt
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Core.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\ViewShowingConcept.Android.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Android.dll.mdb

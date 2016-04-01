@@ -2,10 +2,10 @@ ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android;md53ed8d232c
 ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 ViewShowingConcept.Android.SplashScreen;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 viewshowingconcept.android.SplashScreen;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
-ViewShowingConcept.Android.Views.LoginFragment, ViewShowingConcept.Android;ViewShowingConcept.android.views.LoginFragment
-ViewShowingConcept.Android.Views.LoginFragment, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.LoginFragment
-ViewShowingConcept.Android.Views.LoginFragment;ViewShowingConcept.android.views.LoginFragment
-ViewShowingConcept.android.views.LoginFragment;ViewShowingConcept.android.views.LoginFragment
+ViewShowingConcept.Android.Views.LoginFragment, ViewShowingConcept.Android;viewshowingconcept.android.views.LoginFragment
+ViewShowingConcept.Android.Views.LoginFragment, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.LoginFragment
+ViewShowingConcept.Android.Views.LoginFragment;viewshowingconcept.android.views.LoginFragment
+viewshowingconcept.android.views.LoginFragment;viewshowingconcept.android.views.LoginFragment
 ViewShowingConcept.Android.Views.CustomerEditFragment, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerEditFragment
 ViewShowingConcept.Android.Views.CustomerEditFragment, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerEditFragment
 ViewShowingConcept.Android.Views.CustomerEditFragment;ViewShowingConcept.android.views.CustomerEditFragment

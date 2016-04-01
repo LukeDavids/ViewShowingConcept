@@ -9,7 +9,6 @@ namespace ViewShowingConcept.Core.Interfaces
 {
     public interface ISubView 
     {
-        bool IsMenuVisible { get; set; }
         MvxFragment Fragment { get; set; }
         
     }
