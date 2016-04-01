@@ -12,7 +12,7 @@ namespace ViewShowingConcept.Core.ViewModels
         : BaseViewModel
     {
         public ContainerViewModel() {
-            RegisterViewModels();
+            //RegisterViewModels();
         }
 
         public Customer Customer { get; set; }
@@ -36,20 +36,20 @@ namespace ViewShowingConcept.Core.ViewModels
             }
         }
 
-        private void RegisterViewModels() {
-            Mvx.RegisterSingleton(new CustomerDetailViewModel());
-            CustomerDetailViewModel = Mvx.Resolve<CustomerDetailViewModel>();
+        //private void RegisterViewModels() {
+        //    Mvx.RegisterSingleton(new CustomerDetailViewModel());
+        //    CustomerDetailViewModel = Mvx.Resolve<CustomerDetailViewModel>();
 
-            Mvx.RegisterSingleton(new CustomerEditViewModel());
-            CustomerEditViewModel = Mvx.Resolve<CustomerEditViewModel>();
+        //    Mvx.RegisterSingleton(new CustomerEditViewModel());
+        //    CustomerEditViewModel = Mvx.Resolve<CustomerEditViewModel>();
 
-            Mvx.RegisterSingleton(new CustomerListViewModel());
-            CustomerListViewModel = Mvx.Resolve<CustomerListViewModel>();
+        //    Mvx.RegisterSingleton(new CustomerListViewModel());
+        //    CustomerListViewModel = Mvx.Resolve<CustomerListViewModel>();
 
-            Mvx.RegisterSingleton(new LoginViewModel());
-            LoginViewModel = Mvx.Resolve<LoginViewModel>();
+        //    Mvx.RegisterSingleton(new LoginViewModel());
+        //    LoginViewModel = Mvx.Resolve<LoginViewModel>();
 
 
-        }
+        //}
     }
 }

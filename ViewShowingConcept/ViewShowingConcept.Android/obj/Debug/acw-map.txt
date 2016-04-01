@@ -22,10 +22,10 @@ ViewShowingConcept.Android.Views.ContainerView, ViewShowingConcept.Android;md526
 ViewShowingConcept.Android.Views.ContainerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
 ViewShowingConcept.Android.Views.ContainerView;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
 viewshowingconcept.android.views.ContainerView;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
-ViewShowingConcept.Android.Views.Base.BaseView, ViewShowingConcept.Android;md5686914bec1dd720f019be98cb06dedc7.BaseView
-ViewShowingConcept.Android.Views.Base.BaseView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5686914bec1dd720f019be98cb06dedc7.BaseView
-ViewShowingConcept.Android.Views.Base.BaseView;md5686914bec1dd720f019be98cb06dedc7.BaseView
-viewshowingconcept.android.views.base.BaseView;md5686914bec1dd720f019be98cb06dedc7.BaseView
+ViewShowingConcept.Android.Views.Base.BaseView`1, ViewShowingConcept.Android;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
+ViewShowingConcept.Android.Views.Base.BaseView`1, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
+ViewShowingConcept.Android.Views.Base.BaseView`1;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
+viewshowingconcept.android.views.base.BaseView_1;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView, MvvmCross.Binding.Droid;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView

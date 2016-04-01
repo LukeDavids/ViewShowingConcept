@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using MvvmCross.Core.ViewModels;
 using ViewShowingConcept.Core.Config;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Interfaces;
 
 namespace ViewShowingConcept.Core.ViewModels.Base
 {

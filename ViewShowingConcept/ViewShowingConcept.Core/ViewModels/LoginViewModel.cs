@@ -1,14 +1,19 @@
 using MvvmCross.Core.ViewModels;
 using System.Windows.Input;
+using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels.Base;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class LoginViewModel
-        : BaseViewModel
+        : BaseViewModel, ISubView
     {
-        public LoginViewModel() { }
+        public LoginViewModel() {
+            Username = "user";
+            Password = "password";
+        }
 
         private string _username;
         public string Username
@@ -47,5 +52,8 @@ namespace ViewShowingConcept.Core.ViewModels
                 ShowSubView(SubView.CustomerList);
             }
         }
+
+        public bool IsMenuVisible { get; set; }
+        public MvxFragment Fragment { get; set; }
     }
 }

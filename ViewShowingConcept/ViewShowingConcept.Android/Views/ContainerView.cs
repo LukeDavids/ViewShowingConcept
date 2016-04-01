@@ -4,15 +4,12 @@ using Android.App;
 using Android.OS;
 using Java.Lang;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Support.V7.Fragging.Fragments;
-using MvvmCross.Droid.Views;
-using MvvmCross.Platform;
-using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
-using ViewShowingConcept.Core.Models;
+using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels;
+using MvvmCross.Droid.Support.V7.Fragging.Fragments;
+using ViewShowingConcept.Android.Views.Base;
 
 namespace ViewShowingConcept.Android.Views
 {
@@ -25,7 +22,7 @@ namespace ViewShowingConcept.Android.Views
         private CustomerEditFragment _customerEditFragment;
         private LoginFragment _loginFragment;
 
-        public Dictionary<SubView, BaseView> SubViews { get; set; }
+        public Dictionary<SubView, ISubView> SubViews { get; set; }
         public string CurrentCustomerId { get; set; }
 
         public ContainerViewModel ContainerViewModel
@@ -39,27 +36,15 @@ namespace ViewShowingConcept.Android.Views
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.ContainerView);
 
-            _customerListFragment = new CustomerListFragment
-            {
-                ViewModel = ContainerViewModel.CustomerListViewModel
-            };
-            _customerDetailFragment = new CustomerDetailFragment
-            {
-                ViewModel = ContainerViewModel.CustomerDetailViewModel
-            };
-            _customerEditFragment = new CustomerEditFragment
-            {
-                ViewModel = ContainerViewModel.CustomerEditViewModel
-            };
-            _loginFragment = new LoginFragment
-            {
-                ViewModel = ContainerViewModel.LoginViewModel
-            };
+            _customerListFragment = new CustomerListFragment();
+            _customerDetailFragment = new CustomerDetailFragment();
+            _customerEditFragment = new CustomerEditFragment();
+            _loginFragment = new LoginFragment();
 
             SetupBindings();
             SetupSubViews();
             AddFragments();
-            ShowFragment(_loginFragment, "customerList");
+            ShowFragment(_loginFragment, "loginFragment");
         }
 
         private SubView _currentSubView;
@@ -69,22 +54,22 @@ namespace ViewShowingConcept.Android.Views
             set
             {
                 _currentSubView = value;
-                ShowFragment(SubViews[_currentSubView], _currentSubView.ToString());
+                ShowFragment(SubViews[_currentSubView].Fragment, _currentSubView.ToString());
             }
         }
 
         private void SetupSubViews()
         {
-            SubViews = new Dictionary<SubView, BaseView>
+            SubViews = new Dictionary<SubView, ISubView>
             {
-                {SubView.Login, new LoginFragment {ViewModel = ContainerViewModel.LoginViewModel} },
-                {SubView.CustomerDetails, new CustomerDetailFragment {ViewModel = ContainerViewModel.CustomerDetailViewModel} },
-                {SubView.CustomerEdit, new CustomerEditFragment {ViewModel = ContainerViewModel.CustomerEditViewModel} },
-                {SubView.CustomerList, new CustomerListFragment {ViewModel = ContainerViewModel} }
+                {SubView.Login, _loginFragment },
+                {SubView.CustomerDetails, _customerDetailFragment },
+                {SubView.CustomerEdit, _customerEditFragment },
+                {SubView.CustomerList, _customerListFragment }
             };
         }
 
-        public void ShowFragment(BaseView fragment, string tag)
+        public void ShowFragment(MvxFragment fragment, string tag)
         {
             //FlushFragments();
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
@@ -93,7 +78,6 @@ namespace ViewShowingConcept.Android.Views
 
             try
             {
-                //fragment.BaseViewModel.Init(CurrentCustomerId);
                 fragmentTransaction.Replace(Resource.Id.content_frame, fragment, tag);
                 fragment.SetMenuVisibility(true);
             }
@@ -113,7 +97,7 @@ namespace ViewShowingConcept.Android.Views
 
             foreach (var baseView in SubViews.Where(baseView => baseView.Value != null))
             {
-                fragmentTransaction.Remove(baseView.Value);
+                fragmentTransaction.Remove((MvxFragment) baseView.Value);
             }
 
             fragmentTransaction.Commit();
@@ -121,9 +105,9 @@ namespace ViewShowingConcept.Android.Views
 
         public void HideFragments()
         {
-            foreach (var baseView in SubViews)
+            foreach (var subview in SubViews)
             {
-                baseView.Value.SetMenuVisibility(false);
+                subview.Value.Fragment.SetMenuVisibility(false);
             }
         }
 
@@ -131,25 +115,27 @@ namespace ViewShowingConcept.Android.Views
         {
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
 
-            fragmentTransaction.Add(Resource.Id.content_frame, SubViews[SubView.CustomerList], "customerListFragment");
+            fragmentTransaction.Add(Resource.Id.content_frame, _loginFragment, "loginFragment");
 
             fragmentTransaction.Commit();
         }
 
-        public bool BackPressedOnListView()
-        {
-            if (SubViews[SubView.CustomerList].IsMenuVisible)
-            {
-                //OnDestroyView();
-                return true;
-            }
-            foreach (var baseView in SubViews.Where(baseView => baseView.Value.IsVisible))
-            {
-                ShowFragment(baseView.Value, baseView.Value.SubViewType.ToString());
-                return false;
-            }
-            return true;
-        }
+        //public bool BackPressedOnListView()
+        //{
+        //    if (SubViews[SubView.CustomerList].IsMenuVisible)
+        //    {
+        //        //OnDestroyView();
+        //        return true;
+        //    }
+        //    foreach (var baseView in SubViews.Where(baseView => baseView.Value.IsMenuVisible))
+        //    {
+        //        BaseView<> fragment = (MvxFragment) baseView.Value;
+        //        ShowFragment(baseView.Value, fragment.SubViewType.ToString());
+                
+        //        return false;
+        //    }
+        //    return true;
+        //}
 
         private void SetupBindings()
         {

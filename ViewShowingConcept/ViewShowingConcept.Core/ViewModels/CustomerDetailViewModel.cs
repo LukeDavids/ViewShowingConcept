@@ -1,12 +1,14 @@
 using MvvmCross.Core.ViewModels;
 using System.Windows.Input;
+using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels.Base;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerDetailViewModel 
-        : BaseViewModel
+        : BaseViewModel, ISubView
     {
         public CustomerDetailViewModel() { }
 
@@ -44,5 +46,8 @@ namespace ViewShowingConcept.Core.ViewModels
         private void ShowCustomerEditView() {
             ShowSubView(SubView.CustomerEdit);
         }
+
+        public bool IsMenuVisible { get; set; }
+        public MvxFragment Fragment { get; set; }
     }
 }

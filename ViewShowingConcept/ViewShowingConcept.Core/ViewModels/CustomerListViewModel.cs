@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using ViewShowingConcept.Core.ViewModels.Base;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Interfaces;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerListViewModel
-        : BaseViewModel
+        : BaseViewModel, ISubView
     {
         public CustomerListViewModel() { }
 
@@ -30,5 +32,8 @@ namespace ViewShowingConcept.Core.ViewModels
         private void ShowCustomerDetailView() {
             ShowSubView(SubView.CustomerDetails);
         }
+
+        public bool IsMenuVisible { get; set; }
+        public MvxFragment Fragment { get; set; }
     }
 }
