@@ -32,13 +32,6 @@ C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\Xamarin.Android.Support.v4.dll
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.pdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
+C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.csprojResolveAssemblyReference.cache
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb

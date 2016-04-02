@@ -30,7 +30,7 @@ namespace ViewShowingConcept.Android.Views
             SetupBindings();
             SetupSubViews();
             AddFragments();
-            ShowFragment(SubViews[SubViewType.Login]);
+            CurrentSubView = SubViewType.CustomerDetails;
         }
 
         private SubViewType _currentSubView;

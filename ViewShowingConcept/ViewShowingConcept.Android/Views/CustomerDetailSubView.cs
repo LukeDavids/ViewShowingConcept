@@ -16,16 +16,16 @@ namespace ViewShowingConcept.Android.Views
     public class CustomerDetailSubSubView : BaseSubView<CustomerDetailViewModel>
     {
 
+        public CustomerDetailSubSubView(SubViewType subViewType) : base(subViewType)
+        {
+        }
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            SubViewType = SubViewType.CustomerDetails;
             base.OnCreate(savedInstanceState);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             return this.BindingInflate(Resource.Layout.CustomerDetailView, null);
         }
 
-        public CustomerDetailSubSubView(SubViewType subViewType) : base(subViewType)
-        {
-        }
     }
 }

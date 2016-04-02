@@ -84,6 +84,5 @@ C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Deb
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\values\style.xml
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\R.cs.flag
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\uploadflags.txt
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Core.dll.mdb
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\ViewShowingConcept.Android.dll.mdb
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Android.dll.mdb

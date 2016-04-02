@@ -1,53 +1,51 @@
-using MvvmCross.Core.ViewModels;
-using System.Windows.Input;
-using MvvmCross.Droid.Support.V7.Fragging.Fragments;
-using ViewShowingConcept.Core.Enums;
-using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels.Base;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
-    public class CustomerDetailViewModel 
-        : BaseViewModel
+    public class CustomerDetailViewModel : BaseViewModel
     {
-        public CustomerDetailViewModel() { }
 
-        private string _id;
-        public string Id {
-            get { return _id; }
-            set {
-                _id = value;
-                RaisePropertyChanged(() => Id);
-            }
-        }
+        public string Header => "Customer Details";
 
-        private string _customerName;
-        public string CustomerName {
-            get { return _customerName; }
-            set {
-                _customerName = value;
-                RaisePropertyChanged(() => CustomerName);
-            }
-        }
 
-        private int _customerAge;
-        private int CustomerAge {
-            get { return _customerAge; }
-            set {
-                _customerAge = value;
-                RaisePropertyChanged(() => CustomerAge);
-            }
-        }
+        //    public CustomerDetailViewModel() { }
 
-        public ICommand ShowCustomerEditViewCommand {
-            get { return new MvxCommand(ShowCustomerEditView); }
-        }
+        //    private string _id;
+        //    public string Id {
+        //        get { return _id; }
+        //        set {
+        //            _id = value;
+        //            RaisePropertyChanged(() => Id);
+        //        }
+        //    }
 
-        private void ShowCustomerEditView() {
-            ShowSubView(SubViewType.CustomerEdit);
-        }
+        //    private string _customerName;
+        //    public string CustomerName {
+        //        get { return _customerName; }
+        //        set {
+        //            _customerName = value;
+        //            RaisePropertyChanged(() => CustomerName);
+        //        }
+        //    }
 
-        public bool IsMenuVisible { get; set; }
-        public MvxFragment Fragment { get; set; }
+        //    private int _customerAge;
+        //    private int CustomerAge {
+        //        get { return _customerAge; }
+        //        set {
+        //            _customerAge = value;
+        //            RaisePropertyChanged(() => CustomerAge);
+        //        }
+        //    }
+
+        //    public ICommand ShowCustomerEditViewCommand {
+        //        get { return new MvxCommand(ShowCustomerEditView); }
+        //    }
+
+        //    private void ShowCustomerEditView() {
+        //        ShowSubView(SubViewType.CustomerEdit);
+        //    }
+
+        //    public bool IsMenuVisible { get; set; }
+        //}
     }
 }

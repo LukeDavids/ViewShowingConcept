@@ -11,6 +11,23 @@ namespace ViewShowingConcept.Core.ViewModels
     public class ContainerViewModel
         : BaseViewModel
     {
+        public ContainerViewModel()
+        {
+            RegisterViewModels();
+        }
+
+        private static void RegisterViewModels()
+        {
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new LoginViewModel());
+        }
+      
+
+
+
+
         public Customer Customer { get; set; }
 
         private string _customerId;
