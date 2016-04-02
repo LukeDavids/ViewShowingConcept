@@ -30,10 +30,9 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private void ShowCustomerDetailView() {
-            ShowSubView(SubViewType.CustomerDetails);
+            ContainerViewModel.CurrentView = ViewType.CustomerDetails;
         }
 
         public bool IsMenuVisible { get; set; }
-        public MvxFragment Fragment { get; set; }
     }
 }

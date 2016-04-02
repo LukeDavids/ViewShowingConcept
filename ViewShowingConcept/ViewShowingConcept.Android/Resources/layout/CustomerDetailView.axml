@@ -5,13 +5,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        local:MvxBind="Text Header" />
     <Button
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:text="Login"
-        local:MvxBind="Click ShowLoginViewCommand" />
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        local:MvxBind="Text ButtonText; Click ShowEditCommand" />
 </LinearLayout>

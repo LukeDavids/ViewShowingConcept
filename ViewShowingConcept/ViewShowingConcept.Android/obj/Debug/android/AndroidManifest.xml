@@ -11,7 +11,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="View for ContainerView" android:theme="@style/AppTheme" android:name="md526fb486d3b0c921a0e660941ddf082b7.ContainerView">
+    <activity android:label="View for ContainerView" android:theme="@style/AppTheme" android:name="md55a74d23b11a0c14e53237f361ce422d4.ContainerView">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

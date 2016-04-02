@@ -117,12 +117,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="Views\Base\BaseSubView.cs" />
+    <Compile Include="Views\Base\BaseView.cs" />
     <Compile Include="Views\LoginSubView.cs" />
-    <Compile Include="Views\CustomerEditSubView.cs" />
-    <Compile Include="Views\CustomerDetailSubView.cs" />
-    <Compile Include="Views\CustomerListSubView.cs" />
-    <Compile Include="Views\ContainerView.cs" />
+    <Compile Include="Views\CustomerEditView.cs" />
+    <Compile Include="Views\CustomerDetailView.cs" />
+    <Compile Include="Views\CustomerListView.cs" />
+    <Compile Include="Views\ContainerView\ContainerView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

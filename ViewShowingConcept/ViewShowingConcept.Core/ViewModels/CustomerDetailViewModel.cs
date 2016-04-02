@@ -1,51 +1,20 @@
+using System.Windows.Input;
+using MvvmCross.Core.ViewModels;
+using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels.Base;
+using ViewShowingConcept.Core.ViewModels.Container;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerDetailViewModel : BaseViewModel
     {
+        public string ButtonText => "Edit Customer";
 
-        public string Header => "Customer Details";
+        public ICommand ShowEditCommand => new MvxCommand(ShowEdit);
+        private void ShowEdit()
+        {
+            ContainerViewModel.CurrentView = ViewType.CustomerEdit;
+        }
 
-
-        //    public CustomerDetailViewModel() { }
-
-        //    private string _id;
-        //    public string Id {
-        //        get { return _id; }
-        //        set {
-        //            _id = value;
-        //            RaisePropertyChanged(() => Id);
-        //        }
-        //    }
-
-        //    private string _customerName;
-        //    public string CustomerName {
-        //        get { return _customerName; }
-        //        set {
-        //            _customerName = value;
-        //            RaisePropertyChanged(() => CustomerName);
-        //        }
-        //    }
-
-        //    private int _customerAge;
-        //    private int CustomerAge {
-        //        get { return _customerAge; }
-        //        set {
-        //            _customerAge = value;
-        //            RaisePropertyChanged(() => CustomerAge);
-        //        }
-        //    }
-
-        //    public ICommand ShowCustomerEditViewCommand {
-        //        get { return new MvxCommand(ShowCustomerEditView); }
-        //    }
-
-        //    private void ShowCustomerEditView() {
-        //        ShowSubView(SubViewType.CustomerEdit);
-        //    }
-
-        //    public bool IsMenuVisible { get; set; }
-        //}
     }
 }

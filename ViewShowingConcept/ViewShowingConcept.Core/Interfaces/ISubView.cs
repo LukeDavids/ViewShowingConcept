@@ -8,7 +8,7 @@ namespace ViewShowingConcept.Core.Interfaces
     {
         MvxFragment Fragment { get; }
         BaseViewModel BaseViewModel { get; }
-        SubViewType SubViewType { get; }
+        ViewType SubViewType { get; }
         string Tag { get; }
 
 

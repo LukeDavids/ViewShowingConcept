@@ -1,4 +1,5 @@
 using MvvmCross.Platform.IoC;
+using ViewShowingConcept.Core.ViewModels.Container;
 
 namespace ViewShowingConcept.Core
 {
@@ -11,7 +12,7 @@ namespace ViewShowingConcept.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.ContainerViewModel>();
+            RegisterAppStart<ContainerViewModel>();
         }
     }
 }

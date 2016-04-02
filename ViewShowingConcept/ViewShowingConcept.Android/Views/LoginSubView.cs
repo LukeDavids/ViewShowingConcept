@@ -16,19 +16,19 @@ namespace ViewShowingConcept.Android.Views
 {
     [MvxFragment(typeof(LoginViewModel), Resource.Id.content_frame, true)]
     [Register("viewshowingconcept.android.views.LoginFragment")]
-    public class LoginSubSubView : BaseSubView<LoginViewModel>
+    public class LoginView : BaseView<LoginViewModel>
     {
         //private EditText _usernameEditText;
         private string _username;
         
 
-        public LoginSubSubView(SubViewType subViewType) : base(subViewType)
+        public LoginView(ViewType subViewType) : base(subViewType)
         {
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            SubViewType = SubViewType.Login;
+            SubViewType = ViewType.Login;
             base.OnCreate(savedInstanceState);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
 

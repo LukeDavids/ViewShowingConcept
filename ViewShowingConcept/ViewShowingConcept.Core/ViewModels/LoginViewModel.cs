@@ -52,11 +52,10 @@ namespace ViewShowingConcept.Core.ViewModels
             Debug.WriteLine("======================================== show login command");
             if (Username.Equals("user") && Password.Equals("password"))
             {
-                ShowSubView(SubViewType.CustomerList);
+                ContainerViewModel.CurrentView = ViewType.CustomerList;
             }
         }
 
         public bool IsMenuVisible { get; set; }
-        public MvxFragment Fragment { get; set; }
     }
 }

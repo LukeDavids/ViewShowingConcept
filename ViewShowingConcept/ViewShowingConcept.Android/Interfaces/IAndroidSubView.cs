@@ -8,7 +8,7 @@ namespace ViewShowingConcept.Android.Interfaces
     {
         MvxFragment Fragment { get; }
         BaseViewModel BaseViewModel { get; }
-        SubViewType SubViewType { get; }
+        ViewType SubViewType { get; }
         string SubViewTag { get; set; }
 
 
