@@ -8,8 +8,7 @@ using ViewShowingConcept.Core.ViewModels.Base;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
-    public class CustomerEditViewModel
-        : BaseViewModel, ISubView
+    public class CustomerEditViewModel : BaseViewModel
     {
         public CustomerEditViewModel() { }
 

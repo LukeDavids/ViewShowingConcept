@@ -15,8 +15,8 @@
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
+    <Compile Include="Interfaces\IAndroidSubView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Presenter\IFragmentHost.cs" />
     <Compile Include="Presenter\ICustomPresenter.cs" />
@@ -116,11 +117,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="Views\Base\BaseView.cs" />
-    <Compile Include="Views\LoginFragment.cs" />
-    <Compile Include="Views\CustomerEditFragment.cs" />
-    <Compile Include="Views\CustomerDetailFragment.cs" />
-    <Compile Include="Views\CustomerListFragment.cs" />
+    <Compile Include="Views\Base\BaseSubView.cs" />
+    <Compile Include="Views\LoginSubView.cs" />
+    <Compile Include="Views\CustomerEditSubView.cs" />
+    <Compile Include="Views\CustomerDetailSubView.cs" />
+    <Compile Include="Views\CustomerListSubView.cs" />
     <Compile Include="Views\ContainerView.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@ using ViewShowingConcept.Core.ViewModels.Base;
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class LoginViewModel
-        : BaseViewModel, ISubView
+        : BaseViewModel
     {
         public LoginViewModel() {
             Debug.WriteLine(" -----------------------------------login view model ");
@@ -52,7 +52,7 @@ namespace ViewShowingConcept.Core.ViewModels
             Debug.WriteLine("======================================== show login command");
             if (Username.Equals("user") && Password.Equals("password"))
             {
-                ShowSubView(SubView.CustomerList);
+                ShowSubView(SubViewType.CustomerList);
             }
         }
 

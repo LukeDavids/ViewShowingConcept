@@ -10,7 +10,7 @@ using ViewShowingConcept.Core.Interfaces;
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerListViewModel
-        : BaseViewModel, ISubView
+        : BaseViewModel
     {
         public CustomerListViewModel() { }
 
@@ -30,7 +30,7 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private void ShowCustomerDetailView() {
-            ShowSubView(SubView.CustomerDetails);
+            ShowSubView(SubViewType.CustomerDetails);
         }
 
         public bool IsMenuVisible { get; set; }

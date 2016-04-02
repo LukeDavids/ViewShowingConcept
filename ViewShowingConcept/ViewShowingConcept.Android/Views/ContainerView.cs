@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Android.App;
@@ -11,66 +12,50 @@ using ViewShowingConcept.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using MvvmCross.Platform;
 using ViewShowingConcept.Android.Views.Base;
+using IAndroidSubView = ViewShowingConcept.Android.Interfaces.IAndroidSubView;
 
 namespace ViewShowingConcept.Android.Views
 {
     [Activity(Label = "View for ContainerView", Theme = "@style/AppTheme", MainLauncher = true)]
     public class ContainerView : MvxCachingFragmentCompatActivity
     {
-
-        private CustomerListFragment _customerListFragment;
-        private CustomerDetailFragment _customerDetailFragment;
-        private CustomerEditFragment _customerEditFragment;
-        private LoginFragment _loginFragment;
-
-        public Dictionary<SubView, ISubView> SubViews { get; set; }
+        public Dictionary<SubViewType, IAndroidSubView> SubViews { get; set; }
         public string CurrentCustomerId { get; set; }
-
-        public ContainerViewModel ContainerViewModel
-        {
-            get { return (ContainerViewModel) ContainerViewModel; }
-            set { ViewModel = value; }
-        }
+        
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.ContainerView);
-
-            _customerListFragment = new CustomerListFragment();
-            _customerDetailFragment = new CustomerDetailFragment();
-            _customerEditFragment = new CustomerEditFragment();
-            _loginFragment = new LoginFragment();
-
             SetupBindings();
             SetupSubViews();
             AddFragments();
-            ShowFragment(_loginFragment, "loginFragment");
+            ShowFragment(SubViews[SubViewType.Login]);
         }
 
-        private SubView _currentSubView;
-        public SubView CurrentSubView
+        private SubViewType _currentSubView;
+        public SubViewType CurrentSubView
         {
             get { return _currentSubView; }
             set
             {
                 _currentSubView = value;
-                ShowFragment(SubViews[_currentSubView].Fragment, _currentSubView.ToString());
+                ShowFragment(SubViews[_currentSubView]);
             }
         }
 
         private void SetupSubViews()
         {
-            SubViews = new Dictionary<SubView, ISubView>
+            SubViews = new Dictionary<SubViewType, IAndroidSubView>
             {
-                {SubView.Login, _loginFragment },
-                {SubView.CustomerDetails, _customerDetailFragment },
-                {SubView.CustomerEdit, _customerEditFragment },
-                {SubView.CustomerList, _customerListFragment }
+                {SubViewType.Login, new LoginSubSubView(SubViewType.Login) },
+                {SubViewType.CustomerDetails, new CustomerDetailSubSubView(SubViewType.CustomerDetails) },
+                {SubViewType.CustomerEdit, new CustomerEditSubSubView(SubViewType.CustomerEdit) },
+                {SubViewType.CustomerList, new CustomerListSubSubView(SubViewType.CustomerList) }
             };
         }
 
-        public void ShowFragment(MvxFragment fragment, string tag)
+        public void ShowFragment(IAndroidSubView androidSubView)
         {
             //FlushFragments();
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
@@ -79,14 +64,14 @@ namespace ViewShowingConcept.Android.Views
 
             try
             {
-                fragmentTransaction.Replace(Resource.Id.content_frame, fragment, tag);
-                fragment.SetMenuVisibility(true);
+                fragmentTransaction.Replace(Resource.Id.content_frame, androidSubView.Fragment, androidSubView.SubViewTag);
+                androidSubView.Fragment.SetMenuVisibility(true);
             }
-            catch (Exception e)
+            catch (System.Exception e)
             {
                 AddFragments();
-                fragmentTransaction.Replace(Resource.Id.content_frame, fragment, tag);
-                fragment.SetMenuVisibility(true);
+                fragmentTransaction.Replace(Resource.Id.content_frame, androidSubView.Fragment, androidSubView.SubViewTag);
+                androidSubView.Fragment.SetMenuVisibility(true);
             }
 
             fragmentTransaction.Commit();
@@ -116,7 +101,7 @@ namespace ViewShowingConcept.Android.Views
         {
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
 
-            fragmentTransaction.Add(Resource.Id.content_frame, _loginFragment, "loginFragment");
+            fragmentTransaction.Add(Resource.Id.content_frame, SubViews[SubViewType.Login].Fragment, SubViews[SubViewType.Login].SubViewTag);
 
             fragmentTransaction.Commit();
         }

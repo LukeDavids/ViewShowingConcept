@@ -16,32 +16,32 @@ namespace ViewShowingConcept.Core.ViewModels.Base
         //}
 
         private bool _isBusy;
-        private SubView _currentSubView;
+        private SubViewType _currentSubView;
 
         public bool IsBusy { get { return _isBusy; } set { _isBusy = value; RaisePropertyChanged(() => IsBusy); } }
-        public SubView CurrentSubView { get { return _currentSubView; } set { _currentSubView = value; RaisePropertyChanged(() => CurrentSubView); } }
-        public Dictionary<SubView, BaseViewModel> SubViewModels { get; set; }
+        public SubViewType CurrentSubView { get { return _currentSubView; } set { _currentSubView = value; RaisePropertyChanged(() => CurrentSubView); } }
+        public Dictionary<SubViewType, BaseViewModel> SubViewModels { get; set; }
 
-        public void ShowSubView(SubView subView)
+        public void ShowSubView(SubViewType subView)
         {
             ShowSubView(subView, "");
         }
-        public void ShowSubView(SubView subView, string parameter)
+        public void ShowSubView(SubViewType subView, string parameter)
         {
             CurrentSubView = subView;
             if (CurrentSession.BuildPlatform != BuildPlatform.iOS) return;
             switch (CurrentSubView)
             {
-                case SubView.CustomerDetails:
+                case SubViewType.CustomerDetails:
                     ShowViewModel<CustomerDetailViewModel>(new { parameter });
                     break;
-                case SubView.CustomerEdit:
+                case SubViewType.CustomerEdit:
                     ShowViewModel<CustomerEditViewModel>(new { parameter });
                     break;
-                case SubView.CustomerList:
+                case SubViewType.CustomerList:
                     ShowViewModel<CustomerListViewModel>();
                     break;
-                case SubView.Login:
+                case SubViewType.Login:
                     ShowViewModel<LoginViewModel>();
                     break;
                 default:

@@ -37,7 +37,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Config\CurrentSession.cs" />
     <Compile Include="Enums\BuildPlatform.cs" />
-    <Compile Include="Enums\SubView.cs" />
+    <Compile Include="Enums\SubViewType.cs" />
     <Compile Include="Interfaces\ISubView.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

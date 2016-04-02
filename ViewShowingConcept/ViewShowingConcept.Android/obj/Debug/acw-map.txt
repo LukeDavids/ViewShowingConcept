@@ -2,30 +2,30 @@ ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android;md53ed8d232c
 ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 ViewShowingConcept.Android.SplashScreen;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 viewshowingconcept.android.SplashScreen;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
-ViewShowingConcept.Android.Views.LoginFragment, ViewShowingConcept.Android;viewshowingconcept.android.views.LoginFragment
-ViewShowingConcept.Android.Views.LoginFragment, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.LoginFragment
-ViewShowingConcept.Android.Views.LoginFragment;viewshowingconcept.android.views.LoginFragment
+ViewShowingConcept.Android.Views.LoginSubSubView, ViewShowingConcept.Android;viewshowingconcept.android.views.LoginFragment
+ViewShowingConcept.Android.Views.LoginSubSubView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.LoginFragment
+ViewShowingConcept.Android.Views.LoginSubSubView;viewshowingconcept.android.views.LoginFragment
 viewshowingconcept.android.views.LoginFragment;viewshowingconcept.android.views.LoginFragment
-ViewShowingConcept.Android.Views.CustomerEditFragment, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerEditFragment
-ViewShowingConcept.Android.Views.CustomerEditFragment, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerEditFragment
-ViewShowingConcept.Android.Views.CustomerEditFragment;ViewShowingConcept.android.views.CustomerEditFragment
+ViewShowingConcept.Android.Views.CustomerEditSubSubView, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerEditFragment
+ViewShowingConcept.Android.Views.CustomerEditSubSubView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerEditFragment
+ViewShowingConcept.Android.Views.CustomerEditSubSubView;ViewShowingConcept.android.views.CustomerEditFragment
 ViewShowingConcept.android.views.CustomerEditFragment;ViewShowingConcept.android.views.CustomerEditFragment
-ViewShowingConcept.Android.Views.CustomerDetailFragment, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerDetailFragment
-ViewShowingConcept.Android.Views.CustomerDetailFragment, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerDetailFragment
-ViewShowingConcept.Android.Views.CustomerDetailFragment;ViewShowingConcept.android.views.CustomerDetailFragment
+ViewShowingConcept.Android.Views.CustomerDetailSubSubView, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerDetailFragment
+ViewShowingConcept.Android.Views.CustomerDetailSubSubView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerDetailFragment
+ViewShowingConcept.Android.Views.CustomerDetailSubSubView;ViewShowingConcept.android.views.CustomerDetailFragment
 ViewShowingConcept.android.views.CustomerDetailFragment;ViewShowingConcept.android.views.CustomerDetailFragment
-ViewShowingConcept.Android.Views.CustomerListFragment, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerListFragment
-ViewShowingConcept.Android.Views.CustomerListFragment, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerListFragment
-ViewShowingConcept.Android.Views.CustomerListFragment;ViewShowingConcept.android.views.CustomerListFragment
+ViewShowingConcept.Android.Views.CustomerListSubSubView, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerListFragment
+ViewShowingConcept.Android.Views.CustomerListSubSubView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerListFragment
+ViewShowingConcept.Android.Views.CustomerListSubSubView;ViewShowingConcept.android.views.CustomerListFragment
 ViewShowingConcept.android.views.CustomerListFragment;ViewShowingConcept.android.views.CustomerListFragment
 ViewShowingConcept.Android.Views.ContainerView, ViewShowingConcept.Android;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
 ViewShowingConcept.Android.Views.ContainerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
 ViewShowingConcept.Android.Views.ContainerView;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
 viewshowingconcept.android.views.ContainerView;md526fb486d3b0c921a0e660941ddf082b7.ContainerView
-ViewShowingConcept.Android.Views.Base.BaseView`1, ViewShowingConcept.Android;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
-ViewShowingConcept.Android.Views.Base.BaseView`1, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
-ViewShowingConcept.Android.Views.Base.BaseView`1;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
-viewshowingconcept.android.views.base.BaseView_1;md5686914bec1dd720f019be98cb06dedc7.BaseView_1
+ViewShowingConcept.Android.Views.Base.BaseSubView`1, ViewShowingConcept.Android;md5686914bec1dd720f019be98cb06dedc7.BaseSubView_1
+ViewShowingConcept.Android.Views.Base.BaseSubView`1, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5686914bec1dd720f019be98cb06dedc7.BaseSubView_1
+ViewShowingConcept.Android.Views.Base.BaseSubView`1;md5686914bec1dd720f019be98cb06dedc7.BaseSubView_1
+viewshowingconcept.android.views.base.BaseSubView_1;md5686914bec1dd720f019be98cb06dedc7.BaseSubView_1
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView, MvvmCross.Binding.Droid;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView
 MvvmCross.Binding.Droid.Views.MvxBaseListItemView;md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView

@@ -8,7 +8,7 @@ using ViewShowingConcept.Core.ViewModels.Base;
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerDetailViewModel 
-        : BaseViewModel, ISubView
+        : BaseViewModel
     {
         public CustomerDetailViewModel() { }
 
@@ -44,7 +44,7 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private void ShowCustomerEditView() {
-            ShowSubView(SubView.CustomerEdit);
+            ShowSubView(SubViewType.CustomerEdit);
         }
 
         public bool IsMenuVisible { get; set; }
