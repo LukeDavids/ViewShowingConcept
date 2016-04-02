@@ -2,9 +2,7 @@
 {
     public enum ViewType
     {
-        CustomerList = 0,
         CustomerDetails,
-        CustomerEdit,
-        Login
+        CustomerEdit
     }
 }

@@ -7,7 +7,12 @@
     android:layout_height="match_parent">
     <Button
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="20dp"
+        android:layout_height="100dp"
+        android:textSize="30dp"
         local:MvxBind="Text ButtonText; Click ShowEditCommand" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        local:MvxBind="Text StringPassedAsParameter" />
 </LinearLayout>

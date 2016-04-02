@@ -1,25 +1,26 @@
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using MvvmCross.Platform;
+using System;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels.Base;
-using IAndroidSubView = ViewShowingConcept.Android.Interfaces.IAndroidSubView;
+using IAndroidView = ViewShowingConcept.Android.Interfaces.IAndroidView;
 
 namespace ViewShowingConcept.Android.Views.Base
 {
-    public class BaseView<TViewModel> : MvxFragment<TViewModel>, IAndroidSubView where TViewModel : BaseViewModel, new()
+    public class BaseView<TViewModel> : MvxFragment<TViewModel>, IAndroidView where TViewModel : BaseViewModel, new()
     {
 
-        public BaseView(ViewType subViewType)
+        public BaseView() 
         {
             ViewModel = Mvx.Resolve<TViewModel>();
-            SubViewType = subViewType;
-            SubViewTag = subViewType.ToString();
+            BaseViewModel = Mvx.Resolve<BaseViewModel>();
         }
         
+        public BaseViewModel BaseViewModel { get; }
         public MvxFragment Fragment => this;
-        public BaseViewModel BaseViewModel => ViewModel as BaseViewModel;
-        public ViewType SubViewType { get; set; }
-        public string SubViewTag { get; set; }
+        public ViewType ViewType { get; set; }
+        public string ViewTag { get; set; }
     }
 }

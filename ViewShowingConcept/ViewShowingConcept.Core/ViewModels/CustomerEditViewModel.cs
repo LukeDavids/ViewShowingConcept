@@ -1,64 +1,38 @@
+using System;
+using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
 using System.Windows.Input;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
+using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.Services;
 using ViewShowingConcept.Core.ViewModels.Base;
+using static ViewShowingConcept.Core.Enums.ViewType;
+using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerEditViewModel : BaseViewModel
     {
-        public CustomerEditViewModel() { }
 
-        private string _id;
-        public string Id
+
+        public CustomerEditViewModel()
         {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                RaisePropertyChanged(() => Id);
-            }
+            StringPassedAsParameter = "nothing yet!";
         }
 
-        private string _customerName;
-        public string CustomerName
+        private string _stringParam;
+
+        public string ButtonText => "Customer Details!!";
+        public ICommand ShowDetailsCommand => new MvxCommand(()=> ShowView(CustomerDetails, FullScreen, DateTime.UtcNow.ToString()));
+        public string StringPassedAsParameter { get { return _stringParam; } set { _stringParam = value; RaisePropertyChanged(() => StringPassedAsParameter); } }
+
+        public override async Task Initialise(ShowViewEvent viewEvent)
         {
-            get { return _customerName; }
-            set
-            {
-                _customerName = value;
-                RaisePropertyChanged(() => CustomerName);
-            }
+            await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
         }
 
-        private int _customerAge;
-        private int CustomerAge
-        {
-            get { return _customerAge; }
-            set
-            {
-                _customerAge = value;
-                RaisePropertyChanged(() => CustomerAge);
-            }
-        }
-
-        public ICommand UpdateCustomerCommand {
-            get { return new MvxCommand(UpdateCustomer); }
-        }
-
-        private void UpdateCustomer() {
-            foreach (Customer customer in CustomerServices.getCustomerList()) {
-                if (Id.Equals(customer.getId())) {
-                    customer.setCustomerAge(CustomerAge);
-                    customer.setCustomerName(_customerName);
-                }
-            }
-        }
-
-        public bool IsMenuVisible { get; set; }
-        public MvxFragment Fragment { get; set; }
+       
     }
 }

@@ -4,18 +4,21 @@ using Android.App;
 using Android.OS;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Core.Enums;
-using ViewShowingConcept.Core.ViewModels;
+using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Container;
-using IAndroidSubView = ViewShowingConcept.Android.Interfaces.IAndroidSubView;
+using IAndroidView = ViewShowingConcept.Android.Interfaces.IAndroidView;
+using static ViewShowingConcept.Core.Enums.ViewType;
+using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Android.Views.ContainerView
 {
     [Activity(Label = "View for ContainerView", Theme = "@style/AppTheme", MainLauncher = true)]
     public class ContainerView : MvxCachingFragmentCompatActivity
     {
-        public Dictionary<ViewType, IAndroidSubView> Views { get; set; }
+        
+        public Dictionary<ViewType, IAndroidView> Views { get; set; }
+        public Dictionary<ViewFrame, int> ViewFrames { get; set; } 
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -23,49 +26,65 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetContentView(Resource.Layout.ContainerView);
             SetupBindings();
             SetupViews();
+            SetupContentFrames();
             AddFragments();
-            CurrentView = ViewType.CustomerDetails;
+            ShowViewEvent = new ShowViewEvent(CustomerDetails, FullScreen, "");
         }
 
-        private ViewType _currentView;
-        public ViewType CurrentView
+        private void SetupContentFrames()
         {
-            get { return _currentView; }
+            ViewFrames = new Dictionary<ViewFrame, int>
+            {
+                [FullScreen] = Resource.Id.content_frame
+            };
+            //Add more so we can replace different areas of the screen
+        }
+
+        public ContainerViewModel ContainerViewModel => this.ViewModel as ContainerViewModel;
+
+        private ShowViewEvent _showViewEvent;
+        public ShowViewEvent ShowViewEvent
+        {
+            get { return _showViewEvent; }
             set
             {
-                _currentView = value;
-                ShowFragment(Views[_currentView]);
+                _showViewEvent = value;
+                ShowView(_showViewEvent);
             }
         }
-
+        
         private void SetupViews()
         {
-            Views = new Dictionary<ViewType, IAndroidSubView>
+            Views = new Dictionary<ViewType, IAndroidView>
             {
-                {ViewType.Login, new LoginView(ViewType.Login) },
-                {ViewType.CustomerDetails, new CustomerDetailView(ViewType.CustomerDetails) },
-                {ViewType.CustomerEdit, new CustomerEditView(ViewType.CustomerEdit) },
-                {ViewType.CustomerList, new CustomerListView(ViewType.CustomerList) }
+                {CustomerDetails, new CustomerDetailView() },
+                {CustomerEdit, new CustomerEditView() }
             };
         }
 
-        public void ShowFragment(IAndroidSubView androidSubView)
+        public void ShowView(ShowViewEvent showViewEvent)
         {
-            //FlushFragments();
+            var view = Views[showViewEvent.ViewType];
+            var viewFrame = ViewFrames[showViewEvent.ViewFrame];
+            var viewFragment = view.Fragment;
+            var viewTag = view.ViewTag;
+
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
             SupportFragmentManager.ExecutePendingTransactions();
             HideFragments();
 
             try
             {
-                fragmentTransaction.Replace(Resource.Id.content_frame, androidSubView.Fragment, androidSubView.SubViewTag);
-                androidSubView.Fragment.SetMenuVisibility(true);
+                view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
+                fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
+                fragmentTransaction.AddToBackStack(viewTag);
+                view.Fragment.SetMenuVisibility(true);
             }
             catch (System.Exception e)
             {
                 AddFragments();
-                fragmentTransaction.Replace(Resource.Id.content_frame, androidSubView.Fragment, androidSubView.SubViewTag);
-                androidSubView.Fragment.SetMenuVisibility(true);
+                fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
+                view.Fragment.SetMenuVisibility(true);
             }
 
             fragmentTransaction.Commit();
@@ -75,9 +94,9 @@ namespace ViewShowingConcept.Android.Views.ContainerView
         {
             var fragmentTransaction =SupportFragmentManager.BeginTransaction();
 
-            foreach (var baseView in Views.Where(baseView => baseView.Value != null))
+            foreach (var view in Views.Where(baseView => baseView.Value != null))
             {
-                fragmentTransaction.Remove((MvxFragment) baseView.Value);
+                fragmentTransaction.Remove(view.Value.Fragment);
             }
 
             fragmentTransaction.Commit();
@@ -85,43 +104,25 @@ namespace ViewShowingConcept.Android.Views.ContainerView
 
         public void HideFragments()
         {
-            foreach (var subview in Views)
+            foreach (var view in Views)
             {
-                subview.Value.Fragment.SetMenuVisibility(false);
+                view.Value.Fragment.SetMenuVisibility(false);
             }
         }
 
         public void AddFragments()
         {
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
-
-            fragmentTransaction.Add(Resource.Id.content_frame, Views[ViewType.Login].Fragment, Views[ViewType.Login].SubViewTag);
-
+            fragmentTransaction.Add(ViewFrames[FullScreen], Views[CustomerDetails].Fragment, Views[CustomerDetails].ViewTag);
             fragmentTransaction.Commit();
         }
-
-        //public bool BackPressedOnListView()
-        //{
-        //    if (SubViews[SubView.CustomerList].IsMenuVisible)
-        //    {
-        //        //OnDestroyView();
-        //        return true;
-        //    }
-        //    foreach (var baseView in SubViews.Where(baseView => baseView.Value.IsMenuVisible))
-        //    {
-        //        BaseView<> fragment = (MvxFragment) baseView.Value;
-        //        ShowFragment(baseView.Value, fragment.SubViewType.ToString());
-                
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        
 
         private void SetupBindings()
         {
             this.CreateBinding(this)
-                .For(view => view.CurrentView)
-                .To<ContainerViewModel>(vm => vm.CurrentView)
+                .For(view => view.ShowViewEvent)
+                .To<ContainerViewModel>(vm => vm.ShowViewEvent)
                 .Apply();
             
         }

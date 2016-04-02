@@ -108,7 +108,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
-    <Compile Include="Interfaces\IAndroidSubView.cs" />
+    <Compile Include="Interfaces\IAndroidView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Presenter\IFragmentHost.cs" />
     <Compile Include="Presenter\ICustomPresenter.cs" />
@@ -118,10 +118,8 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
-    <Compile Include="Views\LoginSubView.cs" />
     <Compile Include="Views\CustomerEditView.cs" />
     <Compile Include="Views\CustomerDetailView.cs" />
-    <Compile Include="Views\CustomerListView.cs" />
     <Compile Include="Views\ContainerView\ContainerView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -134,10 +132,6 @@
     <AndroidResource Include="Resources\layout\ContainerView.axml" />
     <AndroidResource Include="Resources\layout\CustomerDetailView.axml" />
     <AndroidResource Include="Resources\layout\CustomerEditView.axml" />
-    <AndroidResource Include="Resources\layout\CustomerListView.axml" />
-    <AndroidResource Include="Resources\layout\LoginView.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

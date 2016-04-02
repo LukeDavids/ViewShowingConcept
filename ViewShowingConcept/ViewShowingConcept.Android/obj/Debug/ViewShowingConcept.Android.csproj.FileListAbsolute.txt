@@ -74,8 +74,6 @@ C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Deb
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\layout\containerview.xml
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\layout\customerdetailview.xml
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\layout\customereditview.xml
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\layout\customerlistview.xml
-C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\layout\loginview.xml
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\values\strings.xml
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\mipmap\icon.png
 C:\Code\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\values\splashstyle.xml
