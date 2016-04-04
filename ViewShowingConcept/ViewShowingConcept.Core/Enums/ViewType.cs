@@ -3,6 +3,8 @@
     public enum ViewType
     {
         CustomerDetails,
-        CustomerEdit
+        CustomerEdit,
+        CustomerView,
+        CustomerList
     }
 }

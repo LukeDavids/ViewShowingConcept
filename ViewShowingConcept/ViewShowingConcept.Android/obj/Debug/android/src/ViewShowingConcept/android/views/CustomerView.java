@@ -1,7 +1,7 @@
-package viewshowingconcept.android.views;
+package ViewShowingConcept.android.views;
 
 
-public class LoginFragment
+public class CustomerView
 	extends md5686914bec1dd720f019be98cb06dedc7.BaseView_1
 	implements
 		mono.android.IGCUserPeer
@@ -11,15 +11,15 @@ public class LoginFragment
 		__md_methods = 
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("ViewShowingConcept.Android.Views.LoginView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", LoginFragment.class, __md_methods);
+		mono.android.Runtime.register ("ViewShowingConcept.Android.Views.CustomerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", CustomerView.class, __md_methods);
 	}
 
 
-	public LoginFragment () throws java.lang.Throwable
+	public CustomerView () throws java.lang.Throwable
 	{
 		super ();
-		if (getClass () == LoginFragment.class)
-			mono.android.TypeManager.Activate ("ViewShowingConcept.Android.Views.LoginView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+		if (getClass () == CustomerView.class)
+			mono.android.TypeManager.Activate ("ViewShowingConcept.Android.Views.CustomerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

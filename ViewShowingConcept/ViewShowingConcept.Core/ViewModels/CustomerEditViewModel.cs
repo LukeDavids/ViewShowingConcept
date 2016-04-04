@@ -32,7 +32,5 @@ namespace ViewShowingConcept.Core.ViewModels
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
         }
-
-       
     }
 }

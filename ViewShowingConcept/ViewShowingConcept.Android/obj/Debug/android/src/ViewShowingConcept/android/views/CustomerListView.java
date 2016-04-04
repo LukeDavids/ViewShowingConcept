@@ -1,7 +1,7 @@
 package ViewShowingConcept.android.views;
 
 
-public class CustomerListFragment
+public class CustomerListView
 	extends md5686914bec1dd720f019be98cb06dedc7.BaseView_1
 	implements
 		mono.android.IGCUserPeer
@@ -11,14 +11,14 @@ public class CustomerListFragment
 		__md_methods = 
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("ViewShowingConcept.Android.Views.CustomerListView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", CustomerListFragment.class, __md_methods);
+		mono.android.Runtime.register ("ViewShowingConcept.Android.Views.CustomerListView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", CustomerListView.class, __md_methods);
 	}
 
 
-	public CustomerListFragment () throws java.lang.Throwable
+	public CustomerListView () throws java.lang.Throwable
 	{
 		super ();
-		if (getClass () == CustomerListFragment.class)
+		if (getClass () == CustomerListView.class)
 			mono.android.TypeManager.Activate ("ViewShowingConcept.Android.Views.CustomerListView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 

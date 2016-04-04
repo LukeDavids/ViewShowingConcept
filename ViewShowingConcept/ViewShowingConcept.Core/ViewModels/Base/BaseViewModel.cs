@@ -11,6 +11,7 @@ namespace ViewShowingConcept.Core.ViewModels.Base
         
         private bool _isBusy;
         public ContainerViewModel ContainerViewModel { get; set; }
+
         public bool IsBusy { get { return _isBusy; } set { _isBusy = value; RaisePropertyChanged(() => IsBusy); } }
 
         public void ShowView(ViewType viewType, ViewFrame viewFrame, string parameter)

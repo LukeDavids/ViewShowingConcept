@@ -28,7 +28,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetupViews();
             SetupContentFrames();
             AddFragments();
-            ShowViewEvent = new ShowViewEvent(CustomerDetails, FullScreen, "");
+            ShowViewEvent = new ShowViewEvent(CustomerList, FullScreen, "");
         }
 
         private void SetupContentFrames()
@@ -58,7 +58,9 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             Views = new Dictionary<ViewType, IAndroidView>
             {
                 {CustomerDetails, new CustomerDetailView() },
-                {CustomerEdit, new CustomerEditView() }
+                {CustomerEdit, new CustomerEditView() },
+                {CustomerList, new CustomerListView() },
+                {ViewType.CustomerView, new CustomerView() }
             };
         }
 

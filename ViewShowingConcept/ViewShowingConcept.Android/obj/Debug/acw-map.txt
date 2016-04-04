@@ -10,6 +10,14 @@ ViewShowingConcept.Android.Views.CustomerDetailView, ViewShowingConcept.Android;
 ViewShowingConcept.Android.Views.CustomerDetailView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerDetailSubView
 ViewShowingConcept.Android.Views.CustomerDetailView;ViewShowingConcept.android.views.CustomerDetailSubView
 ViewShowingConcept.android.views.CustomerDetailSubView;ViewShowingConcept.android.views.CustomerDetailSubView
+ViewShowingConcept.Android.Views.CustomerView, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerView
+ViewShowingConcept.Android.Views.CustomerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerView
+ViewShowingConcept.Android.Views.CustomerView;ViewShowingConcept.android.views.CustomerView
+ViewShowingConcept.android.views.CustomerView;ViewShowingConcept.android.views.CustomerView
+ViewShowingConcept.Android.Views.CustomerListView, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerListView
+ViewShowingConcept.Android.Views.CustomerListView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerListView
+ViewShowingConcept.Android.Views.CustomerListView;ViewShowingConcept.android.views.CustomerListView
+ViewShowingConcept.android.views.CustomerListView;ViewShowingConcept.android.views.CustomerListView
 ViewShowingConcept.Android.Views.ContainerView.ContainerView, ViewShowingConcept.Android;md55a74d23b11a0c14e53237f361ce422d4.ContainerView
 ViewShowingConcept.Android.Views.ContainerView.ContainerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md55a74d23b11a0c14e53237f361ce422d4.ContainerView
 ViewShowingConcept.Android.Views.ContainerView.ContainerView;md55a74d23b11a0c14e53237f361ce422d4.ContainerView
