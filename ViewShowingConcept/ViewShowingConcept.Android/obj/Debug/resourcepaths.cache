@@ -1,6 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Paths>
-  <AdditionalAndroidResourcePaths />
-  <AdditionalJavaLibraryReferences />
+  <AdditionalAndroidResourcePaths>
+    <AdditionalAndroidResourcePath>C:\Users\luke.davids.MAXXOR\AppData\Local\Xamarin\Android.Support.Design\23.2.1.0\embedded</AdditionalAndroidResourcePath>
+    <AdditionalAndroidResourcePath>C:\Users\luke.davids.MAXXOR\AppData\Local\Xamarin\Android.Support.v7.Preference\23.2.1.0\embedded</AdditionalAndroidResourcePath>
+    <AdditionalAndroidResourcePath>C:\Users\luke.davids.MAXXOR\AppData\Local\Xamarin\Android.Support.v7.RecyclerView\23.2.1.0\embedded</AdditionalAndroidResourcePath>
+  </AdditionalAndroidResourcePaths>
+  <AdditionalJavaLibraryReferences>
+    <AdditionalJavaLibraryReference>C:\Users\luke.davids.MAXXOR\AppData\Local\Xamarin\Android.Support.Design\23.2.1.0\embedded\classes.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>C:\Users\luke.davids.MAXXOR\AppData\Local\Xamarin\Android.Support.v7.Preference\23.2.1.0\embedded\classes.jar</AdditionalJavaLibraryReference>
+    <AdditionalJavaLibraryReference>C:\Users\luke.davids.MAXXOR\AppData\Local\Xamarin\Android.Support.v7.RecyclerView\23.2.1.0\embedded\classes.jar</AdditionalJavaLibraryReference>
+  </AdditionalJavaLibraryReferences>
   <AdditionalNativeLibraryReferences />
 </Paths>

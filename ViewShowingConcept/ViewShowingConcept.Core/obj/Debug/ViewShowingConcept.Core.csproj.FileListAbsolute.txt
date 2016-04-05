@@ -4,6 +4,5 @@ C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\View
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Core.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Localization.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Platform.dll
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.csprojResolveAssemblyReference.cache
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.pdb

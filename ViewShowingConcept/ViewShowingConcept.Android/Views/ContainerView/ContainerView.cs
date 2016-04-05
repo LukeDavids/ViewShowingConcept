@@ -4,6 +4,7 @@ using Android.App;
 using Android.OS;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Droid.Support.V7.Fragging;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Container;
@@ -13,8 +14,8 @@ using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Android.Views.ContainerView
 {
-    [Activity(Label = "View for ContainerView", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class ContainerView : MvxCachingFragmentCompatActivity
+    [Activity(Label = "View for ContainerView", MainLauncher = true)]
+    public class ContainerView : MvxFragmentActivity
     {
         
         public Dictionary<ViewType, IAndroidView> Views { get; set; }
