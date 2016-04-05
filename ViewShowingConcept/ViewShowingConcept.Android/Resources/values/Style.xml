@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-  <style name="AppTheme" parent="AppTheme.Base">
-    <item name="android:fitsSystemWindows">true</item>
-  </style>
-  <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
+  <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <item name="colorPrimary">#2196F3</item>
+    <item name="drawerArrowStyle">@style/MyDrawerArrowStyle</item>
+    <item name="windowActionBar">false</item>
+    <item name="android:windowNoTitle">true</item>
   </style>
 </resources>

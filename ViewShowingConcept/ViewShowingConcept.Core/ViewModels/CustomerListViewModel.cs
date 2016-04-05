@@ -16,7 +16,7 @@ namespace ViewShowingConcept.Core.ViewModels
     public class CustomerListViewModel : BaseViewModel
     {
         public CustomerListViewModel() {
-            CustomerList = CustomerServices.getCustomerList();
+            CustomerList = CustomerService.getCustomerList();
         }
         
         public List<Customer> CustomerList { get; set; }

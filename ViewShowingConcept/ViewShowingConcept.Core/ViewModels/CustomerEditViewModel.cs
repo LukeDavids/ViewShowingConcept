@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using MvvmCross.Core.ViewModels;
 using System.Windows.Input;
-using MvvmCross.Droid.Support.V7.Fragging.Fragments;
+//using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.Models;

@@ -1,4 +1,4 @@
-﻿using MvvmCross.Droid.Support.V7.Fragging.Fragments;
+﻿//using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels.Base;
 
@@ -6,7 +6,8 @@ namespace ViewShowingConcept.Core.Interfaces
 {
     public interface IAndroidSubView 
     {
-        MvxFragment Fragment { get; }
+        //        MvxFragment Fragment { get; }
+        object Fragment { get; }
         BaseViewModel BaseViewModel { get; }
         ViewType SubViewType { get; }
         string Tag { get; }
