@@ -4,18 +4,10 @@ using ViewShowingConcept.Core.ViewModels.Base;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
-    public class CustomerViewModel : BaseViewModel
+    public class CustomerSplitViewModel : BaseViewModel
     {
-        public CustomerViewModel() {
+        public CustomerSplitViewModel() {
             StringPassedAsParameter = "nothing yet!";
-        }
-        private string _customerName;
-        public string CustomerName {
-            get { return _customerName; }
-            set {
-                _customerName = value;
-                RaisePropertyChanged(() => CustomerName);
-            }
         }
 
         private string _stringParam;

@@ -5,6 +5,7 @@
         CustomerDetails,
         CustomerEdit,
         CustomerView,
-        CustomerList
+        CustomerList,
+        CustomerSplit
     }
 }

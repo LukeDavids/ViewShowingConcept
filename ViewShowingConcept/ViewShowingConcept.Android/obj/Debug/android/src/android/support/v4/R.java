@@ -1806,6 +1806,8 @@ containing a value of this type.
     }
     public static final class string {
         public static int ApplicationName=0x7f060015;
+        public static int CustomerListView=0x7f060016;
+        public static int CustomerView=0x7f060017;
         public static int Hello=0x7f060014;
         public static int abc_action_bar_home_description=0x7f060000;
         public static int abc_action_bar_home_description_format=0x7f060001;

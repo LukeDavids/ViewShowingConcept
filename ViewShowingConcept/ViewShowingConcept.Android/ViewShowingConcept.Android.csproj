@@ -127,6 +127,7 @@
     <Compile Include="Views\CustomerEditView.cs" />
     <Compile Include="Views\CustomerDetailView.cs" />
     <Compile Include="Views\ContainerView\ContainerView.cs" />
+    <Compile Include="Views\CustomerSplitView.cs" />
     <Compile Include="Views\CustomerView.cs" />
     <Compile Include="Views\CustomerListView.cs" />
   </ItemGroup>
@@ -151,6 +152,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
+    <AndroidResource Include="Resources\layout\CustomerSplitView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />

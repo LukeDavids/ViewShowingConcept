@@ -3,6 +3,8 @@
     public enum ViewFrame
     {
         FullScreen,
-        TabContents
+        TabContents,
+        HalfScreenTop,
+        HalfScreenBottom
     }
 }

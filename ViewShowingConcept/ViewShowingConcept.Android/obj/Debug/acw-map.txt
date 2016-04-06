@@ -10,6 +10,10 @@ ViewShowingConcept.Android.Views.CustomerDetailView, ViewShowingConcept.Android;
 ViewShowingConcept.Android.Views.CustomerDetailView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerDetailSubView
 ViewShowingConcept.Android.Views.CustomerDetailView;ViewShowingConcept.android.views.CustomerDetailSubView
 ViewShowingConcept.android.views.CustomerDetailSubView;ViewShowingConcept.android.views.CustomerDetailSubView
+ViewShowingConcept.Android.Views.CustomerSplitView, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerSplitView
+ViewShowingConcept.Android.Views.CustomerSplitView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerSplitView
+ViewShowingConcept.Android.Views.CustomerSplitView;ViewShowingConcept.android.views.CustomerSplitView
+ViewShowingConcept.android.views.CustomerSplitView;ViewShowingConcept.android.views.CustomerSplitView
 ViewShowingConcept.Android.Views.CustomerView, ViewShowingConcept.Android;ViewShowingConcept.android.views.CustomerView
 ViewShowingConcept.Android.Views.CustomerView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;ViewShowingConcept.android.views.CustomerView
 ViewShowingConcept.Android.Views.CustomerView;ViewShowingConcept.android.views.CustomerView

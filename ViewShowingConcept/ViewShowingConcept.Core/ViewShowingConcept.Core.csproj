@@ -49,6 +49,7 @@
     <Compile Include="ViewModels\CustomerDetailViewModel.cs" />
     <Compile Include="ViewModels\CustomerEditViewModel.cs" />
     <Compile Include="ViewModels\CustomerListViewModel.cs" />
+    <Compile Include="ViewModels\CustomerSplitViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

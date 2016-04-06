@@ -3,7 +3,6 @@ using System.Linq;
 using Android.App;
 using Android.OS;
 using MvvmCross.Binding.BindingContext;
-using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.Fragging;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
@@ -29,14 +28,17 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetupViews();
             SetupContentFrames();
             AddFragments();
-            ShowViewEvent = new ShowViewEvent(CustomerList, FullScreen, "");
+            ShowViewEvent = new ShowViewEvent(CustomerSplit, FullScreen, "");
+            ShowViewEvent = new ShowViewEvent(CustomerList, HalfScreenTop, "");
         }
 
         private void SetupContentFrames()
         {
             ViewFrames = new Dictionary<ViewFrame, int>
             {
-                [FullScreen] = Resource.Id.content_frame
+                [FullScreen] = Resource.Id.content_frame,
+                [HalfScreenTop] = Resource.Id.list_frame,
+                [HalfScreenBottom] = Resource.Id.view_frame
             };
             //Add more so we can replace different areas of the screen
         }
@@ -61,7 +63,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 {CustomerDetails, new CustomerDetailView() },
                 {CustomerEdit, new CustomerEditView() },
                 {CustomerList, new CustomerListView() },
-                {ViewType.CustomerView, new CustomerView() }
+                {ViewType.CustomerView, new CustomerView() },
+                {CustomerSplit, new CustomerSplitView() }
             };
         }
 

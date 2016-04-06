@@ -1504,8 +1504,8 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c000a
 			public const int MvxBindingTagUnique = 2131492874;
 			
-			// aapt resource value: 0x7f0c0055
-			public const int action0 = 2131492949;
+			// aapt resource value: 0x7f0c0057
+			public const int action0 = 2131492951;
 			
 			// aapt resource value: 0x7f0c0043
 			public const int action_bar = 2131492931;
@@ -1531,8 +1531,8 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c0044
 			public const int action_context_bar = 2131492932;
 			
-			// aapt resource value: 0x7f0c0059
-			public const int action_divider = 2131492953;
+			// aapt resource value: 0x7f0c005b
+			public const int action_divider = 2131492955;
 			
 			// aapt resource value: 0x7f0c0002
 			public const int action_menu_divider = 2131492866;
@@ -1564,14 +1564,14 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c002d
 			public const int buttonPanel = 2131492909;
 			
-			// aapt resource value: 0x7f0c0056
-			public const int cancel_action = 2131492950;
+			// aapt resource value: 0x7f0c0058
+			public const int cancel_action = 2131492952;
 			
 			// aapt resource value: 0x7f0c003b
 			public const int checkbox = 2131492923;
 			
-			// aapt resource value: 0x7f0c005c
-			public const int chronometer = 2131492956;
+			// aapt resource value: 0x7f0c005e
+			public const int chronometer = 2131492958;
 			
 			// aapt resource value: 0x7f0c001e
 			public const int collapseActionView = 2131492894;
@@ -1588,8 +1588,8 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c0038
 			public const int customPanel = 2131492920;
 			
-			// aapt resource value: 0x7f0c0054
-			public const int customer_name = 2131492948;
+			// aapt resource value: 0x7f0c0056
+			public const int customer_name = 2131492950;
 			
 			// aapt resource value: 0x7f0c0041
 			public const int decor_content_parent = 2131492929;
@@ -1606,8 +1606,8 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c001b
 			public const int end = 2131492891;
 			
-			// aapt resource value: 0x7f0c0061
-			public const int end_padder = 2131492961;
+			// aapt resource value: 0x7f0c0063
+			public const int end_padder = 2131492963;
 			
 			// aapt resource value: 0x7f0c0027
 			public const int expand_activities_button = 2131492903;
@@ -1630,23 +1630,26 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c0028
 			public const int image = 2131492904;
 			
+			// aapt resource value: 0x7f0c0062
+			public const int info = 2131492962;
+			
+			// aapt resource value: 0x7f0c005c
+			public const int line1 = 2131492956;
+			
 			// aapt resource value: 0x7f0c0060
-			public const int info = 2131492960;
-			
-			// aapt resource value: 0x7f0c005a
-			public const int line1 = 2131492954;
-			
-			// aapt resource value: 0x7f0c005e
-			public const int line3 = 2131492958;
+			public const int line3 = 2131492960;
 			
 			// aapt resource value: 0x7f0c000b
 			public const int listMode = 2131492875;
 			
+			// aapt resource value: 0x7f0c0054
+			public const int list_frame = 2131492948;
+			
 			// aapt resource value: 0x7f0c002a
 			public const int list_item = 2131492906;
 			
-			// aapt resource value: 0x7f0c0058
-			public const int media_actions = 2131492952;
+			// aapt resource value: 0x7f0c005a
+			public const int media_actions = 2131492954;
 			
 			// aapt resource value: 0x7f0c001c
 			public const int middle = 2131492892;
@@ -1747,8 +1750,8 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c0019
 			public const int src_over = 2131492889;
 			
-			// aapt resource value: 0x7f0c0057
-			public const int status_bar_latest_event_content = 2131492951;
+			// aapt resource value: 0x7f0c0059
+			public const int status_bar_latest_event_content = 2131492953;
 			
 			// aapt resource value: 0x7f0c004e
 			public const int submit_area = 2131492942;
@@ -1756,17 +1759,17 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f0c000d
 			public const int tabMode = 2131492877;
 			
-			// aapt resource value: 0x7f0c005f
-			public const int text = 2131492959;
+			// aapt resource value: 0x7f0c0061
+			public const int text = 2131492961;
 			
-			// aapt resource value: 0x7f0c005d
-			public const int text2 = 2131492957;
+			// aapt resource value: 0x7f0c005f
+			public const int text2 = 2131492959;
 			
 			// aapt resource value: 0x7f0c0036
 			public const int textSpacerNoButtons = 2131492918;
 			
-			// aapt resource value: 0x7f0c005b
-			public const int time = 2131492955;
+			// aapt resource value: 0x7f0c005d
+			public const int time = 2131492957;
 			
 			// aapt resource value: 0x7f0c002c
 			public const int title = 2131492908;
@@ -1782,6 +1785,9 @@ namespace ViewShowingConcept.Android
 			
 			// aapt resource value: 0x7f0c0014
 			public const int useLogo = 2131492884;
+			
+			// aapt resource value: 0x7f0c0055
+			public const int view_frame = 2131492949;
 			
 			// aapt resource value: 0x7f0c0021
 			public const int withText = 2131492897;
@@ -1918,49 +1924,52 @@ namespace ViewShowingConcept.Android
 			public const int CustomerListView = 2130968604;
 			
 			// aapt resource value: 0x7f04001d
-			public const int CustomerView = 2130968605;
+			public const int CustomerSplitView = 2130968605;
 			
 			// aapt resource value: 0x7f04001e
-			public const int notification_media_action = 2130968606;
+			public const int CustomerView = 2130968606;
 			
 			// aapt resource value: 0x7f04001f
-			public const int notification_media_cancel_action = 2130968607;
+			public const int notification_media_action = 2130968607;
 			
 			// aapt resource value: 0x7f040020
-			public const int notification_template_big_media = 2130968608;
+			public const int notification_media_cancel_action = 2130968608;
 			
 			// aapt resource value: 0x7f040021
-			public const int notification_template_big_media_narrow = 2130968609;
+			public const int notification_template_big_media = 2130968609;
 			
 			// aapt resource value: 0x7f040022
-			public const int notification_template_lines = 2130968610;
+			public const int notification_template_big_media_narrow = 2130968610;
 			
 			// aapt resource value: 0x7f040023
-			public const int notification_template_media = 2130968611;
+			public const int notification_template_lines = 2130968611;
 			
 			// aapt resource value: 0x7f040024
-			public const int notification_template_part_chronometer = 2130968612;
+			public const int notification_template_media = 2130968612;
 			
 			// aapt resource value: 0x7f040025
-			public const int notification_template_part_time = 2130968613;
+			public const int notification_template_part_chronometer = 2130968613;
 			
 			// aapt resource value: 0x7f040026
-			public const int select_dialog_item_material = 2130968614;
+			public const int notification_template_part_time = 2130968614;
 			
 			// aapt resource value: 0x7f040027
-			public const int select_dialog_multichoice_material = 2130968615;
+			public const int select_dialog_item_material = 2130968615;
 			
 			// aapt resource value: 0x7f040028
-			public const int select_dialog_singlechoice_material = 2130968616;
+			public const int select_dialog_multichoice_material = 2130968616;
 			
 			// aapt resource value: 0x7f040029
-			public const int SplashScreen = 2130968617;
+			public const int select_dialog_singlechoice_material = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int subview_customeritem = 2130968618;
+			public const int SplashScreen = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int support_simple_spinner_dropdown_item = 2130968619;
+			public const int subview_customeritem = 2130968619;
+			
+			// aapt resource value: 0x7f04002c
+			public const int support_simple_spinner_dropdown_item = 2130968620;
 			
 			static Layout()
 			{

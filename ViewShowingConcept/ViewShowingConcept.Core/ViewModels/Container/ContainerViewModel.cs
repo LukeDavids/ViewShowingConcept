@@ -31,13 +31,15 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerViewModel { ContainerViewModel = this });
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerSplitViewModel { ContainerViewModel = this });
 
             ViewModels = new Dictionary<ViewType, BaseViewModel>
             {
                 {ViewType.CustomerDetails, Mvx.Resolve<CustomerDetailViewModel>()},
                 {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditViewModel>()},
                 {ViewType.CustomerList, Mvx.Resolve<CustomerListViewModel>()},
-                {ViewType.CustomerView, Mvx.Resolve<CustomerViewModel>()}
+                {ViewType.CustomerView, Mvx.Resolve<CustomerViewModel>()},
+                {ViewType.CustomerSplit, Mvx.Resolve<CustomerSplitViewModel>()}
             };
         }
     }
