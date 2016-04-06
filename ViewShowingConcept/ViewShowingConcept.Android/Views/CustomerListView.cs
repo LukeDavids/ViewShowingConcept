@@ -1,13 +1,16 @@
 using Android;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Droid.Support.V7.Fragging;
 using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels;
+using ViewShowingConcept.Core.ViewModels.Container;
 
 namespace ViewShowingConcept.Android.Views
 {
@@ -29,5 +32,8 @@ namespace ViewShowingConcept.Android.Views
             return this.BindingInflate(Resource.Layout.CustomerListView, null);
         }
 
+        public override void OnViewCreated(View view, Bundle savedInstanceState) {
+            Activity.SetTitle(Resource.String.CustomerListView);
+        }
     }
 }

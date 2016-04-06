@@ -12,7 +12,7 @@ using ViewShowingConcept.Core.ViewModels;
 namespace ViewShowingConcept.Android.Views
 {
     [Register("ViewShowingConcept.android.views.CustomerView")]
-    public class CustomerView : BaseView<CustomerListViewModel>
+    public class CustomerView : BaseView<CustomerViewModel>
     {
 
         public CustomerView()
@@ -24,9 +24,15 @@ namespace ViewShowingConcept.Android.Views
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ViewType = ViewType.CustomerView;
+            
             base.OnCreate(savedInstanceState);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             return this.BindingInflate(Resource.Layout.CustomerView, null);
+        }
+
+        public override void OnViewCreated(View view, Bundle savedInstanceState)
+        {
+            Activity.SetTitle(Resource.String.CustomerView);
         }
 
     }

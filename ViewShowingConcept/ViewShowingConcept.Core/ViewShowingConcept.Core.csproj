@@ -50,7 +50,6 @@
     <Compile Include="ViewModels\CustomerEditViewModel.cs" />
     <Compile Include="ViewModels\CustomerListViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
-    <Compile Include="ViewModels\FirstViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Managers\" />
@@ -63,6 +62,9 @@
     <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Core.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.FullFragging">
+      <HintPath>..\packages\MvvmCross.Droid.FullFragging.4.1.1\lib\MonoAndroid\MvvmCross.Droid.FullFragging.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Binding.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>

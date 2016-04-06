@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Droid.FullFragging;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.Services;
 using ViewShowingConcept.Core.ViewModels.Base;
@@ -29,12 +30,14 @@ namespace ViewShowingConcept.Core.ViewModels
             }
         }
 
-        public ICommand ShowCustomerCommand {
+        private MvxCommand<Customer> _showCustomerCommand;
+        public ICommand ShowCustomerCommand
+        {
             get
             {
-                return new MvxCommand<Customer>(item =>
+                return _showCustomerCommand = _showCustomerCommand ?? new MvxCommand<Customer>(item =>
                     {
-                        new MvxCommand(() => ShowView(CustomerView, FullScreen, item.getCustomerName()));
+                        ContainerViewModel.ShowViewEvent = new ShowViewEvent(CustomerView, FullScreen, item.CustomerName);
                     });
             }
         }

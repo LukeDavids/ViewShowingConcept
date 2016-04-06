@@ -1,9 +1,18 @@
+using System.Collections.Generic;
+using System.Linq;
 using Android.Content;
+using Android.Renderscripts;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
+using MvvmCross.Platform.IoC;
 using MvvmCross.Platform.Platform;
+using ViewShowingConcept.Android.Interfaces;
+using ViewShowingConcept.Android.Views;
+using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.ViewModels;
+using ViewShowingConcept.Core.ViewModels.Container;
 
 namespace ViewShowingConcept.Android
 {

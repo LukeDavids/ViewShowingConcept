@@ -46,40 +46,73 @@
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
-    <Reference Include="MvvmCross.Droid.Support.Design, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Droid.Support.Design.4.0.1\lib\MonoAndroid403\MvvmCross.Droid.Support.Design.dll</HintPath>
+    <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\MonoAndroid\MvvmCross.Binding.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Droid.Support.V4.4.1.1\lib\MonoAndroid403\MvvmCross.Droid.Support.V4.dll</HintPath>
+    <Reference Include="MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\MonoAndroid\MvvmCross.Binding.Droid.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.Preference, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Droid.Support.V7.Preference.4.1.1\lib\MonoAndroid403\MvvmCross.Droid.Support.V7.Preference.dll</HintPath>
+    <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Core.4.1.0\lib\MonoAndroid\MvvmCross.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MvvmCross.Droid.Support.V7.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmCross.Droid.Support.V7.RecyclerView.4.1.0\lib\MonoAndroid403\MvvmCross.Droid.Support.V7.RecyclerView.dll</HintPath>
+    <Reference Include="MvvmCross.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Core.4.1.0\lib\MonoAndroid\MvvmCross.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.FullFragging, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Droid.FullFragging.4.1.1\lib\MonoAndroid\MvvmCross.Droid.FullFragging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Shared, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Droid.Shared.4.1.2\lib\MonoAndroid\MvvmCross.Droid.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.V7.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Droid.Support.V7.AppCompat.4.1.2\lib\MonoAndroid403\MvvmCross.Droid.Support.V7.AppCompat.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Droid.Support.V7.Fragging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Droid.Support.V7.Fragging.4.1.1\lib\MonoAndroid403\MvvmCross.Droid.Support.V7.Fragging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.4.1.1\lib\MonoAndroid\MvvmCross.Localization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.1.0\lib\MonoAndroid\MvvmCross.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Platform.Droid, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.4.1.0\lib\MonoAndroid\MvvmCross.Platform.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Json, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Plugin.Json.4.1.0\lib\MonoAndroid\MvvmCross.Plugins.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="Xamarin.Android.Support.Design, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Android.Support.Design.23.2.1\lib\MonoAndroid43\Xamarin.Android.Support.Design.dll</HintPath>
+    <Reference Include="Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.1.1.1\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Xamarin.Android.Support.v7.Preference, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Android.Support.v7.Preference.23.2.1\lib\MonoAndroid41\Xamarin.Android.Support.v7.Preference.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Xamarin.Android.Support.v7.RecyclerView, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.2.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.1.1.1\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Interfaces\IAndroidView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
@@ -101,9 +134,6 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\SplashScreen.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\layout\ContainerView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
@@ -118,8 +148,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\CustomerListView.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\SplashScreen.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -128,11 +159,9 @@
     <AndroidResource Include="Resources\mipmap\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\AndroidManifest.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\values\SplashStyle.xml" />
-    <AndroidResource Include="Resources\drawable\splash.png" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\drawable\drawable-hdpi\icon.png" />
@@ -143,6 +172,9 @@
     <AndroidResource Include="Resources\values\Style.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\values\SplashStyle.xml" />
+    <AndroidResource Include="Resources\drawable\splash.png" />
+    <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewShowingConcept.Core\ViewShowingConcept.Core.csproj">

@@ -14,7 +14,7 @@ using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Android.Views.ContainerView
 {
-    [Activity(Label = "View for ContainerView", MainLauncher = true)]
+    [Activity(Label = "ViewShowingConcept", MainLauncher = true)]
     public class ContainerView : MvxFragmentActivity
     {
         

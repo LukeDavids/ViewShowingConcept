@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
@@ -21,7 +22,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         public ShowViewEvent ShowViewEvent {
             get { return _showViewEvent; }
             set { _showViewEvent = value; RaisePropertyChanged(() => ShowViewEvent); }
-        }
+        }  
 
         private void RegisterViewModels()
         {

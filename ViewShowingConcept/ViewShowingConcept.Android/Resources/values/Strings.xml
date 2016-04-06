@@ -2,4 +2,6 @@
 <resources>
   <string name="Hello">Hello World, Click Me!</string>
   <string name="ApplicationName">ViewShowingConcept.Android</string>
+  <string name="CustomerListView">ViewShowingConcept - CustomerListView</string>
+  <string name="CustomerView">ViewShowingConcept - CustomerView</string>
 </resources>
