@@ -27,8 +27,12 @@ namespace ViewShowingConcept.Core.ViewModels
         public override async Task Initialise(ShowViewEvent viewEvent)
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
-
         }
 
+        //Used to Init new ViewModel
+        public static void ShowViewModel()
+        {
+            ShowViewModel<CustomerDetailViewModel>(new { });
+        }
     }
 }

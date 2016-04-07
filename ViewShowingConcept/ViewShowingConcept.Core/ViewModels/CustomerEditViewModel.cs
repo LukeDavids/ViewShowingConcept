@@ -27,10 +27,16 @@ namespace ViewShowingConcept.Core.ViewModels
         public string ButtonText => "Customer Details!!";
         public ICommand ShowDetailsCommand => new MvxCommand(()=> ShowView(CustomerDetails, FullScreen, DateTime.UtcNow.ToString()));
         public string StringPassedAsParameter { get { return _stringParam; } set { _stringParam = value; RaisePropertyChanged(() => StringPassedAsParameter); } }
-
+        
         public override async Task Initialise(ShowViewEvent viewEvent)
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
+        }
+
+        //Used to Init new ViewModel
+        public static void ShowViewModel()
+        {
+            ShowViewModel<CustomerEditViewModel>(new { });
         }
     }
 }

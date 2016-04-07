@@ -23,7 +23,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             get { return _showViewEvent; }
             set { _showViewEvent = value; RaisePropertyChanged(() => ShowViewEvent); }
         }  
-
+        
         private void RegisterViewModels()
         {
             Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel { ContainerViewModel = this });
