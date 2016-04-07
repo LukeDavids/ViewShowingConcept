@@ -10,6 +10,18 @@
     android:id="@+id/customer_name"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    local:MvxBind="Text StringPassedAsParameter"
+    local:MvxBind="Text CustomerId"
+  />
+  <TextView
+    android:id="@+id/customer_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    local:MvxBind="Text CustomerName"
+  />
+  <TextView
+    android:id="@+id/customer_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    local:MvxBind="Text CustomerAge"
   />
 </LinearLayout>

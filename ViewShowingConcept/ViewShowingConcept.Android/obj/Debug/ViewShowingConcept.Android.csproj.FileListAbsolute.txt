@@ -85,6 +85,5 @@ C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\View
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\R.cs.flag
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\uploadflags.txt
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\res\layout\customersplitview.xml
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Core.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\ViewShowingConcept.Android.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\bin\Debug\ViewShowingConcept.Android.dll.mdb

@@ -37,7 +37,7 @@ namespace ViewShowingConcept.Core.ViewModels
             {
                 return _showCustomerCommand = _showCustomerCommand ?? new MvxCommand<Customer>(item =>
                     {
-                        ContainerViewModel.ShowViewEvent = new ShowViewEvent(CustomerView, HalfScreenBottom, item.CustomerName);
+                        ContainerViewModel.ShowViewEvent = new ShowViewEvent(CustomerView, HalfScreenBottom, item.Id);
                     });
             }
         }
