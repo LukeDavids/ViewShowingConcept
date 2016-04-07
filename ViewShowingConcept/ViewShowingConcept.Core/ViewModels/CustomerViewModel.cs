@@ -35,8 +35,6 @@ namespace ViewShowingConcept.Core.ViewModels
             }
         }
 
-
-
         public override async Task Initialise(ShowViewEvent viewEvent)
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);

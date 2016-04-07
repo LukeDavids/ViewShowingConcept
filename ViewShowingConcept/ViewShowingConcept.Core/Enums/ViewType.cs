@@ -6,6 +6,9 @@
         CustomerEdit,
         CustomerView,
         CustomerList,
-        CustomerSplit
+        CustomerSplit,
+        DummyTab1View,
+        DummyTab2View,
+        TabbedView
     }
 }

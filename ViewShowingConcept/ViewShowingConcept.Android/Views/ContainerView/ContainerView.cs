@@ -18,7 +18,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
     {
         
         public Dictionary<ViewType, IAndroidView> Views { get; set; }
-        public Dictionary<ViewFrame, int> ViewFrames { get; set; } 
+        public Dictionary<ViewFrame, int> ViewFrames { get; set; }
+        private ShowViewEvent CurrentFragment;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -79,12 +80,19 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SupportFragmentManager.ExecutePendingTransactions();
             HideFragments();
 
+
+            
             try
             {
                 view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
                 fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
-                fragmentTransaction.AddToBackStack(viewTag);
+                //fragmentTransaction.AddToBackStack(viewTag);
                 view.Fragment.SetMenuVisibility(true);
+                if (CurrentFragment.ViewType == showViewEvent.ViewType)
+                {
+                   // fragmentTransaction.
+                }
+                CurrentFragment.ViewType = ShowViewEvent.ViewType;
             }
             catch (System.Exception e)
             {

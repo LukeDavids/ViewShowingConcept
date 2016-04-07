@@ -49,8 +49,11 @@
     <Compile Include="ViewModels\CustomerDetailViewModel.cs" />
     <Compile Include="ViewModels\CustomerEditViewModel.cs" />
     <Compile Include="ViewModels\CustomerListViewModel.cs" />
+    <Compile Include="ViewModels\DummyTab2ViewModel.cs" />
+    <Compile Include="ViewModels\DummyTab1ViewModel.cs" />
     <Compile Include="ViewModels\CustomerSplitViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\TabbedViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Managers\" />
