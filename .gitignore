@@ -1,9 +1,9 @@
 packages
 ViewShowingConcept/ViewShowingConcept.Ios/bin
-ViewShowingConcept/ViewShowingConcept.Ios/org
+ViewShowingConcept/ViewShowingConcept.Ios/obj
 ViewShowingConcept/ViewShowingConcept.Android/bin
-ViewShowingConcept/ViewShowingConcept.Android/org
+ViewShowingConcept/ViewShowingConcept.Android/obj
 ViewShowingConcept/ViewShowingConcept.Core/bin
-ViewShowingConcept/ViewShowingConcept.Core/org
+ViewShowingConcept/ViewShowingConcept.Core/obj
 *.config
 *.suo
