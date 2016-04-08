@@ -34,7 +34,7 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         //Used to Init new ViewModel
-        public static void ShowViewModel()
+        public void ShowViewModel()
         {
             ShowViewModel<CustomerEditViewModel>(new { });
         }

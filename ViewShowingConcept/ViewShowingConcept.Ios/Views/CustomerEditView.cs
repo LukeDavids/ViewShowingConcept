@@ -22,7 +22,7 @@ namespace ViewShowingConcept.Ios.Views
 
         public override void ShowViewModel()
         {
-            CustomerEditViewModel.ShowViewModel();
+            ViewModel.ShowViewModel();
         }
 
         public override void ViewDidLoad()

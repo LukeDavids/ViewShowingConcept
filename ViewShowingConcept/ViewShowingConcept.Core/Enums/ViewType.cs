@@ -9,6 +9,9 @@
         CustomerSplit,
         DummyTab1View,
         DummyTab2View,
-        TabbedView
+        TabbedView,
+        DummyTab1,
+        DummyTab2,
+        DummyTab3,
     }
 }

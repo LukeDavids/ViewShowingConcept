@@ -22,7 +22,7 @@ namespace ViewShowingConcept.Core.ViewModels
 
         public string ButtonText => "Edit Customer";
         public string StringPassedAsParameter { get { return _stringParam; } set { _stringParam = value; RaisePropertyChanged(() => StringPassedAsParameter); } }
-        public ICommand ShowEditCommand => new MvxCommand(()=> ShowView(CustomerEdit, FullScreen, DateTime.UtcNow.ToString()));
+        public ICommand ShowTabbedCommand => new MvxCommand(()=> ShowView(TabbedView, FullScreen, DateTime.UtcNow.ToString()));
 
         public override async Task Initialise(ShowViewEvent viewEvent)
         {
@@ -30,7 +30,7 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         //Used to Init new ViewModel
-        public static void ShowViewModel()
+        public void ShowViewModel()
         {
             ShowViewModel<CustomerDetailViewModel>(new { });
         }

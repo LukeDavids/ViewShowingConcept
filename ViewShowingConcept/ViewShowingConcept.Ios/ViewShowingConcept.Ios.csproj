@@ -88,12 +88,17 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Views\Base\BaseTabbedView.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
     <Compile Include="Views\Container\ContainerView.cs" />
     <Compile Include="Views\CustomerDetailView.cs" />
     <Compile Include="Views\CustomerEditView.cs" />
+    <Compile Include="Views\DummyTab1View.cs" />
+    <Compile Include="Views\DummyTab2View.cs" />
+    <Compile Include="Views\DummyTab3View.cs" />
+    <Compile Include="Views\TabbedView.cs" />
     <Compile Include="Views\ViewTemplates\Helper.cs" />
-    <None Include="GettingStarted.Xamarin" />
+    <Compile Include="Views\ViewTemplates\UniversalView.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
@@ -136,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Entitlements.plist" />
+    <BundleResource Include="Resources\Images\Tabs\glyphicons-282-bullets.png" />
+    <BundleResource Include="Resources\Images\Tabs\glyphicons-506-piggy-bank.png" />
+    <BundleResource Include="Resources\Images\Tabs\glyphicons-social-44-apple.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ViewShowingConcept.Core\ViewShowingConcept.Core.csproj">

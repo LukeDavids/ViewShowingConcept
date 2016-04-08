@@ -44,6 +44,7 @@
     <Compile Include="Models\ShowViewEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="ViewModels\Base\BaseTabbedViewModel.cs" />
     <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="ViewModels\Container\ContainerViewModel.cs" />
     <Compile Include="ViewModels\CustomerDetailViewModel.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="ViewModels\DummyTab1ViewModel.cs" />
     <Compile Include="ViewModels\CustomerSplitViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\DummyTab3ViewModel.cs" />
     <Compile Include="ViewModels\TabbedViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -27,11 +27,16 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         private void RegisterViewModels()
         {
             Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel { ContainerViewModel = this });
+            Mvx.LazyConstructAndRegisterSingleton(() => new BaseTabbedViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerSplitViewModel { ContainerViewModel = this });
+            Mvx.LazyConstructAndRegisterSingleton(() => new TabbedViewModel { ContainerViewModel = this });
+            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab1ViewModel { ContainerViewModel = this });
+            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab2ViewModel { ContainerViewModel = this });
+            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab3ViewModel { ContainerViewModel = this });
 
             ViewModels = new Dictionary<ViewType, BaseViewModel>
             {
@@ -39,7 +44,8 @@ namespace ViewShowingConcept.Core.ViewModels.Container
                 {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditViewModel>()},
                 {ViewType.CustomerList, Mvx.Resolve<CustomerListViewModel>()},
                 {ViewType.CustomerView, Mvx.Resolve<CustomerViewModel>()},
-                {ViewType.CustomerSplit, Mvx.Resolve<CustomerSplitViewModel>()}
+                {ViewType.CustomerSplit, Mvx.Resolve<CustomerSplitViewModel>()},
+                {ViewType.TabbedView, Mvx.Resolve<TabbedViewModel>()},
             };
         }
     }
