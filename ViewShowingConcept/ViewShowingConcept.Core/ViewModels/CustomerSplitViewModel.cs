@@ -7,7 +7,8 @@ namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerSplitViewModel : BaseViewModel
     {
-        public CustomerSplitViewModel() {
+        public CustomerSplitViewModel()
+        {
             StringPassedAsParameter = "nothing yet!";
             //ContainerViewModel.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, "");
         }

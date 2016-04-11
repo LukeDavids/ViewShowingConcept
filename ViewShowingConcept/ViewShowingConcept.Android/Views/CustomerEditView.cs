@@ -11,7 +11,7 @@ using ViewShowingConcept.Core.ViewModels;
 
 namespace ViewShowingConcept.Android.Views
 {
-    [Register("ViewShowingConcept.android.views.CustomerEditFragment")]
+    [Register("viewshowingconcept.android.views.CustomerEditFragment")]
     public class CustomerEditView : BaseView<CustomerEditViewModel>
     {
 

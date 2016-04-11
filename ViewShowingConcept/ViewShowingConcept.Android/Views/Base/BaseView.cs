@@ -5,6 +5,7 @@ using System;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels.Base;
+using ViewShowingConcept.Core.ViewModels.Container;
 using IAndroidView = ViewShowingConcept.Android.Interfaces.IAndroidView;
 
 namespace ViewShowingConcept.Android.Views.Base

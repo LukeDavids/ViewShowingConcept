@@ -11,7 +11,7 @@ using ViewShowingConcept.Core.ViewModels;
 
 namespace ViewShowingConcept.Android.Views
 {
-    [Register("ViewShowingConcept.android.views.DummyTab2View")]
+    [Register("viewshowingconcept.android.views.DummyTab2View")]
     public class DummyTab2View : BaseView<DummyTab2ViewModel>
     {
 
@@ -30,10 +30,10 @@ namespace ViewShowingConcept.Android.Views
             return this.BindingInflate(Resource.Layout.DummyTab2View, null);
         }
 
-        public override void OnViewCreated(View view, Bundle savedInstanceState)
-        {
-            Activity.SetTitle(Resource.String.CustomerView);
-        }
+        //public override void OnViewCreated(View view, Bundle savedInstanceState)
+        //{
+        //    Activity.SetTitle(Resource.String.CustomerView);
+        //}
 
     }
 }

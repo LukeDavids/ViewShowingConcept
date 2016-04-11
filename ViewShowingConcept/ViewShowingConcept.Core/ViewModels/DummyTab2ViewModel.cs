@@ -7,7 +7,8 @@ namespace ViewShowingConcept.Core.ViewModels
 {
     public class DummyTab2ViewModel : BaseViewModel
     {
-        public DummyTab2ViewModel() {
+        public DummyTab2ViewModel() 
+        {
             StringPassedAsParameter = "nothing yet!";
             //ContainerViewModel.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, "");
         }

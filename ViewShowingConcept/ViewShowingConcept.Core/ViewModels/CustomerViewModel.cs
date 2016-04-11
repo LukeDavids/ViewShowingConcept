@@ -7,7 +7,8 @@ namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerViewModel : BaseViewModel
     {
-        public CustomerViewModel() {
+        public CustomerViewModel() 
+        {
             StringPassedAsParameter = "nothing yet!";
         }
 

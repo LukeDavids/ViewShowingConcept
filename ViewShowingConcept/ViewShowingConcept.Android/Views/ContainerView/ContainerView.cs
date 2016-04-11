@@ -3,7 +3,9 @@ using System.Linq;
 using Android.App;
 using Android.OS;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Droid.Support.V7.Fragging;
+using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Container;
@@ -13,8 +15,8 @@ using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Android.Views.ContainerView
 {
-    [Activity(Label = "ViewShowingConcept", MainLauncher = true)]
-    public class ContainerView : MvxFragmentActivity
+    [Activity(Label = "ViewShowingConcept", Theme = "@style/AppTheme", MainLauncher = true)]
+    public class ContainerView : MvxCachingFragmentCompatActivity<ContainerViewModel>
     {
         
         public Dictionary<ViewType, IAndroidView> Views { get; set; }
@@ -28,9 +30,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetupBindings();
             SetupViews();
             SetupContentFrames();
-            AddFragments();
-            ShowViewEvent = new ShowViewEvent(CustomerSplit, FullScreen, "");
-            ShowViewEvent = new ShowViewEvent(CustomerList, HalfScreenTop, "");
+            //AddFragments();
+            ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
         }
 
         private void SetupContentFrames()
@@ -38,8 +39,10 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             ViewFrames = new Dictionary<ViewFrame, int>
             {
                 [FullScreen] = Resource.Id.content_frame,
+                [FullScreenTabs] = Resource.Id.viewpager,
                 [HalfScreenTop] = Resource.Id.list_frame,
-                [HalfScreenBottom] = Resource.Id.view_frame
+                [HalfScreenBottom] = Resource.Id.view_frame,
+                [TabContents] = Resource.Id.tab_content_frame
             };
             //Add more so we can replace different areas of the screen
         }
@@ -47,6 +50,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
         public ContainerViewModel ContainerViewModel => this.ViewModel as ContainerViewModel;
 
         private ShowViewEvent _showViewEvent;
+        private string _test;
+
         public ShowViewEvent ShowViewEvent
         {
             get { return _showViewEvent; }
@@ -61,11 +66,15 @@ namespace ViewShowingConcept.Android.Views.ContainerView
         {
             Views = new Dictionary<ViewType, IAndroidView>
             {
-                {CustomerDetails, new CustomerDetailView() },
-                {CustomerEdit, new CustomerEditView() },
-                {CustomerList, new CustomerListView() },
-                {ViewType.CustomerView, new CustomerView() },
-                {CustomerSplit, new CustomerSplitView() }
+                {CustomerDetails,           new CustomerDetailView()},
+                {CustomerEdit,              new CustomerEditView()},
+                {CustomerList,              new CustomerListView()},
+                {ViewType.CustomerView,     new CustomerView()},
+                {CustomerSplit,             new CustomerSplitView()},
+                {ViewType.TabbedView,       new TabbedView()},
+                {ViewType.DummyTab1View,    new DummyTab1View()},
+                {ViewType.DummyTab2View,    new DummyTab2View()},
+                {CustomerTab,               new CustomerTabView()}
             };
         }
 
@@ -79,8 +88,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
             SupportFragmentManager.ExecutePendingTransactions();
             HideFragments();
-
-
             
             try
             {
@@ -88,16 +95,13 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
                 //fragmentTransaction.AddToBackStack(viewTag);
                 view.Fragment.SetMenuVisibility(true);
-                if (CurrentFragment.ViewType == showViewEvent.ViewType)
-                {
-                   // fragmentTransaction.
-                }
                 CurrentFragment.ViewType = ShowViewEvent.ViewType;
             }
             catch (System.Exception e)
             {
-                AddFragments();
-                fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
+                view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
+                AddFragments(showViewEvent);
+                //fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
                 view.Fragment.SetMenuVisibility(true);
             }
 
@@ -123,11 +127,25 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 view.Value.Fragment.SetMenuVisibility(false);
             }
         }
-
-        public void AddFragments()
+        public string Test {
+            get
+            {
+                return _test;
+            }
+            set
+            {
+                _test = value;
+            }
+        }
+        public void AddFragments(ShowViewEvent showViewEvent)
         {
+            var view = Views[showViewEvent.ViewType];
+            var viewFrame = ViewFrames[showViewEvent.ViewFrame];
+            var viewFragment = view.Fragment;
+            var viewTag = view.ViewTag;
+
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
-            fragmentTransaction.Add(ViewFrames[FullScreen], Views[CustomerDetails].Fragment, Views[CustomerDetails].ViewTag);
+            fragmentTransaction.Add(viewFrame, viewFragment, viewTag);
             fragmentTransaction.Commit();
         }
         
@@ -138,7 +156,10 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 .For(view => view.ShowViewEvent)
                 .To<ContainerViewModel>(vm => vm.ShowViewEvent)
                 .Apply();
-            
+            this.CreateBinding(this)
+                .For(view => view.Test)
+                .To<ContainerViewModel>(vm => vm.Test)
+                .Apply();
         }
     }
 }

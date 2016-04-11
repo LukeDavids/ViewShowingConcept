@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.FullFragging;
+using MvvmCross.Platform;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.Services;
 using ViewShowingConcept.Core.ViewModels.Base;
+using ViewShowingConcept.Core.ViewModels.Container;
 using static ViewShowingConcept.Core.Enums.ViewType;
 using static ViewShowingConcept.Core.Enums.ViewFrame;
 
@@ -16,8 +18,10 @@ namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerListViewModel : BaseViewModel
     {
-        public CustomerListViewModel() {
+        public CustomerListViewModel() 
+        {
             CustomerList = CustomerService.getCustomerList();
+            //ContainerViewModel = Mvx.Resolve<ContainerViewModel>();
         }
         
         public List<Customer> CustomerList { get; set; }
@@ -37,12 +41,11 @@ namespace ViewShowingConcept.Core.ViewModels
             {
                 return _showCustomerCommand = _showCustomerCommand ?? new MvxCommand<Customer>(item =>
                     {
-                        //ContainerViewModel.ShowViewEvent = new ShowViewEvent(CustomerView, HalfScreenBottom, item.Id);
-                        ShowView(CustomerView, HalfScreenBottom, item.Id);
+                        ShowView(CustomerView, FullScreenTabs, item.Id);
                     });
             }
         }
-
+        public ContainerViewModel ContainerViewModel2 { get; set; }
         private string _stringParam;
         public string StringPassedAsParameter
         {

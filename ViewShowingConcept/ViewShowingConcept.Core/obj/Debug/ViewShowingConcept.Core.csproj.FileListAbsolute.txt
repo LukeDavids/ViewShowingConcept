@@ -3,15 +3,13 @@ C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\View
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Binding.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Core.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Droid.FullFragging.dll
+C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Droid.Support.V4.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Localization.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\MvvmCross.Platform.dll
+C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\Xamarin.Android.Support.v4.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.csprojResolveAssemblyReference.cache
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.pdb
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
-C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\bin\Debug\ViewShowingConcept.Core.dll.mdb
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Core\obj\Debug\ViewShowingConcept.Core.dll.mdb

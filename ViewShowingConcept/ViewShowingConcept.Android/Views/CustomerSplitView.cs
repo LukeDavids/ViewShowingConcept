@@ -14,7 +14,7 @@ using ViewShowingConcept.Core.ViewModels.Container;
 
 namespace ViewShowingConcept.Android.Views
 {
-    [Register("ViewShowingConcept.android.views.CustomerSplitView")]
+    [Register("viewshowingconcept.android.views.CustomerSplitView")]
     public class CustomerSplitView : BaseView<CustomerSplitViewModel>
     {
 

@@ -1,4 +1,4 @@
-package ViewShowingConcept.android.views;
+package viewshowingconcept.android.views;
 
 
 public class CustomerSplitView

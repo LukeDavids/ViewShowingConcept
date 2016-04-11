@@ -29,10 +29,10 @@ namespace ViewShowingConcept.Core.ViewModels
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
         }
 
-        //Used to Init new ViewModel
-        public static void ShowViewModel()
-        {
-            ShowViewModel<CustomerDetailViewModel>(new { });
-        }
+        ////Used to Init new ViewModel
+        //public static void ShowViewModel()
+        //{
+        //    ShowViewModel<CustomerDetailViewModel>(new { });
+        //}
     }
 }
