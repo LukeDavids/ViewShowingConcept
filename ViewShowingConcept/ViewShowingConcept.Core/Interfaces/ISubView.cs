@@ -1,4 +1,5 @@
-﻿using MvvmCross.Droid.FullFragging.Fragments;
+﻿
+using MvvmCross.Droid.FullFragging.Fragments;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels.Base;
 

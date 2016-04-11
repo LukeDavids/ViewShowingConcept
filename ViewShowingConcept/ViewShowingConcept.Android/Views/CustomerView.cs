@@ -11,7 +11,7 @@ using ViewShowingConcept.Core.ViewModels;
 
 namespace ViewShowingConcept.Android.Views
 {
-    [Register("ViewShowingConcept.android.views.CustomerView")]
+    [Register("viewshowingconcept.android.views.CustomerView")]
     public class CustomerView : BaseView<CustomerViewModel>
     {
 

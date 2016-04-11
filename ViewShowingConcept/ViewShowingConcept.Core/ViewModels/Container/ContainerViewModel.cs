@@ -3,51 +3,73 @@ using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Helpers;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
+using static ViewShowingConcept.Core.Enums.ViewFrame;
+using static ViewShowingConcept.Core.Enums.ViewType;
 
 namespace ViewShowingConcept.Core.ViewModels.Container
 {
-    public class ContainerViewModel : MvxViewModel
+    public class ContainerViewModel :MvxViewModel
     {
 
-        public ContainerViewModel()
+        public ContainerViewModel() 
         {
             RegisterViewModels();
+            Test = " Test texct";
+            //ShowViewEvent = new ShowViewEvent(CustomerView, FullScreen, "001");
+            ContainerViewModelHelper.ContainerViewModel = this;
         }
-        
+
+
         public Dictionary<ViewType, BaseViewModel> ViewModels { get; set; }
 
         private ShowViewEvent _showViewEvent;
+        private string _test;
+
         public ShowViewEvent ShowViewEvent {
             get { return _showViewEvent; }
             set { _showViewEvent = value; RaisePropertyChanged(() => ShowViewEvent); }
-        }  
-        
+        }
+        public string Test
+        {
+            get
+            {
+                return _test;
+
+            }
+            set
+            {
+                _test = value;
+                RaisePropertyChanged(() => Test);
+            }
+        }
         private void RegisterViewModels()
         {
-            Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerSplitViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new TabbedViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab1ViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab2ViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab3ViewModel { ContainerViewModel = this });
+            Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel ());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailViewModel ());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerSplitViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new TabbedViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab1ViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab2ViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerTabViewModel());
+
 
             ViewModels = new Dictionary<ViewType, BaseViewModel>
             {
-                {ViewType.CustomerDetails, Mvx.Resolve<CustomerDetailViewModel>()},
-                {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditViewModel>()},
-                {ViewType.CustomerList, Mvx.Resolve<CustomerListViewModel>()},
-                {ViewType.CustomerView, Mvx.Resolve<CustomerViewModel>()},
-                {ViewType.CustomerSplit, Mvx.Resolve<CustomerSplitViewModel>()},
-                {ViewType.TabbedView, Mvx.Resolve<TabbedViewModel>()},
-                {ViewType.DummyTab1View, Mvx.Resolve<DummyTab1ViewModel>()},
-                {ViewType.DummyTab2View, Mvx.Resolve<DummyTab2ViewModel>()},
-                {ViewType.DummyTab3View, Mvx.Resolve<DummyTab3ViewModel>()},
+                {CustomerDetails,  Mvx.Resolve<CustomerDetailViewModel>()},
+                {CustomerEdit,     Mvx.Resolve<CustomerEditViewModel>()},
+                {CustomerList,     Mvx.Resolve<CustomerListViewModel>()},
+                {CustomerView,     Mvx.Resolve<CustomerViewModel>()},
+                {CustomerSplit,    Mvx.Resolve<CustomerSplitViewModel>()},
+                {TabbedView,       Mvx.Resolve<TabbedViewModel>()},
+                {DummyTab1View,    Mvx.Resolve<DummyTab1ViewModel>()},
+                {DummyTab2View,    Mvx.Resolve<DummyTab2ViewModel>()},
+                {CustomerTab,      Mvx.Resolve<CustomerTabViewModel>()}
             };
         }
     }

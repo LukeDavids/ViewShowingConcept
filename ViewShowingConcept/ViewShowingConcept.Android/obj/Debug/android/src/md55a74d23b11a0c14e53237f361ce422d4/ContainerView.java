@@ -2,7 +2,7 @@ package md55a74d23b11a0c14e53237f361ce422d4;
 
 
 public class ContainerView
-	extends md5209f763caf0052ebf1b6fd6382de6083.MvxFragmentActivity
+	extends md5204979768ea66d3a79201c4efd7c602a.MvxCachingFragmentCompatActivity_1
 	implements
 		mono.android.IGCUserPeer
 {

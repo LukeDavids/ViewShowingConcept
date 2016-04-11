@@ -8,6 +8,8 @@ C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\View
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Droid.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Droid.FullFragging.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Droid.Shared.dll
+C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Droid.Support.Design.dll
+C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Droid.Support.V4.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Droid.Support.V7.AppCompat.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Droid.Support.V7.Fragging.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\MvvmCross.Localization.dll
@@ -20,8 +22,10 @@ C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\View
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\System.Xml.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\System.Xml.Linq.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\ViewShowingConcept.Core.dll
+C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\Xamarin.Android.Support.Design.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\Xamarin.Android.Support.v4.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\Xamarin.Android.Support.v7.AppCompat.dll
+C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\Xamarin.Android.Support.v7.RecyclerView.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\System.Collections.Concurrent.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\System.Collections.dll
 C:\Users\luke.davids.MAXXOR\Documents\ViewShowingConcept\ViewShowingConcept\ViewShowingConcept.Android\obj\Debug\assemblies\System.ComponentModel.Annotations.dll

@@ -1,9 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics;
+using System.Threading.Tasks;
 using MvvmCross.Core.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Helpers;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Container;
 
@@ -11,19 +13,27 @@ namespace ViewShowingConcept.Core.ViewModels.Base
 {
     public class BaseViewModel : MvxViewModel
     {
-        public BaseViewModel()
-        {
-            
+        public BaseViewModel() { 
         }
 
         private bool _isBusy;
-        public ContainerViewModel ContainerViewModel { get; set; }
+        private ContainerViewModel _containerViewModel;
+
+        public ContainerViewModel ContainerViewModel => ContainerViewModelHelper.ContainerViewModel;
 
         public bool IsBusy { get { return _isBusy; } set { _isBusy = value; RaisePropertyChanged(() => IsBusy); } }
 
         public void ShowView(ViewType viewType, ViewFrame viewFrame, string parameter)
         {
-            ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
+            if (ContainerViewModel != null)
+            {
+                ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
+            }
+            else {
+                //ContainerViewModel = Mvx.Resolve<ContainerViewModel>();
+                ContainerViewModel.Test = " test string from base view ";
+                ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
+            }
         }
 
         public void ShowView(ViewType viewType, ViewFrame viewFrame)
@@ -46,6 +56,5 @@ namespace ViewShowingConcept.Core.ViewModels.Base
             request.ParameterValues = ((object)parameter).ToSimplePropertyDictionary();
             viewDispatcher.ShowViewModel(request);
         }
-
     }
 }

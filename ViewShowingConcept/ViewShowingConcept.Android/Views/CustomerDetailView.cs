@@ -9,7 +9,7 @@ using ViewShowingConcept.Core.ViewModels;
 
 namespace ViewShowingConcept.Android.Views
 {
-    [Register("ViewShowingConcept.android.views.CustomerDetailSubView")]
+    [Register("viewshowingconcept.android.views.CustomerDetailView")]
     public class CustomerDetailView : BaseView<CustomerDetailViewModel>
     {
         public CustomerDetailView()
