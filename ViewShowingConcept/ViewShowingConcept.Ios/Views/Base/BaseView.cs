@@ -23,6 +23,11 @@ namespace ViewShowingConcept.Ios.Views.Base
             ViewModel = Mvx.Resolve<TViewModel>();
         }
 
+        public BaseView(IntPtr handle) : base(handle)
+        {
+            ViewModel = Mvx.Resolve<TViewModel>();
+        } 
+
         public virtual void ShowViewModel() { }
 
         public override void DidReceiveMemoryWarning()

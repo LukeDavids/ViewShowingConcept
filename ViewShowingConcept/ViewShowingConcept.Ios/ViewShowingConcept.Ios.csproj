@@ -88,7 +88,6 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
-    <Compile Include="Views\Base\BaseTabbedView.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
     <Compile Include="Views\Container\ContainerView.cs" />
     <Compile Include="Views\CustomerDetailView.cs" />

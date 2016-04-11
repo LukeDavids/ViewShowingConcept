@@ -14,8 +14,13 @@ namespace ViewShowingConcept.Ios.Views
     {
         public DummyTab1View()
         {
-            ViewType = ViewType.DummyTab1;
+            ViewType = ViewType.DummyTab1View;
             ViewTag = ViewType.ToString();
+        }
+
+        public DummyTab1View(IntPtr handle) : base(handle)
+        {
+            
         }
 
         public override void DidReceiveMemoryWarning()

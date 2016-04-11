@@ -9,7 +9,7 @@ using ViewShowingConcept.Core.ViewModels.Base;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
-    public class TabbedViewModel : BaseTabbedViewModel
+    public class TabbedViewModel : BaseViewModel
     {
         private string _stringParam;
 

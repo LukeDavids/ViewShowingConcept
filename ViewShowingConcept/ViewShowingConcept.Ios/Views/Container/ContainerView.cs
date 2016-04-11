@@ -61,6 +61,7 @@ namespace ViewShowingConcept.Ios.Views.Container
             
             
             View.Add(label);
+            View.Add(button);
         }
 
         private ShowViewEvent _showViewEvent;
@@ -78,11 +79,13 @@ namespace ViewShowingConcept.Ios.Views.Container
             
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailView{  });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditView{  });
+            Mvx.LazyConstructAndRegisterSingleton(() => new TabbedView { });
 
             Views = new Dictionary<ViewType, IIosView>
             {
                 {ViewType.CustomerDetails, Mvx.Resolve<CustomerDetailView>() },
-                {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditView>() }
+                {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditView>() },
+                {ViewType.TabbedView, Mvx.Resolve<TabbedView>() },
             };
         }
 

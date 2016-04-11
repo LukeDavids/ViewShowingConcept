@@ -15,7 +15,7 @@ namespace ViewShowingConcept.Ios.Views
     {
         public DummyTab2View()
         {
-            ViewType = ViewType.DummyTab2;
+            ViewType = ViewType.DummyTab2View;
             ViewTag = ViewType.ToString();
         }
 

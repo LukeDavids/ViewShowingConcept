@@ -27,7 +27,6 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         private void RegisterViewModels()
         {
             Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel { ContainerViewModel = this });
-            Mvx.LazyConstructAndRegisterSingleton(() => new BaseTabbedViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel { ContainerViewModel = this });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel { ContainerViewModel = this });
@@ -46,6 +45,9 @@ namespace ViewShowingConcept.Core.ViewModels.Container
                 {ViewType.CustomerView, Mvx.Resolve<CustomerViewModel>()},
                 {ViewType.CustomerSplit, Mvx.Resolve<CustomerSplitViewModel>()},
                 {ViewType.TabbedView, Mvx.Resolve<TabbedViewModel>()},
+                {ViewType.DummyTab1View, Mvx.Resolve<DummyTab1ViewModel>()},
+                {ViewType.DummyTab2View, Mvx.Resolve<DummyTab2ViewModel>()},
+                {ViewType.DummyTab3View, Mvx.Resolve<DummyTab3ViewModel>()},
             };
         }
     }
