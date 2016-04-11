@@ -4,6 +4,7 @@ using System.Drawing;
 using CoreFoundation;
 using UIKit;
 using Foundation;
+using MvvmCross.Binding.BindingContext;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Ios.Views.Base;
@@ -36,7 +37,15 @@ namespace ViewShowingConcept.Ios.Views
             // Perform any additional setup after loading the view
 
             var label = new UILabel(new RectangleF(10, 60, 320, 40)) {Text = "Dummy Tab2"};
+            var edittext = new UITextField(new RectangleF(10, 110, 320, 40));
+            var num = new UILabel(new RectangleF(10, 160, 320, 40));
+            var set = this.CreateBindingSet<DummyTab2View, DummyTab2ViewModel>();
+            set.Bind(edittext).To(vm => vm.Number);
+            set.Bind(num).To(vm => vm.Number);
+            set.Apply();
             View.Add(label);
+            View.Add(edittext);
+            View.Add(num);
         }
     }
 }

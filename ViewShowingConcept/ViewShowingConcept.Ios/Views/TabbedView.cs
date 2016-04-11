@@ -10,6 +10,7 @@ using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Core;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Ios.Views.Base;
 
@@ -55,32 +56,36 @@ namespace ViewShowingConcept.Ios.Views
             CustomizableViewControllers = null;
             SelectedViewController = ViewControllers[0];*/
             _tabBar = new UITabBarController();
-            _tabBar.ViewControllers = new UIViewController[]
-            {
-                CreateTabFor("Apple", "glyphicons-social-44-apple", Mvx.Resolve<DummyTab1ViewModel>()),
-                CreateTabFor("Kills", "glyphicons-282-bullets", Mvx.Resolve<DummyTab2ViewModel>()),
-                CreateTabFor("Piggy", "glyphicons-506-piggy-bank", Mvx.Resolve<DummyTab3ViewModel>())
-            };
-            _tabBar.CustomizableViewControllers = null;
+            SetTabs();
+
             _tabBar.SelectedViewController = _tabBar.ViewControllers[0];
             AddChildViewController(_tabBar);
             _tabBar.View.Frame = this.View.Frame;
             View.AddSubview(_tabBar.View);
             _tabBar.DidMoveToParentViewController(this);
         }
-        private UIViewController CreateTabFor(string title, string imageName, IMvxViewModel viewModel)
+
+        private void SetTabs()
         {
-            var controller = new UINavigationController();
-            var screen = this.CreateViewControllerFor(viewModel) as UIViewController;
-            SetTitleAndTabBarItem(title, imageName, screen);
-            controller.PushViewController(screen, false);
-            return controller;
+            string[] images = new string[]
+            {
+                "glyphicons-social-44-apple","glyphicons-282-bullets","glyphicons-506-piggy-bank",
+            };
+            UIViewController[] controllers = new UIViewController[ViewModel.NumTabs];
+            for (var i = 0; i < ViewModel.NumTabs; i++)
+            {
+                ITab tab = ViewModel.Tabs[i];
+                tab.Image = i< images.Length ? images[i] : "";
+                controllers[i] = CreateTabFor(tab);
+            }
+            _tabBar.ViewControllers = controllers;
         }
-        private UIViewController CreateTabFor(string title, string imageName, UIViewController view)
+        private UIViewController CreateTabFor(ITab tab)
         {
             var controller = new UINavigationController();
-            SetTitleAndTabBarItem(title, imageName, view);
-            controller.PushViewController(view, false);
+            var screen = this.CreateViewControllerFor(tab.Page) as UIViewController;
+            SetTitleAndTabBarItem(tab.Name, tab.Image, screen);
+            controller.PushViewController(screen, false);
             return controller;
         }
 

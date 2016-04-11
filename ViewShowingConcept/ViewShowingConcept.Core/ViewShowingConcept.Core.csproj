@@ -41,6 +41,7 @@
     <Compile Include="Enums\ViewType.cs" />
     <Compile Include="Helpers\ContainerViewModelHelper.cs" />
     <Compile Include="Interfaces\ISubView.cs" />
+    <Compile Include="Interfaces\ITab.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ShowViewEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -59,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Managers\" />
+    <Folder Include="ViewModels\ViewModelTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
