@@ -21,7 +21,6 @@ namespace ViewShowingConcept.Core.ViewModels
         public CustomerListViewModel() 
         {
             CustomerList = CustomerService.getCustomerList();
-            //ContainerViewModel = Mvx.Resolve<ContainerViewModel>();
         }
         
         public List<Customer> CustomerList { get; set; }
@@ -41,7 +40,7 @@ namespace ViewShowingConcept.Core.ViewModels
             {
                 return _showCustomerCommand = _showCustomerCommand ?? new MvxCommand<Customer>(item =>
                     {
-                        ShowView(CustomerView, FullScreenTabs, item.Id);
+                        ShowView(CustomerView, FullScreen, item.Id);
                     });
             }
         }

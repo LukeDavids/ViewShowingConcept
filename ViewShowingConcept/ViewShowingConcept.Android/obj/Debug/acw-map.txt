@@ -2,10 +2,6 @@ ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android;md53ed8d232c
 ViewShowingConcept.Android.SplashScreen, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 ViewShowingConcept.Android.SplashScreen;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
 viewshowingconcept.android.SplashScreen;md53ed8d232ccfe17816a865d9f3b65d6ec.SplashScreen
-ViewShowingConcept.Android.Views.CustomerTabView, ViewShowingConcept.Android;viewshowingconcept.android.views.CustomerTabView
-ViewShowingConcept.Android.Views.CustomerTabView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.CustomerTabView
-ViewShowingConcept.Android.Views.CustomerTabView;viewshowingconcept.android.views.CustomerTabView
-viewshowingconcept.android.views.CustomerTabView;viewshowingconcept.android.views.CustomerTabView
 ViewShowingConcept.Android.Views.CustomerEditView, ViewShowingConcept.Android;viewshowingconcept.android.views.CustomerEditFragment
 ViewShowingConcept.Android.Views.CustomerEditView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.CustomerEditFragment
 ViewShowingConcept.Android.Views.CustomerEditView;viewshowingconcept.android.views.CustomerEditFragment

@@ -17,8 +17,6 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         public ContainerViewModel() 
         {
             RegisterViewModels();
-            Test = " Test texct";
-            //ShowViewEvent = new ShowViewEvent(CustomerView, FullScreen, "001");
             ContainerViewModelHelper.ContainerViewModel = this;
         }
 
@@ -32,19 +30,9 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             get { return _showViewEvent; }
             set { _showViewEvent = value; RaisePropertyChanged(() => ShowViewEvent); }
         }
-        public string Test
-        {
-            get
-            {
-                return _test;
 
-            }
-            set
-            {
-                _test = value;
-                RaisePropertyChanged(() => Test);
-            }
-        }
+
+
         private void RegisterViewModels()
         {
             Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel ());
@@ -56,7 +44,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             Mvx.LazyConstructAndRegisterSingleton(() => new TabbedViewModel());
             Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab1ViewModel());
             Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab2ViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerTabViewModel());
+            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab3ViewModel());
 
 
             ViewModels = new Dictionary<ViewType, BaseViewModel>
@@ -69,7 +57,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
                 {TabbedView,       Mvx.Resolve<TabbedViewModel>()},
                 {DummyTab1View,    Mvx.Resolve<DummyTab1ViewModel>()},
                 {DummyTab2View,    Mvx.Resolve<DummyTab2ViewModel>()},
-                {CustomerTab,      Mvx.Resolve<CustomerTabViewModel>()}
+                {DummyTab3View,    Mvx.Resolve<DummyTab3ViewModel>()}
             };
         }
     }

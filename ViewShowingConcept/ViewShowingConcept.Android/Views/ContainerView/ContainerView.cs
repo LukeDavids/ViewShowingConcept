@@ -30,7 +30,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetupBindings();
             SetupViews();
             SetupContentFrames();
-            //AddFragments();
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
         }
 
@@ -73,8 +72,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 {CustomerSplit,             new CustomerSplitView()},
                 {ViewType.TabbedView,       new TabbedView()},
                 {ViewType.DummyTab1View,    new DummyTab1View()},
-                {ViewType.DummyTab2View,    new DummyTab2View()},
-                {CustomerTab,               new CustomerTabView()}
+                {ViewType.DummyTab2View,    new DummyTab2View()}
             };
         }
 
@@ -155,10 +153,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             this.CreateBinding(this)
                 .For(view => view.ShowViewEvent)
                 .To<ContainerViewModel>(vm => vm.ShowViewEvent)
-                .Apply();
-            this.CreateBinding(this)
-                .For(view => view.Test)
-                .To<ContainerViewModel>(vm => vm.Test)
                 .Apply();
         }
     }

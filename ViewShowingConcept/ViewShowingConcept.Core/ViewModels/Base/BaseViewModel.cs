@@ -30,8 +30,6 @@ namespace ViewShowingConcept.Core.ViewModels.Base
                 ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
             }
             else {
-                //ContainerViewModel = Mvx.Resolve<ContainerViewModel>();
-                ContainerViewModel.Test = " test string from base view ";
                 ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
             }
         }

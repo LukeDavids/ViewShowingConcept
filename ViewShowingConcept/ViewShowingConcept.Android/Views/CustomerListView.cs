@@ -23,7 +23,6 @@ namespace ViewShowingConcept.Android.Views
         {
             ViewType = ViewType.CustomerList;
             ViewTag = ViewType.ToString();
-            //BaseViewModel.ContainerViewModel = Mvx.Resolve< ContainerViewModel>();
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -34,8 +33,9 @@ namespace ViewShowingConcept.Android.Views
             return this.BindingInflate(Resource.Layout.CustomerListView, null);
         }
 
-        //public override void OnViewCreated(View view, Bundle savedInstanceState) {
-        //    Activity.SetTitle(Resource.String.CustomerListView);
-        //}
+        public override void OnViewCreated(View view, Bundle savedInstanceState)
+        {
+            Activity.SetTitle(Resource.String.CustomerListView);
+        }
     }
 }

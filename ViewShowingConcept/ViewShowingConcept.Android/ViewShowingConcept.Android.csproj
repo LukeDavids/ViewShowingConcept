@@ -141,7 +141,6 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Base\BaseView.cs" />
-    <Compile Include="Views\CustomerTabView.cs" />
     <Compile Include="Views\CustomerEditView.cs" />
     <Compile Include="Views\CustomerDetailView.cs" />
     <Compile Include="Views\ContainerView\ContainerView.cs" />
