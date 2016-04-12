@@ -24,8 +24,12 @@ namespace ViewShowingConcept.Core.ViewModels
             set { _image = value; RaisePropertyChanged(() => Image); }
         }
         public DummyTab2ViewModel() {
-            StringPassedAsParameter = "nothing yet!";
+            //StringPassedAsParameter = "nothing yet!";
             //ContainerViewModel.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, "");
+        }
+        public void AlertViewModel()
+        {
+            ShowView(ViewType.DummyTab2View, ViewFrame.FullScreenTabs);
         }
 
         private string _stringParam;

@@ -96,16 +96,10 @@ namespace ViewShowingConcept.Ios.Views.Container
             var viewController = view.Controller;
             var viewTag = view.ViewTag;
 
-            //Add logic for transitioning between views in IOS
-            try
-            {
-                view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
-                view.ShowViewModel();
-            }
-            catch (SystemException e)
-            {
-                Console.WriteLine("LOOK HERE"+e.Message);
-            }
+            view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
+
+            if (viewTag == "none") return;
+            view.ShowViewModel();
         }
         private void SetupBindings()
         {

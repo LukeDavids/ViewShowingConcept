@@ -18,6 +18,7 @@ namespace ViewShowingConcept.Ios.Views
         {
             ViewType = ViewType.DummyTab2View;
             ViewTag = ViewType.ToString();
+            
         }
 
         public override void DidReceiveMemoryWarning()
@@ -26,6 +27,13 @@ namespace ViewShowingConcept.Ios.Views
             base.DidReceiveMemoryWarning();
 
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+
+            ViewModel.AlertViewModel();
         }
 
         public override void ViewDidLoad()

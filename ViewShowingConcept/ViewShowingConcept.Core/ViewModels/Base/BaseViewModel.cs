@@ -25,13 +25,7 @@ namespace ViewShowingConcept.Core.ViewModels.Base
 
         public void ShowView(ViewType viewType, ViewFrame viewFrame, string parameter)
         {
-            if (ContainerViewModel != null)
-            {
-                ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
-            }
-            else {
-                ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
-            }
+            ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
         }
 
         public void ShowView(ViewType viewType, ViewFrame viewFrame)

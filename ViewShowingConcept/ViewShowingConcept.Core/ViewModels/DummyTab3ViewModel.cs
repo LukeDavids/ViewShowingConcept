@@ -25,7 +25,7 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         public DummyTab3ViewModel() {
-            StringPassedAsParameter = "nothing yet!";
+            //StringPassedAsParameter = "nothing yet!";
         }
 
         private string _stringParam;
@@ -36,6 +36,12 @@ namespace ViewShowingConcept.Core.ViewModels
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }
         }
+
+        public void AlertViewModel()
+        {
+            ShowView(ViewType.DummyTab3View, ViewFrame.FullScreenTabs);
+        }
+
         private string _number;
         public string Number
         {

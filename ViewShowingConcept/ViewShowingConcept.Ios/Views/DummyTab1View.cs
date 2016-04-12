@@ -17,6 +17,7 @@ namespace ViewShowingConcept.Ios.Views
         {
             ViewType = ViewType.DummyTab1View;
             ViewTag = ViewType.ToString();
+            
         }
 
         public DummyTab1View(IntPtr handle) : base(handle)
@@ -31,6 +32,12 @@ namespace ViewShowingConcept.Ios.Views
 
             // Release any cached data, images, etc that aren't in use.
         }
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+
+            ViewModel.AlertViewModel();
+        }
 
         public override void ViewDidLoad()
         {
@@ -39,6 +46,7 @@ namespace ViewShowingConcept.Ios.Views
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
+
             var label = new UILabel(new RectangleF(10, 60, 320, 40)) {Text = "Dummy Tab1"};
             var edittext = new UITextField(new RectangleF(10, 110, 320, 40));
             var num = new UILabel(new RectangleF(10, 160, 320, 40));

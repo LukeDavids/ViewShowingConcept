@@ -1,14 +1,7 @@
 using System;
-using System.Drawing;
-
-using CoreFoundation;
 using UIKit;
 using Foundation;
-using MvvmCross.Core.ViewModels;
-using MvvmCross.Core.Views;
 using MvvmCross.iOS.Views;
-using MvvmCross.Platform;
-using MvvmCross.Platform.Core;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.ViewModels;
@@ -46,15 +39,7 @@ namespace ViewShowingConcept.Ios.Views
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
-            /**
-            ViewControllers = new UIViewController[]
-            {
-                CreateTabFor("Tab1", "glyphicons-social-44-apple", Mvx.Resolve<DummyTab1ViewModel>()),
-                CreateTabFor("Tab2", "glyphicons-282-bullets", Mvx.Resolve<DummyTab2ViewModel>()),
-                CreateTabFor("Tab3", "glyphicons-506-piggy-bank", Mvx.Resolve<DummyTab3ViewModel>())
-            };
-            CustomizableViewControllers = null;
-            SelectedViewController = ViewControllers[0];*/
+            
             _tabBar = new UITabBarController();
             SetTabs();
 

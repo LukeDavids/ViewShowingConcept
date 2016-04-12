@@ -12,5 +12,7 @@ namespace ViewShowingConcept.Core.Interfaces
         IMvxViewModel Page { get; }
         string Name { get; set; }
         string Image { get; set; }
+
+        void AlertViewModel();
     }
 }
