@@ -43,8 +43,8 @@ namespace ViewShowingConcept.Android.Views
             {
                 _fragments = new List<MvxFragmentPagerAdapter.FragmentInfo>
                 {
-                    new MvxFragmentPagerAdapter.FragmentInfo("Customers", typeof (CustomerListView),
-                        typeof (CustomerListViewModel)),
+                    new MvxFragmentPagerAdapter.FragmentInfo("Customers", typeof (CustomerSplitView),
+                        typeof (CustomerSplitViewModel)),
                     new MvxFragmentPagerAdapter.FragmentInfo("Dummy Tab 1", typeof (DummyTab1View),
                         typeof (DummyTab1ViewModel)),
                     new MvxFragmentPagerAdapter.FragmentInfo("Dummy Tab 2", typeof (DummyTab2View),

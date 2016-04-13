@@ -27,6 +27,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetContentView(Resource.Layout.ContainerView);
             SetupContentFrames();
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
+            ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, HalfScreenTop, ""); // Here is where the problem is somehow, splitview isnt fully instantiated so Resource.Id.list_frame doesnt yet exist or is null
         }
 
         private void SetupContentFrames()
