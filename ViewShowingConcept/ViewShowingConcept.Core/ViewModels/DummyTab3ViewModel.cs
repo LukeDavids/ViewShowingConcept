@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
 
@@ -7,14 +6,18 @@ namespace ViewShowingConcept.Core.ViewModels
 {
     public class DummyTab3ViewModel : BaseViewModel
     {
-        public DummyTab3ViewModel() {
+        public DummyTab3ViewModel()
+        {
             StringPassedAsParameter = "nothing yet!";
         }
 
         private string _stringParam;
-        public string StringPassedAsParameter {
+
+        public string StringPassedAsParameter
+        {
             get { return _stringParam; }
-            set {
+            set
+            {
                 _stringParam = value;
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }

@@ -1,7 +1,6 @@
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.Droid.BindingContext;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;

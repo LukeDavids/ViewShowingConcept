@@ -32,11 +32,11 @@ namespace ViewShowingConcept.Android
             return new DebugTrace();
         }
 
-        //protected override IMvxAndroidViewPresenter CreateViewPresenter()
-        //{
-        //    var customPresenter = new CustomPresenter();
-        //    Mvx.RegisterSingleton<ICustomPresenter>(customPresenter);
-        //    return customPresenter;
-        //}
+        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        {
+            var customPresenter = new CustomPresenter();
+            Mvx.RegisterSingleton<ICustomPresenter>(customPresenter);
+            return customPresenter;
+        }
     }
 }

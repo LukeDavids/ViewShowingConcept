@@ -1,7 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Android.App;
-using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
@@ -10,14 +7,9 @@ using Android.Support.V4.View;
 using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
-using MvvmCross.Droid.Support.V7.Fragging.Fragments;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Core.Enums;
-using Android.Support.V7.Widget;
-using MvvmCross.Platform;
-using FragmentManager = Android.Support.V4.App.FragmentManager;
-using Android.Support.V4.App;
 
 namespace ViewShowingConcept.Android.Views
 {
@@ -27,9 +19,6 @@ namespace ViewShowingConcept.Android.Views
         public CoordinatorLayout _coordinatorLayout;
         private List<MvxFragmentPagerAdapter.FragmentInfo> _fragments;
         private ViewPager _viewPager;
-        private ProgressDialog pd;
-        private MvxFragment _customerListView;
-        private Toolbar toolbar;
 
         public TabbedView()
         {
@@ -40,24 +29,18 @@ namespace ViewShowingConcept.Android.Views
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ViewType = ViewType.TabbedView;
-            
             base.OnCreate(savedInstanceState);
-
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-
             return this.BindingInflate(Resource.Layout.TabbedView, null);
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
-            
-
-            toolbar = view.FindViewById<Toolbar>(Resource.Id.toolbar);
             _coordinatorLayout = view.FindViewById<CoordinatorLayout>(Resource.Id.main_content);
             _viewPager = view.FindViewById<ViewPager>(Resource.Id.viewpager);
+
             if (_viewPager != null)
             {
-
                 _fragments = new List<MvxFragmentPagerAdapter.FragmentInfo>
                 {
                     new MvxFragmentPagerAdapter.FragmentInfo("Customers", typeof (CustomerListView),

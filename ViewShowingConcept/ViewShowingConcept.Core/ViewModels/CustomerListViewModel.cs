@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Droid.FullFragging;
-using MvvmCross.Platform;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.Services;
 using ViewShowingConcept.Core.ViewModels.Base;
@@ -18,34 +13,40 @@ namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerListViewModel : BaseViewModel
     {
-        public CustomerListViewModel() 
+        public CustomerListViewModel()
         {
             CustomerList = CustomerService.getCustomerList();
         }
-        
+
         public List<Customer> CustomerList { get; set; }
         private string _customerId;
-        public string CustomerId {
+
+        public string CustomerId
+        {
             get { return _customerId; }
-            set {
+            set
+            {
                 _customerId = value;
                 RaisePropertyChanged(() => CustomerId);
             }
         }
 
         private MvxCommand<Customer> _showCustomerCommand;
+
         public ICommand ShowCustomerCommand
         {
             get
             {
-                return _showCustomerCommand = _showCustomerCommand ?? new MvxCommand<Customer>(item =>
-                    {
-                        ShowView(CustomerView, FullScreen, item.Id);
-                    });
+                return
+                    _showCustomerCommand =
+                        _showCustomerCommand ??
+                        new MvxCommand<Customer>(item => { ShowView(CustomerView, FullScreen, item.Id); });
             }
         }
+
         public ContainerViewModel ContainerViewModel2 { get; set; }
         private string _stringParam;
+
         public string StringPassedAsParameter
         {
             get { return _stringParam; }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MvvmCross.Platform;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
@@ -21,7 +17,16 @@ namespace ViewShowingConcept.Core.ViewModels
         {
             StringPassedAsParameter = "nothing yet!";
         }
-        public string StringPassedAsParameter { get { return _stringParam; } set { _stringParam = value; RaisePropertyChanged(() => StringPassedAsParameter); } }
+
+        public string StringPassedAsParameter
+        {
+            get { return _stringParam; }
+            set
+            {
+                _stringParam = value;
+                RaisePropertyChanged(() => StringPassedAsParameter);
+            }
+        }
 
         public override async Task Initialise(ShowViewEvent viewEvent)
         {
@@ -31,7 +36,7 @@ namespace ViewShowingConcept.Core.ViewModels
         //Used to Init new ViewModel
         public void ShowViewModel()
         {
-            ShowViewModel<TabbedViewModel>(new { });
+            ShowViewModel<TabbedViewModel>(new {});
         }
     }
 }
