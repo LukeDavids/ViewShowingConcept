@@ -16,7 +16,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="?attr/colorPrimary"
         local:popupTheme="@style/ThemeOverlay.AppCompat.Light">
     </android.support.v7.widget.Toolbar>
@@ -29,7 +29,7 @@
         local:tabGravity="center"
         local:tabMode="scrollable" />
   </android.support.design.widget.AppBarLayout>
-  
+
   <android.support.v4.view.ViewPager
       android:id="@+id/viewpager"
       android:layout_width="fill_parent"

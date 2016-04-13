@@ -29,9 +29,12 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private string _stringParam;
-        public string StringPassedAsParameter {
+
+        public string StringPassedAsParameter
+        {
             get { return _stringParam; }
-            set {
+            set
+            {
                 _stringParam = value;
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }

@@ -4,8 +4,6 @@ using Android.App;
 using Android.OS;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
-using MvvmCross.Droid.Support.V7.Fragging;
-using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Container;
@@ -18,39 +16,34 @@ namespace ViewShowingConcept.Android.Views.ContainerView
     [Activity(Label = "ViewShowingConcept", Theme = "@style/AppTheme", MainLauncher = true)]
     public class ContainerView : MvxCachingFragmentCompatActivity<ContainerViewModel>
     {
-        
         public Dictionary<ViewType, IAndroidView> Views { get; set; }
         public Dictionary<ViewFrame, int> ViewFrames { get; set; }
-        private ShowViewEvent CurrentFragment;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.ContainerView);
             SetupBindings();
             SetupViews();
+            SetContentView(Resource.Layout.ContainerView);
             SetupContentFrames();
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
+            ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, HalfScreenTop, ""); // Here is where the problem is somehow, splitview isnt fully instantiated so Resource.Id.list_frame doesnt yet exist or is null
         }
 
         private void SetupContentFrames()
         {
             ViewFrames = new Dictionary<ViewFrame, int>
             {
-                [FullScreen] = Resource.Id.content_frame,
-                [FullScreenTabs] = Resource.Id.viewpager,
-                [HalfScreenTop] = Resource.Id.list_frame,
-                [HalfScreenBottom] = Resource.Id.view_frame,
-                [TabContents] = Resource.Id.tab_content_frame
+                [FullScreen]        = Resource.Id.content_frame,
+                [FullScreenTabs]    = Resource.Id.viewpager,
+                [HalfScreenTop]     = Resource.Id.list_frame,
+                [HalfScreenBottom]  = Resource.Id.view_frame,
+                [TabContents]       = Resource.Id.tab_content_frame
             };
             //Add more so we can replace different areas of the screen
         }
 
-        public ContainerViewModel ContainerViewModel => this.ViewModel as ContainerViewModel;
-
         private ShowViewEvent _showViewEvent;
-        private string _test;
-
         public ShowViewEvent ShowViewEvent
         {
             get { return _showViewEvent; }
@@ -82,8 +75,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             var viewFrame = ViewFrames[showViewEvent.ViewFrame];
             var viewFragment = view.Fragment;
             var viewTag = view.ViewTag;
-
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
+
             SupportFragmentManager.ExecutePendingTransactions();
             HideFragments();
             
@@ -91,15 +84,12 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             {
                 view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
                 fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
-                //fragmentTransaction.AddToBackStack(viewTag);
                 view.Fragment.SetMenuVisibility(true);
-                CurrentFragment.ViewType = ShowViewEvent.ViewType;
             }
             catch (System.Exception e)
             {
                 view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
                 AddFragments(showViewEvent);
-                //fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
                 view.Fragment.SetMenuVisibility(true);
             }
 
@@ -125,24 +115,15 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 view.Value.Fragment.SetMenuVisibility(false);
             }
         }
-        public string Test {
-            get
-            {
-                return _test;
-            }
-            set
-            {
-                _test = value;
-            }
-        }
+
         public void AddFragments(ShowViewEvent showViewEvent)
         {
             var view = Views[showViewEvent.ViewType];
             var viewFrame = ViewFrames[showViewEvent.ViewFrame];
             var viewFragment = view.Fragment;
             var viewTag = view.ViewTag;
-
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
+
             fragmentTransaction.Add(viewFrame, viewFragment, viewTag);
             fragmentTransaction.Commit();
         }

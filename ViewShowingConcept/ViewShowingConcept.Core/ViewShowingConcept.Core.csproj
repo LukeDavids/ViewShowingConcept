@@ -39,7 +39,6 @@
     <Compile Include="Enums\BuildPlatform.cs" />
     <Compile Include="Enums\ViewFrame.cs" />
     <Compile Include="Enums\ViewType.cs" />
-    <Compile Include="Helpers\ContainerViewModelHelper.cs" />
     <Compile Include="Interfaces\ISubView.cs" />
     <Compile Include="Interfaces\ITab.cs" />
     <Compile Include="Models\Customer.cs" />

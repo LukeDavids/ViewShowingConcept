@@ -27,7 +27,6 @@ namespace ViewShowingConcept.Core.ViewModels
 
         public DummyTab1ViewModel() {
             //StringPassedAsParameter = "nothing yet!";
-            //ContainerViewModel.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, "");
         }
         public void AlertViewModel()
         {
@@ -35,9 +34,12 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private string _stringParam;
-        public string StringPassedAsParameter {
+
+        public string StringPassedAsParameter
+        {
             get { return _stringParam; }
-            set {
+            set
+            {
                 _stringParam = value;
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }
