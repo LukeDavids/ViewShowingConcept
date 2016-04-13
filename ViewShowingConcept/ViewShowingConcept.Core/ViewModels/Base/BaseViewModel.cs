@@ -16,7 +16,8 @@ namespace ViewShowingConcept.Core.ViewModels.Base
 
         public bool IsBusy
         {
-            ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
+            get { return _isBusy; }
+            set { _isBusy = value; RaisePropertyChanged(() => IsBusy); }
         }
 
         public void ShowView(ViewType viewType, ViewFrame viewFrame, string parameter)

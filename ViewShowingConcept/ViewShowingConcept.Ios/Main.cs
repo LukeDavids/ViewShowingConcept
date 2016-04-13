@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
+using MvvmCross.Platform;
+using MvvmCross.Platform.Platform;
 using UIKit;
 
 namespace ViewShowingConcept.Ios
@@ -16,6 +19,9 @@ namespace ViewShowingConcept.Ios
             }
             catch (Exception ffs)
             {
+                Mvx.Trace(MvxTraceLevel.Error, ffs.Message);
+                Mvx.Error(ffs.Message,null);
+                Debug.WriteLine(ffs.Message);
             }
         }
     }

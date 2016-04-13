@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
@@ -7,7 +8,7 @@ using static ViewShowingConcept.Core.Enums.ViewType;
 
 namespace ViewShowingConcept.Core.ViewModels.Container
 {
-    public class ContainerViewModel : BaseViewModel
+    public class ContainerViewModel : MvxViewModel
     {
         public ContainerViewModel()
         {
@@ -18,7 +19,6 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         public Dictionary<ViewType, BaseViewModel> ViewModels { get; set; }
 
         private ShowViewEvent _showViewEvent;
-        private string _test;
 
         public ShowViewEvent ShowViewEvent
         {
