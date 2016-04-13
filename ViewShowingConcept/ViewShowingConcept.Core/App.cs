@@ -1,8 +1,4 @@
-using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
-using ViewShowingConcept.Core.Helpers;
-using ViewShowingConcept.Core.Services;
-using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Core.ViewModels.Container;
 
 namespace ViewShowingConcept.Core
@@ -15,11 +11,7 @@ namespace ViewShowingConcept.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-
-            //MvxSimpleIoCContainer.Instance.RegisterSingleton(() => new ContainerViewModel());
-            //Mvx.RegisterSingleton(new ContainerViewModel());
             RegisterAppStart<ContainerViewModel>();
-            
         }
     }
 }
