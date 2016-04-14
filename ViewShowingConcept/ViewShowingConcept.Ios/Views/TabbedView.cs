@@ -63,7 +63,6 @@ namespace ViewShowingConcept.Ios.Views
             UISwipeGestureRecognizer rightToLeft = new UISwipeGestureRecognizer(rAction);
             rightToLeft.Direction = UISwipeGestureRecognizerDirection.Left;
             _tabBar.TabBar.AddGestureRecognizer(rightToLeft);
-
         }
 
         private void SetTabs()
