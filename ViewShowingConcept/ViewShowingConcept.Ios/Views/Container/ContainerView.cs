@@ -55,13 +55,8 @@ namespace ViewShowingConcept.Ios.Views.Container
 
             var button = new UIButton(new RectangleF(10, 200, 320, 40));
             button.SetTitle("Go to first view", UIControlState.Normal);
-            button.TouchUpInside += delegate {
-                ShowViewEvent = new ShowViewEvent(ViewType.CustomerEdit, ViewFrame.FullScreen, "none");
-            };
-            
-            
+     
             View.Add(label);
-            View.Add(button);
         }
 
         private ShowViewEvent _showViewEvent;
@@ -79,6 +74,7 @@ namespace ViewShowingConcept.Ios.Views.Container
             
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailView{  });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditView{  });
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerView {});
             Mvx.LazyConstructAndRegisterSingleton(() => new TabbedView { });
 
             Views = new Dictionary<ViewType, IIosView>
@@ -86,6 +82,7 @@ namespace ViewShowingConcept.Ios.Views.Container
                 {ViewType.CustomerDetails, Mvx.Resolve<CustomerDetailView>() },
                 {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditView>() },
                 {ViewType.TabbedView, Mvx.Resolve<TabbedView>() },
+                {ViewType.CustomerView, Mvx.Resolve<CustomerView>() },
             };
         }
 

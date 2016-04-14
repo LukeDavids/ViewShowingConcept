@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MvvmCross.Core.ViewModels;
 
 namespace ViewShowingConcept.Core.Models
 {
-    public class Customer
+    public class Customer : MvxViewModel
     {
         public Customer() {
         }
@@ -18,6 +19,7 @@ namespace ViewShowingConcept.Core.Models
             }
             set {
                 _id = value;
+                RaisePropertyChanged(() => Id);
             }
         } 
 
@@ -28,6 +30,7 @@ namespace ViewShowingConcept.Core.Models
             }
             set {
                 _customerName = value;
+                RaisePropertyChanged(() => CustomerName);
             }
         }
 
@@ -36,40 +39,19 @@ namespace ViewShowingConcept.Core.Models
             get { return _customerAge; }
             set {
                 _customerAge = value;
+                RaisePropertyChanged(() => CustomerAge);
             }
         }
 
-        public Customer(string Id, string CustomerName, int CustomerAge) {
-            //setId(Id);
-            //setCustomerName(CustomerName);
-            //setCustomerAge(CustomerAge);
-            this.CustomerAge = CustomerAge;
-            this.CustomerName = CustomerName;
-            this.Id = Id;
+        public Customer(string id, string customerName, int customerAge) {
+            this.CustomerAge = customerAge;
+            this.CustomerName = customerName;
+            this.Id = id;
         }
 
-        //public string getId() {
-        //    return this.Id;
-        //}
-
-        //public string getCustomerName() {
-        //    return this.CustomerName;
-        //}
-
-        //public int getCustomerAge() {
-        //    return this.CustomerAge;
-        //}
-
-        //public void setId(string Id) {
-        //    this.Id = Id;
-        //}
-
-        //public void setCustomerName(string CustomerName) {
-        //    this.CustomerName = CustomerName;
-        //}
-
-        //public void setCustomerAge(int CustomerAge) {
-        //    this.CustomerAge = CustomerAge;
-        //}
+        public override string ToString()
+        {
+            return CustomerName+" : "+Id;
+        }
     }
 }

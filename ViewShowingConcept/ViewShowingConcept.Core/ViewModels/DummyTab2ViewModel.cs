@@ -56,5 +56,25 @@ namespace ViewShowingConcept.Core.ViewModels
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
         }
+        private string _label1 = "Dummy Tab2";
+        public string Label1
+        { 
+            get { return _label1; }
+            set { _label1 = value; RaisePropertyChanged(() => Label1); }
+        }
+        private int _num1;
+        public int Num1
+        {
+            get { return _num1; }
+            set { _num1 = value; RaisePropertyChanged(() => Num1); }
+        }
+        private string _label2;
+        public string Label2
+        {
+            get { return _label2; }
+            set { _label2 = value; RaisePropertyChanged(() => Label2); }
+        }
+        
+
     }
 }

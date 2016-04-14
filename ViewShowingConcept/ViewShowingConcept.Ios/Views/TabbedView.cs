@@ -42,20 +42,34 @@ namespace ViewShowingConcept.Ios.Views
             
             _tabBar = new UITabBarController();
             SetTabs();
+            AddGestureRecognition();
 
             _tabBar.SelectedViewController = _tabBar.ViewControllers[0];
             AddChildViewController(_tabBar);
             _tabBar.View.Frame = this.View.Frame;
             View.AddSubview(_tabBar.View);
             _tabBar.DidMoveToParentViewController(this);
+            
+        }
+
+        private void AddGestureRecognition()
+        {
+            Action lAction = (LeftToRight);
+            UISwipeGestureRecognizer leftToRight = new UISwipeGestureRecognizer(lAction);
+            leftToRight.Direction = UISwipeGestureRecognizerDirection.Right;
+            _tabBar.TabBar.AddGestureRecognizer(leftToRight);
+
+            Action rAction = (RightToLeft);
+            UISwipeGestureRecognizer rightToLeft = new UISwipeGestureRecognizer(rAction);
+            rightToLeft.Direction = UISwipeGestureRecognizerDirection.Left;
+            _tabBar.TabBar.AddGestureRecognizer(rightToLeft);
+
         }
 
         private void SetTabs()
         {
-            string[] images = new string[]
-            {
-                "glyphicons-social-44-apple","glyphicons-282-bullets","glyphicons-506-piggy-bank",
-            };
+            string[] images = ViewModel.TabImages;
+            
             UIViewController[] controllers = new UIViewController[ViewModel.NumTabs];
             for (var i = 0; i < ViewModel.NumTabs; i++)
             {
@@ -80,6 +94,19 @@ namespace ViewShowingConcept.Ios.Views
             var image = UIImage.FromBundle("Images/Tabs/" + imageName + ".png");
             screen.TabBarItem = new UITabBarItem(title, image, _createdSoFar);
             _createdSoFar++;
+        }
+        private void LeftToRight()
+        {
+            nint index = _tabBar.SelectedIndex;
+            if (index > 0)
+                _tabBar.SelectedIndex = index - 1;
+        }
+
+        private void RightToLeft()
+        {
+            nint index = _tabBar.SelectedIndex;
+            if (index < _tabBar.TabBar.Items.Length - 1)
+                _tabBar.SelectedIndex = index + 1;
         }
     }
 }

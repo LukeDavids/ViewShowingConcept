@@ -5,6 +5,7 @@ using CoreFoundation;
 using UIKit;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Ios.Views.Base;
@@ -43,10 +44,12 @@ namespace ViewShowingConcept.Ios.Views
             var button = new UIButton(new RectangleF(10, 100, 140, 15));
             button.SetTitle("Show Tabs", UIControlState.Normal);
             button.SetTitleColor(UIColor.Black, UIControlState.Normal);
+           
             var set = this.CreateBindingSet<CustomerDetailView, CustomerDetailViewModel>();
             View.Add(button);
             set.Bind(button).To(vm => vm.ShowTabbedCommand);
             set.Apply();
+            
         }
     }
 }
