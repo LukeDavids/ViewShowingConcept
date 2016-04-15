@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="ViewShowingConcept.Ios/ViewShowingConcept.Ios.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ViewShowingConcept.Core/Interfaces/ISubView.cs">
+    <Files>
+      <File FileName="ViewShowingConcept.Core/Interfaces/ISubView.cs" Line="10" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <DisabledProjects>
+    <String>ViewShowingConcept.Android/ViewShowingConcept.Android.csproj</String>
+  </DisabledProjects>
+</Properties>
