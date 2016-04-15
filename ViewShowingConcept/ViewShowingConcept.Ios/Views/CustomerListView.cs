@@ -8,6 +8,7 @@ using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
 using MvvmCross.iOS.Views;
+using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Ios.Views.Base;
@@ -52,24 +53,57 @@ namespace ViewShowingConcept.Ios.Views
 
             // Perform any additional setup after loading the view
 
-            var label = new UILabel(new RectangleF(10,50,150,60));
-            View.Add(label);
+            if (DeviceIsIPhone())
+            {
+                var label = new UILabel(new RectangleF(10, 50, 150, 60));
+                View.Add(label);
 
-            var tableView = new UITableView(new RectangleF(10, 120,300,400), UITableViewStyle.Plain);
+                var tableView = new UITableView(new RectangleF(10, 120, 300, 400), UITableViewStyle.Plain);
+
+                var source = new MvxStandardTableViewSource(tableView, "TitleText CustomerName");
+
+                var set = this.CreateBindingSet<CustomerListView, CustomerListViewModel>();
+                set.Bind(source).To(vm => vm.CustomerList);
+                set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ShowCustomerCommand);
+                set.Bind(label).To(vm => vm.CustomerList.Count);
+                set.Apply();
+
+                tableView.Source = source;
+
+                View.Add(tableView);
+
+                tableView.ReloadData();
+            }
+            else
+            {
+               
+                var controller = new UIViewController();
+                controller.View = new UniversalView();
+                var label = new UILabel(new RectangleF(10, 50, 150, 60));
+                controller.View.Add(label);
+
+                var master = new UITableViewController();
+                var source = new MvxStandardTableViewSource(master.TableView, "TitleText CustomerName");
+                master.TableView.Source = source;
+                var splitController = new UISplitViewController();
+                splitController.ViewControllers = new UIViewController[]
+                {
+                    master,
+                    controller 
+                };
+
+                var set = this.CreateBindingSet<CustomerListView, CustomerListViewModel>();
+                set.Bind(source).To(vm => vm.CustomerList);
+                set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ShowCustomerCommand);
+                set.Bind(label).To(vm => vm.CustomerList.Count);
+                set.Apply();
+
+                AddChildViewController(splitController);
+                splitController.View.Frame = this.View.Frame;
+                View.AddSubview(splitController.View);
+                splitController.DidMoveToParentViewController(this);
+            }
             
-            var source = new MvxStandardTableViewSource(tableView, "TitleText CustomerName");
-
-            var set = this.CreateBindingSet<CustomerListView, CustomerListViewModel>();
-            set.Bind(source).To(vm => vm.CustomerList);
-            set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ShowCustomerCommand);
-            set.Bind(label).To(vm => vm.CustomerList.Count);
-            set.Apply();
-
-            tableView.Source = source;
-
-            View.Add(tableView);
-
-            tableView.ReloadData();
         }
     }
 }

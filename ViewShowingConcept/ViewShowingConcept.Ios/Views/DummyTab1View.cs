@@ -1,6 +1,6 @@
 using System;
 using System.Drawing;
-
+using Cirrious.FluentLayouts.Touch;
 using UIKit;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
@@ -45,17 +45,54 @@ namespace ViewShowingConcept.Ios.Views
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
-
-            var label = new UILabel(new RectangleF(10, 60, 320, 40)) {Text = "Dummy Tab1"};
-            var edittext = new UITextField(new RectangleF(10, 110, 320, 40));
-            var num = new UILabel(new RectangleF(10, 160, 320, 40));
+            //Instantiate sub views
+            var label = new UILabel()
+            {
+                Text = "Dummy Tab1",
+                TextColor = UIColor.Black                
+            };
+            var edittext = new UITextField()
+            {
+                BorderStyle = UITextBorderStyle.Line,
+            };
+            var num = new UILabel();
             var set = this.CreateBindingSet<DummyTab1View, DummyTab1ViewModel>();
-            set.Bind(edittext).To(vm => vm.Number);
-            set.Bind(num).To(vm => vm.Number);
-            set.Apply();
+
+            //Add Views
             View.Add(label);
             View.Add(edittext);
             View.Add(num);
+
+            //Add constraints
+            View.SubviewsDoNotTranslateAutoresizingMaskIntoConstraints();
+            var padding = DeviceIsIPhone() ? 10f : 20f;
+            var basicwidth = (UIScreen.MainScreen.Bounds.Width - 2 * padding);
+            var basicheight = (UIScreen.MainScreen.Bounds.Height - 2 * padding)/6;
+            View.AddConstraints(
+                label.WithSameCenterX(View),
+                label.WithSameCenterY(View).Minus(20f),
+                label.WithRelativeWidth(View, 0.5f),
+                label.WithRelativeHeight(View, 0.10f),
+
+                edittext.Below(label),
+                edittext.WithSameCenterX(View),
+                edittext.WithRelativeWidth(View, 0.5f),
+                edittext.WithRelativeHeight(View, 0.10f),
+
+                num.Below(edittext),
+                num.WithSameCenterX(View),
+                num.WithRelativeWidth(View, 0.5f),
+                num.WithRelativeHeight(View, 0.10f)
+            );
+            
+
+            //Set up Bindings
+            set.Bind(edittext).To(vm => vm.Number);
+            set.Bind(num).To(vm => vm.Number);
+            set.Apply();
+
+            
+            
         }
     }
 }

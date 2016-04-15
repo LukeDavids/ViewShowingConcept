@@ -28,7 +28,12 @@ namespace ViewShowingConcept.Ios.Views.Base
             ViewModel = Mvx.Resolve<TViewModel>();
         } 
 
-        public virtual void ShowViewModel() { }
+        public virtual void ShowViewModel() { throw new NotImplementedException(); }
+
+        public static bool DeviceIsIPhone()
+        {
+            return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone;
+        }
 
         public override void DidReceiveMemoryWarning()
         {
