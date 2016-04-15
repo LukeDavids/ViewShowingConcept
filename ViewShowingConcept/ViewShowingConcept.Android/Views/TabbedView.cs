@@ -1,11 +1,15 @@
+using System;
 using System.Collections.Generic;
+using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
+using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
+using MvvmCross.Binding.ExtensionMethods;
 using MvvmCross.Droid.Support.V4;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.ViewModels;
@@ -19,6 +23,7 @@ namespace ViewShowingConcept.Android.Views
         public CoordinatorLayout _coordinatorLayout;
         private List<MvxFragmentPagerAdapter.FragmentInfo> _fragments;
         private ViewPager _viewPager;
+        public static TabLayout tabLayout;
 
         public TabbedView()
         {
@@ -50,14 +55,30 @@ namespace ViewShowingConcept.Android.Views
                     new MvxFragmentPagerAdapter.FragmentInfo("Dummy Tab 2", typeof (DummyTab2View),
                         typeof (DummyTab2ViewModel))
                 };
-                _viewPager.Adapter = new MvxFragmentPagerAdapter(Context, FragmentManager, _fragments);
+                _viewPager.Adapter = new CustomFragmentPagerAdapter(Context, FragmentManager, _fragments);
             }
 
-            var tabLayout = view.FindViewById<TabLayout>(Resource.Id.tabs);
+            tabLayout = view.FindViewById<TabLayout>(Resource.Id.tabs);
             tabLayout.SetTabTextColors(Color.Gray, Color.Black);
-            tabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#BA77FF"));
+            //tabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#BA77FF"));
             tabLayout.SetupWithViewPager(_viewPager);
             Activity.SetTitle(Resource.String.CustomerView);
+        }
+    }
+
+    public class CustomFragmentPagerAdapter : MvxFragmentPagerAdapter {
+        public CustomFragmentPagerAdapter(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
+        {
+        }
+
+        public CustomFragmentPagerAdapter(Context context, FragmentManager fragmentManager, IEnumerable<FragmentInfo> fragments) : base(context, fragmentManager, fragments)
+        {
+        }
+
+        public override Fragment GetItem(int position)
+        {
+
+            return base.GetItem(position);
         }
     }
 }
