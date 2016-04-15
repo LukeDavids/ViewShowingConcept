@@ -11,6 +11,8 @@ public class CustomerSplitView
 		__md_methods = 
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"n_onViewCreated:(Landroid/view/View;Landroid/os/Bundle;)V:GetOnViewCreated_Landroid_view_View_Landroid_os_Bundle_Handler\n" +
+			"n_getUserVisibleHint:()Z:GetGetUserVisibleHintHandler\n" +
+			"n_setUserVisibleHint:(Z)V:GetSetUserVisibleHint_ZHandler\n" +
 			"";
 		mono.android.Runtime.register ("ViewShowingConcept.Android.Views.CustomerSplitView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", CustomerSplitView.class, __md_methods);
 	}
@@ -38,6 +40,22 @@ public class CustomerSplitView
 	}
 
 	private native void n_onViewCreated (android.view.View p0, android.os.Bundle p1);
+
+
+	public boolean getUserVisibleHint ()
+	{
+		return n_getUserVisibleHint ();
+	}
+
+	private native boolean n_getUserVisibleHint ();
+
+
+	public void setUserVisibleHint (boolean p0)
+	{
+		n_setUserVisibleHint (p0);
+	}
+
+	private native void n_setUserVisibleHint (boolean p0);
 
 	java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

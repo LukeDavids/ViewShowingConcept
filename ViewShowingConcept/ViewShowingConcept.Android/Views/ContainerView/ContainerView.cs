@@ -81,9 +81,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             var viewTag = view.ViewTag;
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
 
-            //SupportFragmentManager.ExecutePendingTransactions();
-            HideFragments();
-            
             try
             {
                 view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
@@ -112,13 +109,13 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             fragmentTransaction.Commit();
         }
 
-        public void HideFragments()
-        {
-            foreach (var view in Views)
-            {
-                view.Value.Fragment.SetMenuVisibility(false);
-            }
-        }
+        //public void HideFragments()
+        //{
+        //    foreach (var view in Views)
+        //    {
+        //        view.Value.Fragment.SetMenuVisibility(false);
+        //    }
+        //}
 
         public void AddFragments(ShowViewEvent showViewEvent)
         {
@@ -140,5 +137,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 .To<ContainerViewModel>(vm => vm.ShowViewEvent)
                 .Apply();
         }
+        
     }
 }

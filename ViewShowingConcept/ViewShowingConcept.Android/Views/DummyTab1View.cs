@@ -1,3 +1,4 @@
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -24,6 +25,23 @@ namespace ViewShowingConcept.Android.Views
             base.OnCreate(savedInstanceState);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             return this.BindingInflate(Resource.Layout.DummyTab1View, null);
+        }
+
+        public override bool UserVisibleHint
+        {
+            get
+            {
+                return base.UserVisibleHint;
+            }
+
+            set
+            {
+                base.UserVisibleHint = value;
+                if (value)
+                {
+                    TabbedView.tabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#009900")); // testing to see if I am able to change things in tabs dynamically 
+                }
+            }
         }
     }
 }
