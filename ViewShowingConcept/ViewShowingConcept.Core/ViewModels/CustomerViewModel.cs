@@ -71,5 +71,10 @@ namespace ViewShowingConcept.Core.ViewModels
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
         }
+
+        public void ShowViewModel()
+        {
+            ShowViewModel<CustomerViewModel>(new { });
+        }
     }
 }

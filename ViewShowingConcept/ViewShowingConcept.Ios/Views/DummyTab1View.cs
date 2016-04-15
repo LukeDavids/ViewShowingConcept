@@ -17,7 +17,6 @@ namespace ViewShowingConcept.Ios.Views
         {
             ViewType = ViewType.DummyTab1View;
             ViewTag = ViewType.ToString();
-            
         }
 
         public DummyTab1View(IntPtr handle) : base(handle)

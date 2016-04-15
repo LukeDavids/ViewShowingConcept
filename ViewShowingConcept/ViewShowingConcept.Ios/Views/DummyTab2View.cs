@@ -18,7 +18,10 @@ namespace ViewShowingConcept.Ios.Views
         {
             ViewType = ViewType.DummyTab2View;
             ViewTag = ViewType.ToString();
-            
+        }
+        public DummyTab2View(IntPtr handle) : base(handle)
+        {
+
         }
 
         public override void DidReceiveMemoryWarning()
@@ -43,14 +46,33 @@ namespace ViewShowingConcept.Ios.Views
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
+            //Instantiate views here
+            var label = new UILabel()
+            {
+                Text = "Dummy Tab2"
+            };
+            var edittext = new UITextField()
+            {
+                BorderStyle = UITextBorderStyle.Line
+            };
+            var colorbutton = new UIButton();
+            var num = new UILabel();
+            var numbutton = new UIButton();
+            var label2 = new UILabel();
+            var button = new UIButton();
 
-            var label = new UILabel(new RectangleF(10, 60, 320, 40)) {Text = "Dummy Tab2"};
-            var edittext = new UITextField(new RectangleF(10, 110, 320, 40));
-            var num = new UILabel(new RectangleF(10, 160, 320, 40));
+            //Set up bindings here
             var set = this.CreateBindingSet<DummyTab2View, DummyTab2ViewModel>();
-            set.Bind(edittext).To(vm => vm.Number);
-            set.Bind(num).To(vm => vm.Number);
+            set.Bind(label).To(vm => vm.Label1);
+            set.Bind(edittext).To(vm => vm.Label1);
+            set.Bind(num).To(vm => vm.Num1);
+            set.Bind(label2).To(vm => vm.Label2);
             set.Apply();
+            
+            //Set constraints here
+            //num.LeadingAnchor.ConstraintEqualTo(View.LeadingAnchor);
+
+            //Add views here
             View.Add(label);
             View.Add(edittext);
             View.Add(num);

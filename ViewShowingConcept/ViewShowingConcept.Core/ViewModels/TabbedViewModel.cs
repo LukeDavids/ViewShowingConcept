@@ -14,13 +14,26 @@ namespace ViewShowingConcept.Core.ViewModels
 
         public DummyTab1ViewModel Tab1 { get; } = Mvx.Resolve<DummyTab1ViewModel>();
         public DummyTab2ViewModel Tab2 { get; } = Mvx.Resolve<DummyTab2ViewModel>();
-        public DummyTab3ViewModel Tab3 { get; } = Mvx.Resolve<DummyTab3ViewModel>();
+        public CustomerListViewModel Tab3 { get; } = Mvx.Resolve<CustomerListViewModel>();
+        public DummyTab3ViewModel Tab4 { get; } = Mvx.Resolve<DummyTab3ViewModel>();
 
         private ITab[] _tabs;
         public ITab[] Tabs
         {
             get { return _tabs; }
             set { _tabs = value; RaisePropertyChanged(() => Tabs); RaisePropertyChanged(() => NumTabs);}
+        }
+
+        //Resource paths
+        private string[] _tabImages = 
+            {
+                "glyphicons-social-44-apple","glyphicons-282-bullets","glyphicons-4-user","glyphicons-506-piggy-bank",
+            };
+
+        public string[] TabImages 
+        {
+            get { return _tabImages; }
+            set { _tabImages = value; RaisePropertyChanged(() => TabImages); }
         }
         
         public int NumTabs => _tabs.Length;
@@ -31,7 +44,7 @@ namespace ViewShowingConcept.Core.ViewModels
             StringPassedAsParameter = "nothing yet!";
             _tabs = new ITab[]
             {
-                Tab1,Tab2,Tab3,
+                Tab1,Tab2,Tab3,Tab4
             };
         }
 

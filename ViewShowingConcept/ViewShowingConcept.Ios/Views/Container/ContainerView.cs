@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 
 using CoreFoundation;
@@ -8,6 +9,7 @@ using Foundation;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
+using MvvmCross.Platform.Platform;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels;
@@ -21,6 +23,7 @@ namespace ViewShowingConcept.Ios.Views.Container
     [Register("ContainerView")]
     public class ContainerView : MvxViewController<ContainerViewModel>
     {
+        private UIViewController Navigator = new UINavigationController();
         public Dictionary<ViewType, IIosView> Views { get; set; }
         public Dictionary<ViewFrame, int> ViewFrames { get; set; } = new Dictionary<ViewFrame, int>()
         {
@@ -46,22 +49,20 @@ namespace ViewShowingConcept.Ios.Views.Container
             //Set up the bindings
             SetupBindings();
             SetupViews();
-            ShowViewEvent = new ShowViewEvent(ViewType.CustomerEdit, ViewFrame.FullScreen, "none");
 
             // Perform any additional setup after loading the view
 
             View = new UniversalView();
             var label = new UILabel(new RectangleF(60, 100, 320, 20)) {Text = "Welcome to Onsight"};
 
-            var button = new UIButton(new RectangleF(10, 200, 320, 40));
-            button.SetTitle("Go to first view", UIControlState.Normal);
-            button.TouchUpInside += delegate {
-                ShowViewEvent = new ShowViewEvent(ViewType.CustomerEdit, ViewFrame.FullScreen, "none");
-            };
-            
-            
             View.Add(label);
-            View.Add(button);
+
+            AddChildViewController(Navigator);
+            Navigator.View.Frame = this.View.Frame;
+            View.AddSubview(Navigator.View);
+            Navigator.DidMoveToParentViewController(this);
+
+            ShowViewEvent = new ShowViewEvent(ViewType.CustomerEdit, ViewFrame.FullScreen, "");
         }
 
         private ShowViewEvent _showViewEvent;
@@ -79,6 +80,7 @@ namespace ViewShowingConcept.Ios.Views.Container
             
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailView{  });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditView{  });
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerView {});
             Mvx.LazyConstructAndRegisterSingleton(() => new TabbedView { });
 
             Views = new Dictionary<ViewType, IIosView>
@@ -86,20 +88,33 @@ namespace ViewShowingConcept.Ios.Views.Container
                 {ViewType.CustomerDetails, Mvx.Resolve<CustomerDetailView>() },
                 {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditView>() },
                 {ViewType.TabbedView, Mvx.Resolve<TabbedView>() },
+                {ViewType.CustomerView, Mvx.Resolve<CustomerView>() },
             };
         }
 
         public void ShowView(ShowViewEvent showViewEvent)
-        {           
+        {
+            //If the Views son't contain the showViewEvent viewType
+            //Navigation is being handled by a child view and nothing more needs to be done
+            if (!Views.ContainsKey(showViewEvent.ViewType)) return;
+
             var view = Views[showViewEvent.ViewType];
             var viewFrame = ViewFrames[showViewEvent.ViewFrame];
-            var viewController = view.Controller;
+            var viewController = view.Controller as UIViewController;
             var viewTag = view.ViewTag;
 
             view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
+            
+            if (viewController != null)
+            {
+                Navigator.NavigationController.PushViewController(viewController, true);
+            }
+            else
+            {
+                Debug.WriteLine("Unable to cast viewController as UIController:");
+                Mvx.Trace(MvxTraceLevel.Error, "Unable to cast viewController as UIController: ");
+            }
 
-            if (viewTag == "none") return;
-            view.ShowViewModel();
         }
         private void SetupBindings()
         {

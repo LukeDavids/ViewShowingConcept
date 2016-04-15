@@ -19,7 +19,6 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         public Dictionary<ViewType, BaseViewModel> ViewModels { get; set; }
 
         private ShowViewEvent _showViewEvent;
-
         public ShowViewEvent ShowViewEvent
         {
             get { return _showViewEvent; }

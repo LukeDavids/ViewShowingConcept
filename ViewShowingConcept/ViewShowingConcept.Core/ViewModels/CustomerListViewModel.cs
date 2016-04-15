@@ -2,6 +2,8 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
+using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.Services;
 using ViewShowingConcept.Core.ViewModels.Base;
@@ -11,14 +13,32 @@ using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
-    public class CustomerListViewModel : BaseViewModel
+    public class CustomerListViewModel : BaseViewModel , ITab
     {
-        public CustomerListViewModel()
+        public IMvxViewModel Page => this;
+        private string _name = "Customers";
+        public string Name
         {
-            CustomerList = CustomerService.getCustomerList();
+            get { return _name; }
+            set { _name = value; RaisePropertyChanged(() => Name); }
+        }
+        private string _image;
+        public string Image
+        {
+            get { return _image; }
+            set { _image = value; RaisePropertyChanged(() => Image); }
+        }
+        public void AlertViewModel()
+        {
+            ShowView(ViewType.CustomerList, ViewFrame.FullScreenTabs);
         }
 
-        public List<Customer> CustomerList { get; set; }
+        public CustomerListViewModel() 
+        {
+        }
+        
+        public List<Customer> CustomerList => CustomerService.getCustomerList();
+
         private string _customerId;
 
         public string CustomerId
@@ -44,9 +64,10 @@ namespace ViewShowingConcept.Core.ViewModels
             }
         }
 
-        public ContainerViewModel ContainerViewModel2 { get; set; }
-        private string _stringParam;
 
+        public ContainerViewModel ContainerViewModel2 { get; set; }
+
+        private string _stringParam;
         public string StringPassedAsParameter
         {
             get { return _stringParam; }
