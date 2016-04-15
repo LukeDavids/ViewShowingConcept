@@ -14,6 +14,7 @@ namespace ViewShowingConcept.Android.Views.Base
             BaseViewModel = Mvx.Resolve<BaseViewModel>();
         }
 
+        public ContainerView.ContainerView ContainerView => Mvx.Resolve<ContainerView.ContainerView>();
         public BaseViewModel BaseViewModel { get; }
         public MvxFragment Fragment => this;
         public ViewType ViewType { get; set; }

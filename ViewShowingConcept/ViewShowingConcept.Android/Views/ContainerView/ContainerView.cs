@@ -4,6 +4,8 @@ using Android.App;
 using Android.OS;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
+using MvvmCross.Platform;
+using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Container;
@@ -22,12 +24,13 @@ namespace ViewShowingConcept.Android.Views.ContainerView
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetupBindings();
             SetupViews();
+            SetupBindings();
             SetContentView(Resource.Layout.ContainerView);
             SetupContentFrames();
+            Mvx.RegisterSingleton(() => this);
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
-            ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, HalfScreenTop, ""); // Here is where the problem is somehow, splitview isnt fully instantiated so Resource.Id.list_frame doesnt yet exist or is null
+            
         }
 
         private void SetupContentFrames()
@@ -50,6 +53,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             set
             {
                 _showViewEvent = value;
+                if(value != null)
                 ShowView(_showViewEvent);
             }
         }
@@ -77,7 +81,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             var viewTag = view.ViewTag;
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
 
-            SupportFragmentManager.ExecutePendingTransactions();
+            //SupportFragmentManager.ExecutePendingTransactions();
             HideFragments();
             
             try

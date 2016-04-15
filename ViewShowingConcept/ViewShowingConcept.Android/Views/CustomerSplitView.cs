@@ -4,6 +4,7 @@ using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels;
 
 namespace ViewShowingConcept.Android.Views
@@ -27,6 +28,7 @@ namespace ViewShowingConcept.Android.Views
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState) {
+            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, ""); // Here is where the problem is somehow, splitview isnt fully instantiated so Resource.Id.list_frame doesnt yet exist or is null
             Activity.SetTitle(Resource.String.CustomerListView);
         }
     }
