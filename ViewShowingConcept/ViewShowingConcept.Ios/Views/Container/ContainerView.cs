@@ -80,12 +80,14 @@ namespace ViewShowingConcept.Ios.Views.Container
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailView{  });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditView{  });
             Mvx.LazyConstructAndRegisterSingleton(() => new TabbedView { });
+			Mvx.LazyConstructAndRegisterSingleton(() => new StoryBoardOneView { });
 
             Views = new Dictionary<ViewType, IIosView>
             {
                 {ViewType.CustomerDetails, Mvx.Resolve<CustomerDetailView>() },
                 {ViewType.CustomerEdit, Mvx.Resolve<CustomerEditView>() },
                 {ViewType.TabbedView, Mvx.Resolve<TabbedView>() },
+				{ViewType.StoryBoardOneView, Mvx.Resolve<StoryBoardOneView>()}
             };
         }
 

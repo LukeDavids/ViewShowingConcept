@@ -5,6 +5,10 @@ using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
+using System.Windows.Input;
+using System;
+using static ViewShowingConcept.Core.Enums.ViewType;
+using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Core.ViewModels
 {

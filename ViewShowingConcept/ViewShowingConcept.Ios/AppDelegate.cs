@@ -20,6 +20,10 @@ namespace ViewShowingConcept.Ios
             set;
         }
 
+		public static UIStoryboard Storyboard = UIStoryboard.FromName("MainStoryboard", null);
+
+		public static UIViewController initialViewController;
+
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
             // create a new window instance based on the screen size
@@ -27,13 +31,15 @@ namespace ViewShowingConcept.Ios
 
             var presenter = new MvxIosViewPresenter(this, Window);
 
+			initialViewController = Storyboard.InstantiateInitialViewController () as UIViewController;
+
             var setup = new Setup(this, presenter);
             setup.Initialize();
-
+//
             var startup = Mvx.Resolve<IMvxAppStart>();
             startup.Start();
             // If you have defined a root view controller, set it here:
-            // Window.RootViewController = myViewController;
+			Window.RootViewController = initialViewController;
 
             // make the window visible
             Window.MakeKeyAndVisible();

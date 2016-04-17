@@ -11,5 +11,6 @@
         DummyTab2View,
         DummyTab3View,
         TabbedView,
+		StoryBoardOneView
     }
 }

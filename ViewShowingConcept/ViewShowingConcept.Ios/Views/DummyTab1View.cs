@@ -50,7 +50,7 @@ namespace ViewShowingConcept.Ios.Views
             var label = new UILabel(new RectangleF(10, 60, 320, 40)) {Text = "Dummy Tab1"};
             var edittext = new UITextField(new RectangleF(10, 110, 320, 40));
             var num = new UILabel(new RectangleF(10, 160, 320, 40));
-            var set = this.CreateBindingSet<DummyTab1View, DummyTab1ViewModel>();
+			var set = this.CreateBindingSet<DummyTab1View, DummyTab1ViewModel>();
             set.Bind(edittext).To(vm => vm.Number);
             set.Bind(num).To(vm => vm.Number);
             set.Apply();

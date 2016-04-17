@@ -56,6 +56,7 @@
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\DummyTab3ViewModel.cs" />
     <Compile Include="ViewModels\TabbedViewModel.cs" />
+    <Compile Include="ViewModels\StoryBoardOneViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Managers\" />
@@ -63,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />		
+    <Reference Include="System.Core" />
     <Reference Include="MvvmCross.Droid.FullFragging">
       <HintPath>..\packages\MvvmCross.Droid.FullFragging.4.1.1\lib\MonoAndroid\MvvmCross.Droid.FullFragging.dll</HintPath>
     </Reference>
