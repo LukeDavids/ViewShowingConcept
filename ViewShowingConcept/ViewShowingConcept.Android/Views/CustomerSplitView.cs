@@ -34,8 +34,7 @@ namespace ViewShowingConcept.Android.Views
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState) {
-            //ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, "");
-            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.DummyTab2View, ViewFrame.Experiment, "");
+            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, "");
             IsViewCreated = true;
         }
     }

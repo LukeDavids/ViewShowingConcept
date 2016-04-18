@@ -1,11 +1,8 @@
-using System;
 using System.Collections.Generic;
-using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Support.Design.Widget;
-using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
@@ -13,8 +10,6 @@ using MvvmCross.Droid.Support.V4;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Core.Enums;
-using Java.Lang;
-using ViewShowingConcept.Core.Models;
 
 namespace ViewShowingConcept.Android.Views
 {

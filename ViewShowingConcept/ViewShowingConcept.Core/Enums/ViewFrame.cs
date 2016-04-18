@@ -6,7 +6,6 @@
         TabContents,
         HalfScreenTop,
         HalfScreenBottom,
-        FullScreenTabs,
-        Experiment
+        FullScreenTabs
     }
 }

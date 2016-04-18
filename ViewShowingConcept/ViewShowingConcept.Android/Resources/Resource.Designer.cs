@@ -3482,9 +3482,6 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f070053
 			public const int expanded_menu = 2131165267;
 			
-			// aapt resource value: 0x7f07008a
-			public const int experiment = 2131165322;
-			
 			// aapt resource value: 0x7f070037
 			public const int fill = 2131165239;
 			

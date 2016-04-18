@@ -42,8 +42,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 [FullScreenTabs]    = Resource.Id.viewpager,
                 [HalfScreenTop]     = Resource.Id.list_frame,
                 [HalfScreenBottom]  = Resource.Id.view_frame,
-                [TabContents]       = Resource.Id.tab_content_frame,
-                [Experiment]        = Resource.Id.experiment
+                [TabContents]       = Resource.Id.tab_content_frame
             };
             //Add more so we can replace different areas of the screen
         }
@@ -139,6 +138,11 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 .To<ContainerViewModel>(vm => vm.ShowViewEvent)
                 .Apply();
         }
-        
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+        }
+
     }
 }

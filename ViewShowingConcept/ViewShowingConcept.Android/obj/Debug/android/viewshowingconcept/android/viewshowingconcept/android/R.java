@@ -2305,7 +2305,6 @@ containing a value of this type.
         public static final int exitUntilCollapsed=0x7f070027;
         public static final int expand_activities_button=0x7f070040;
         public static final int expanded_menu=0x7f070053;
-        public static final int experiment=0x7f07008a;
         public static final int fill=0x7f070037;
         public static final int fill_horizontal=0x7f070038;
         public static final int fill_vertical=0x7f070030;
