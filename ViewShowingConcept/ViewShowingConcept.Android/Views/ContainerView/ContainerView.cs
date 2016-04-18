@@ -30,7 +30,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetupContentFrames();
             Mvx.RegisterSingleton(() => this);
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
-            
+            //ShowViewEvent = new ShowViewEvent(ViewType.DummyTab2View, FullScreenTabs, "");
+
         }
 
         private void SetupContentFrames()
@@ -41,7 +42,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 [FullScreenTabs]    = Resource.Id.viewpager,
                 [HalfScreenTop]     = Resource.Id.list_frame,
                 [HalfScreenBottom]  = Resource.Id.view_frame,
-                [TabContents]       = Resource.Id.tab_content_frame
+                [TabContents]       = Resource.Id.tab_content_frame,
+                [Experiment]        = Resource.Id.experiment
             };
             //Add more so we can replace different areas of the screen
         }

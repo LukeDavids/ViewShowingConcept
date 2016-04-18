@@ -9,11 +9,12 @@ using Android.Support.V4.App;
 using Android.Support.V4.View;
 using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Binding.ExtensionMethods;
 using MvvmCross.Droid.Support.V4;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Core.Enums;
+using Java.Lang;
+using ViewShowingConcept.Core.Models;
 
 namespace ViewShowingConcept.Android.Views
 {
@@ -22,7 +23,7 @@ namespace ViewShowingConcept.Android.Views
     {
         public CoordinatorLayout _coordinatorLayout;
         private List<MvxFragmentPagerAdapter.FragmentInfo> _fragments;
-        private ViewPager _viewPager;
+        public static ViewPager _viewPager;
         public static TabLayout tabLayout;
 
         public TabbedView()
@@ -53,32 +54,19 @@ namespace ViewShowingConcept.Android.Views
                     new MvxFragmentPagerAdapter.FragmentInfo("Dummy Tab 1", typeof (DummyTab1View),
                         typeof (DummyTab1ViewModel)),
                     new MvxFragmentPagerAdapter.FragmentInfo("Dummy Tab 2", typeof (DummyTab2View),
-                        typeof (DummyTab2ViewModel))
+                        typeof (DummyTab2ViewModel)),
+                    new MvxFragmentPagerAdapter.FragmentInfo("Dummy Tab 3", typeof (DummyTab3View),
+                        typeof (DummyTab3ViewModel))
                 };
-                _viewPager.Adapter = new CustomFragmentPagerAdapter(Context, FragmentManager, _fragments);
+                _viewPager.Adapter = new MvxFragmentPagerAdapter(Context, FragmentManager, _fragments);
             }
 
             tabLayout = view.FindViewById<TabLayout>(Resource.Id.tabs);
             tabLayout.SetTabTextColors(Color.Gray, Color.Black);
-            //tabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#BA77FF"));
+            tabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#BA77FF"));
+            _viewPager.OffscreenPageLimit = _fragments.Count;
             tabLayout.SetupWithViewPager(_viewPager);
             Activity.SetTitle(Resource.String.CustomerView);
-        }
-    }
-
-    public class CustomFragmentPagerAdapter : MvxFragmentPagerAdapter {
-        public CustomFragmentPagerAdapter(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)
-        {
-        }
-
-        public CustomFragmentPagerAdapter(Context context, FragmentManager fragmentManager, IEnumerable<FragmentInfo> fragments) : base(context, fragmentManager, fragments)
-        {
-        }
-
-        public override Fragment GetItem(int position)
-        {
-
-            return base.GetItem(position);
         }
     }
 }

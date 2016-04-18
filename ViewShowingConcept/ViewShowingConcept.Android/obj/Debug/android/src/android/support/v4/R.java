@@ -2305,6 +2305,7 @@ containing a value of this type.
         public static int exitUntilCollapsed=0x7f070027;
         public static int expand_activities_button=0x7f070040;
         public static int expanded_menu=0x7f070053;
+        public static int experiment=0x7f07008a;
         public static int fill=0x7f070037;
         public static int fill_horizontal=0x7f070038;
         public static int fill_vertical=0x7f070030;
@@ -2444,21 +2445,22 @@ containing a value of this type.
         public static int design_navigation_menu_item=0x7f04002a;
         public static int dummytab1view=0x7f04002b;
         public static int dummytab2view=0x7f04002c;
-        public static int notification_media_action=0x7f04002d;
-        public static int notification_media_cancel_action=0x7f04002e;
-        public static int notification_template_big_media=0x7f04002f;
-        public static int notification_template_big_media_narrow=0x7f040030;
-        public static int notification_template_lines=0x7f040031;
-        public static int notification_template_media=0x7f040032;
-        public static int notification_template_part_chronometer=0x7f040033;
-        public static int notification_template_part_time=0x7f040034;
-        public static int select_dialog_item_material=0x7f040035;
-        public static int select_dialog_multichoice_material=0x7f040036;
-        public static int select_dialog_singlechoice_material=0x7f040037;
-        public static int splashscreen=0x7f040038;
-        public static int subview_customeritem=0x7f040039;
-        public static int support_simple_spinner_dropdown_item=0x7f04003a;
-        public static int tabbedview=0x7f04003b;
+        public static int dummytab3view=0x7f04002d;
+        public static int notification_media_action=0x7f04002e;
+        public static int notification_media_cancel_action=0x7f04002f;
+        public static int notification_template_big_media=0x7f040030;
+        public static int notification_template_big_media_narrow=0x7f040031;
+        public static int notification_template_lines=0x7f040032;
+        public static int notification_template_media=0x7f040033;
+        public static int notification_template_part_chronometer=0x7f040034;
+        public static int notification_template_part_time=0x7f040035;
+        public static int select_dialog_item_material=0x7f040036;
+        public static int select_dialog_multichoice_material=0x7f040037;
+        public static int select_dialog_singlechoice_material=0x7f040038;
+        public static int splashscreen=0x7f040039;
+        public static int subview_customeritem=0x7f04003a;
+        public static int support_simple_spinner_dropdown_item=0x7f04003b;
+        public static int tabbedview=0x7f04003c;
     }
     public static final class mipmap {
         public static int icon=0x7f030000;
