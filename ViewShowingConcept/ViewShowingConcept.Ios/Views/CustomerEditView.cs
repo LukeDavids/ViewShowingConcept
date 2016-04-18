@@ -20,11 +20,6 @@ namespace ViewShowingConcept.Ios.Views
             ViewTag = ViewType.ToString();
         }
 
-        public override void ShowViewModel()
-        {
-            ViewModel.ShowViewModel();
-        }
-
         public override void ViewDidLoad()
         {
             View = new Helper();

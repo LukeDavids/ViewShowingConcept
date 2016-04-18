@@ -19,10 +19,6 @@ namespace ViewShowingConcept.Ios.Views
             ViewType = ViewType.TabbedView;
             ViewTag = ViewType.ToString();
         }
-        public override void ShowViewModel()
-        {
-            ViewModel.ShowViewModel();
-        }
 
         public override void DidReceiveMemoryWarning()
         {
