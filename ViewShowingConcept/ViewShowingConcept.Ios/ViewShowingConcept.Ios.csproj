@@ -100,8 +100,6 @@
     <Compile Include="Views\ViewTemplates\UniversalView.cs" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\StoryBoardOneView.cs" />
-    <InterfaceDefinition Include="MainStoryboard.storyboard" />
     <Compile Include="TestButton.cs" />
     <Compile Include="TestButton.designer.cs">
       <DependentUpon>TestButton.cs</DependentUpon>

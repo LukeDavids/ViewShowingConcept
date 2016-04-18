@@ -32,10 +32,10 @@ namespace ViewShowingConcept.Core.ViewModels.Base
 
         public IMvxCommand InitialiseCommand => new MvxAsyncCommand<ShowViewEvent>(Initialise);
 
-        public virtual async Task Initialise(ShowViewEvent viewEvent)
+		public virtual async Task Initialise(ShowViewEvent viewEvent)
         {
             if (ContainerViewModel == null || ContainerViewModel.ViewModels == null) return;
-            ContainerViewModel.ViewModels[viewEvent.ViewType].InitialiseCommand.Execute(viewEvent);
+			await Task.Run(() => ContainerViewModel.ViewModels[viewEvent.ViewType].InitialiseCommand.Execute(viewEvent));
         }
 
         public static void ShowViewModel<T>(dynamic parameter) where T : IMvxViewModel

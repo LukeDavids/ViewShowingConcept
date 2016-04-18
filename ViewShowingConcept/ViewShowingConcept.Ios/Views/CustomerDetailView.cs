@@ -35,7 +35,7 @@ namespace ViewShowingConcept.Ios.Views
 
         public override void ViewDidLoad()
         {
-//            View = new UniversalView();
+            View = new UniversalView();
 
             base.ViewDidLoad();
 

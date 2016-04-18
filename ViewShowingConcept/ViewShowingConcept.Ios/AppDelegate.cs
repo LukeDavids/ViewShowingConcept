@@ -20,9 +20,9 @@ namespace ViewShowingConcept.Ios
             set;
         }
 
-		public static UIStoryboard Storyboard = UIStoryboard.FromName("MainStoryboard", null);
+		//public static UIStoryboard Storyboard = UIStoryboard.FromName("MainStoryboard", null);
 
-		public static UIViewController initialViewController;
+		//public static UIViewController initialViewController;
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
@@ -31,7 +31,7 @@ namespace ViewShowingConcept.Ios
 
             var presenter = new MvxIosViewPresenter(this, Window);
 
-			initialViewController = Storyboard.InstantiateInitialViewController () as UIViewController;
+			//initialViewController = Storyboard.InstantiateInitialViewController () as UIViewController;
 
             var setup = new Setup(this, presenter);
             setup.Initialize();
@@ -39,7 +39,7 @@ namespace ViewShowingConcept.Ios
             var startup = Mvx.Resolve<IMvxAppStart>();
             startup.Start();
             // If you have defined a root view controller, set it here:
-			Window.RootViewController = initialViewController;
+			//Window.RootViewController = initialViewController;
 
             // make the window visible
             Window.MakeKeyAndVisible();

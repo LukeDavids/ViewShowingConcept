@@ -10,7 +10,6 @@
         DummyTab1View,
         DummyTab2View,
         DummyTab3View,
-        TabbedView,
-		StoryBoardOneView
+        TabbedView
     }
 }

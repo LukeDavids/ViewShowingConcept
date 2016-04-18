@@ -56,7 +56,6 @@
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\DummyTab3ViewModel.cs" />
     <Compile Include="ViewModels\TabbedViewModel.cs" />
-    <Compile Include="ViewModels\StoryBoardOneViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Managers\" />

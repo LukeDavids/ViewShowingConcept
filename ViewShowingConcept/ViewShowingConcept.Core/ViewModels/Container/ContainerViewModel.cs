@@ -44,7 +44,6 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab1ViewModel());
             Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab2ViewModel());
             Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab3ViewModel());
-			Mvx.LazyConstructAndRegisterSingleton(() => new StoryBoardOneViewModel());
 
             ViewModels = new Dictionary<ViewType, BaseViewModel>
             {
@@ -56,8 +55,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
                 {TabbedView, Mvx.Resolve<TabbedViewModel>()},
                 {DummyTab1View, Mvx.Resolve<DummyTab1ViewModel>()},
                 {DummyTab2View, Mvx.Resolve<DummyTab2ViewModel>()},
-                {DummyTab3View, Mvx.Resolve<DummyTab3ViewModel>()},
-				{StoryBoardOneView, Mvx.Resolve<StoryBoardOneViewModel>()}
+                {DummyTab3View, Mvx.Resolve<DummyTab3ViewModel>()}
             };
         }
     }
