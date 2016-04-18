@@ -19,6 +19,7 @@ namespace ViewShowingConcept.Ios.Views
     [Register("CustomerListView")]
     public class CustomerListView : BaseView<CustomerListViewModel>
     {
+        private UISplitViewController _splitView = new UISplitViewController();
         public CustomerListView()
         {
             ViewType = ViewType.CustomerList;
@@ -85,25 +86,31 @@ namespace ViewShowingConcept.Ios.Views
                 var master = new UITableViewController();
                 var source = new MvxStandardTableViewSource(master.TableView, "TitleText CustomerName");
                 master.TableView.Source = source;
-                var splitController = new UISplitViewController();
-                splitController.ViewControllers = new UIViewController[]
+                _splitView.ViewControllers = new UIViewController[]
                 {
                     master,
                     controller 
                 };
 
+                var newCon = new CustomerView();
+                UpdateDetail(newCon);
                 var set = this.CreateBindingSet<CustomerListView, CustomerListViewModel>();
                 set.Bind(source).To(vm => vm.CustomerList);
                 set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ShowCustomerCommand);
                 set.Bind(label).To(vm => vm.CustomerList.Count);
                 set.Apply();
 
-                AddChildViewController(splitController);
-                splitController.View.Frame = this.View.Frame;
-                View.AddSubview(splitController.View);
-                splitController.DidMoveToParentViewController(this);
+                AddChildViewController(_splitView);
+                _splitView.View.Frame = this.View.Frame;
+                View.AddSubview(_splitView.View);
+                _splitView.DidMoveToParentViewController(this);
             }
             
+        }
+
+        public void UpdateDetail(UIViewController vc)
+        {
+            _splitView.ShowDetailViewController(vc,null);
         }
     }
 }

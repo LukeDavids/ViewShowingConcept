@@ -38,7 +38,7 @@ namespace ViewShowingConcept.Ios.Views
             
             _tabBar = new UITabBarController();
             SetTabs();
-            AddGestureRecognition();
+            //AddGestureRecognition();
 
             _tabBar.SelectedViewController = _tabBar.ViewControllers[0];
             AddChildViewController(_tabBar);

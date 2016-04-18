@@ -6,6 +6,7 @@
         TabContents,
         HalfScreenTop,
         HalfScreenBottom,
-        FullScreenTabs
+        FullScreenTabs,
+        Detail,
     }
 }

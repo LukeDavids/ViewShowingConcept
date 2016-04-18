@@ -60,7 +60,7 @@ namespace ViewShowingConcept.Core.ViewModels
                 return
                     _showCustomerCommand =
                         _showCustomerCommand ??
-                        new MvxCommand<Customer>(item => { ShowView(CustomerView, HalfScreenBottom, item.Id); });
+                        new MvxCommand<Customer>(item => { ShowView(CustomerView, Detail, item.Id); });
             }
         }
 

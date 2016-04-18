@@ -28,7 +28,8 @@ namespace ViewShowingConcept.Ios.Views.Container
         public Dictionary<ViewFrame, int> ViewFrames { get; set; } = new Dictionary<ViewFrame, int>()
         {
             {ViewFrame.FullScreen, 0 },
-            {ViewFrame.TabContents, 1 }
+            {ViewFrame.TabContents, 1 },
+            {ViewFrame.Detail, 2 },
         };
 
         public ContainerView()
@@ -82,6 +83,7 @@ namespace ViewShowingConcept.Ios.Views.Container
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditView{  });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerView {});
             Mvx.LazyConstructAndRegisterSingleton(() => new TabbedView { });
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListView { });
 
             Views = new Dictionary<ViewType, IIosView>
             {
@@ -94,7 +96,7 @@ namespace ViewShowingConcept.Ios.Views.Container
 
         public void ShowView(ShowViewEvent showViewEvent)
         {
-            //If the Views son't contain the showViewEvent viewType
+            //If the Views don't contain the showViewEvent viewType
             //Navigation is being handled by a child view and nothing more needs to be done
             if (!Views.ContainsKey(showViewEvent.ViewType)) return;
 
@@ -104,7 +106,13 @@ namespace ViewShowingConcept.Ios.Views.Container
             var viewTag = view.ViewTag;
 
             view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
-            
+
+            if (showViewEvent.ViewFrame == ViewFrame.Detail)
+            {
+                (Mvx.Resolve<CustomerListView>()).UpdateDetail(viewController);
+                return;
+            }
+
             if (viewController != null)
             {
                 Navigator.NavigationController.PushViewController(viewController, true);
