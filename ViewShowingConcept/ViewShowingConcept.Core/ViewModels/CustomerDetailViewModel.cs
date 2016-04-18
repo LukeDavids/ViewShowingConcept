@@ -14,11 +14,31 @@ namespace ViewShowingConcept.Core.ViewModels
         private string _stringParam;
 
         public CustomerDetailViewModel()
-        {
+		{
             StringPassedAsParameter = "nothing yet!";
         }
+			
+		private static CustomerDetailViewModel _instance = null;
 
         public string ButtonText => "Edit Customer";
+
+
+
+		public static CustomerDetailViewModel Instance
+		{
+			get{
+				return getInstance();
+			}
+		}
+			
+		public static CustomerDetailViewModel getInstance()
+		{
+			if (_instance == null)
+				_instance = new CustomerDetailViewModel();
+
+			return _instance;
+		}
+
 
         public string StringPassedAsParameter
         {
@@ -41,7 +61,7 @@ namespace ViewShowingConcept.Core.ViewModels
         //Used to Init new ViewModel
         public void ShowViewModel()
         {
-            ShowViewModel<CustomerDetailViewModel>(new {});
+			ShowViewModel<CustomerDetailViewModel>(new {});
         }
     }
 }

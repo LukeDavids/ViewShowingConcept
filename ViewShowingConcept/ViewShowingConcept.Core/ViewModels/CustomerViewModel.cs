@@ -16,6 +16,23 @@ namespace ViewShowingConcept.Core.ViewModels
         private string _customerName;
         private int _customerAge;
 
+		private static CustomerViewModel _instance = null;
+
+		public static CustomerViewModel Instance 
+		{
+			get{
+				return getInstance ();
+			}
+		}
+			
+		public static CustomerViewModel getInstance()
+		{
+			if (_instance == null)
+				_instance = new CustomerViewModel ();
+
+			return _instance;
+		}
+
         private Customer Customer { get; set; }
 
         public string CustomerId

@@ -12,6 +12,7 @@ namespace ViewShowingConcept.Core.ViewModels.Base
     public class BaseViewModel : MvxViewModel
     {
         private bool _isBusy;
+		private static BaseViewModel _baseinstance = null;
         public ContainerViewModel ContainerViewModel => Mvx.Resolve<ContainerViewModel>();
 
         public bool IsBusy
@@ -19,6 +20,21 @@ namespace ViewShowingConcept.Core.ViewModels.Base
             get { return _isBusy; }
             set { _isBusy = value; RaisePropertyChanged(() => IsBusy); }
         }
+			
+		public static BaseViewModel BaseInstance
+		{
+			get{ 
+				return getBaseInstance ();
+			}
+		}
+			
+		public static BaseViewModel getBaseInstance()
+		{
+			if (_baseinstance == null)
+				_baseinstance = new BaseViewModel ();
+
+			return _baseinstance;
+		}
 
         public void ShowView(ViewType viewType, ViewFrame viewFrame, string parameter)
         {

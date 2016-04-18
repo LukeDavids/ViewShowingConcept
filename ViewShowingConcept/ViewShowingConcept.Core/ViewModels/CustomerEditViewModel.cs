@@ -12,11 +12,14 @@ namespace ViewShowingConcept.Core.ViewModels
     public class CustomerEditViewModel : BaseViewModel
     {
         public CustomerEditViewModel()
-        {
+		{
             StringPassedAsParameter = "nothing yet!";
         }
 
         private string _stringParam;
+		public static int _isInstance;
+
+		private static CustomerEditViewModel _instance = null;	
 
         public string ButtonText => "Customer Details!!";
 
@@ -32,6 +35,21 @@ namespace ViewShowingConcept.Core.ViewModels
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }
         }
+
+
+		public static CustomerEditViewModel Instance
+		{
+			get { return getInstance();}
+		}
+			
+		public static CustomerEditViewModel getInstance()
+		{
+			if (_instance == null) {
+				_instance = new CustomerEditViewModel ();
+			}
+
+			return _instance;
+		}
 
         public override async Task Initialise(ShowViewEvent viewEvent)
         {

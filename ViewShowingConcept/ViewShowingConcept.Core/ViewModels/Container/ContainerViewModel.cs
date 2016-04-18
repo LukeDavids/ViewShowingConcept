@@ -12,6 +12,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
     {
         public ContainerViewModel()
         {
+			
             RegisterViewModels();
             Mvx.RegisterSingleton(() => this);
         }
@@ -34,20 +35,21 @@ namespace ViewShowingConcept.Core.ViewModels.Container
 
         private void RegisterViewModels()
         {
-            Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerSplitViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new TabbedViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab1ViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab2ViewModel());
-            Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab3ViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => BaseViewModel.BaseInstance);
+			Mvx.LazyConstructAndRegisterSingleton(() => CustomerDetailViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => CustomerEditViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => CustomerListViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => CustomerViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => CustomerSplitViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => TabbedViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => DummyTab1ViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => DummyTab2ViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => DummyTab3ViewModel.Instance);
 
             ViewModels = new Dictionary<ViewType, BaseViewModel>
             {
-                {CustomerDetails, Mvx.Resolve<CustomerDetailViewModel>()},
+				
+				{CustomerDetails, Mvx.Resolve<CustomerDetailViewModel>()},
                 {CustomerEdit, Mvx.Resolve<CustomerEditViewModel>()},
                 {CustomerList, Mvx.Resolve<CustomerListViewModel>()},
                 {CustomerView, Mvx.Resolve<CustomerViewModel>()},

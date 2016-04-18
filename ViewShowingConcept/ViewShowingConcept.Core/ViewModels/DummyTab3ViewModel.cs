@@ -10,6 +10,14 @@ namespace ViewShowingConcept.Core.ViewModels
     public class DummyTab3ViewModel : BaseViewModel, ITab
     {
         public IMvxViewModel Page => this;
+
+		private static DummyTab3ViewModel _instance = null;
+		public static DummyTab3ViewModel Instance
+		{
+			get{ return getInstance();}
+
+		}
+
         private string _name = "Piggy";
         public string Name
         {
@@ -27,6 +35,15 @@ namespace ViewShowingConcept.Core.ViewModels
         public DummyTab3ViewModel() {
             //StringPassedAsParameter = "nothing yet!";
         }
+			
+		public static DummyTab3ViewModel getInstance()
+		{
+			if (_instance == null)
+				_instance = new DummyTab3ViewModel ();
+
+			return _instance;
+		}
+
 
         private string _stringParam;
 

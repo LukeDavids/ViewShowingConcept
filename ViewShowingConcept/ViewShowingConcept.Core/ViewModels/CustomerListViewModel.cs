@@ -21,6 +21,12 @@ namespace ViewShowingConcept.Core.ViewModels
         public List<Customer> CustomerList { get; set; }
         private string _customerId;
 
+		private static CustomerListViewModel _instance = null;
+		public static CustomerListViewModel Instance {
+			get{
+				return getInstance ();
+			}
+		}
         public string CustomerId
         {
             get { return _customerId; }
@@ -32,6 +38,15 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private MvxCommand<Customer> _showCustomerCommand;
+
+		public static CustomerListViewModel getInstance()
+		{
+			if (_instance == null)
+				_instance = new CustomerListViewModel ();
+
+			return _instance;
+		}
+
 
         public ICommand ShowCustomerCommand
         {
