@@ -45,7 +45,7 @@ namespace ViewShowingConcept.Core.ViewModels
             ShowView(ViewType.DummyTab1View, ViewFrame.FullScreenTabs);
         }
 			
-		public static DummyTab1ViewModel getInstance()
+		private static DummyTab1ViewModel getInstance()
 		{
 			if (_instance == null)
 				_instance = new DummyTab1ViewModel ();

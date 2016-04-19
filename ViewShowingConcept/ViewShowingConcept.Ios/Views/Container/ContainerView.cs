@@ -77,9 +77,9 @@ namespace ViewShowingConcept.Ios.Views.Container
         private void SetupViews()
         {
             
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailView{  });
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditView{  });
-            Mvx.LazyConstructAndRegisterSingleton(() => new TabbedView { });
+			Mvx.LazyConstructAndRegisterSingleton(() => CustomerDetailView.Instance);
+            Mvx.LazyConstructAndRegisterSingleton(() => CustomerEditView.Instance);
+            Mvx.LazyConstructAndRegisterSingleton(() => TabbedView.Instance);
 
             Views = new Dictionary<ViewType, IIosView>
             {

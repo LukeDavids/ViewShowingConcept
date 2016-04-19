@@ -50,7 +50,7 @@ namespace ViewShowingConcept.Core.ViewModels
             }
         }
 			
-		public static TabbedViewModel getInstance()
+		private static TabbedViewModel getInstance()
 		{
 			if (_instance == null)
 				_instance = new TabbedViewModel ();

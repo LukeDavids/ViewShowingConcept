@@ -14,11 +14,27 @@ namespace ViewShowingConcept.Ios.Views
     {
         private int _createdSoFar = 0;
         private UITabBarController _tabBar;
+		private static TabbedView _instance = null;
+	
+		public static TabbedView Instance
+		{
+			get{ return getInstance();}
+		}
+
         public TabbedView()
         {
             ViewType = ViewType.TabbedView;
             ViewTag = ViewType.ToString();
         }
+
+		private static TabbedView getInstance()
+		{
+			if(_instance == null)
+				_instance = new TabbedView();
+
+			return _instance;
+		}
+
         public override void ShowViewModel()
         {
             ViewModel.ShowViewModel();

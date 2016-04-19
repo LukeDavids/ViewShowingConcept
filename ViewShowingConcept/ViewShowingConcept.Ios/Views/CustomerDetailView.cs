@@ -20,10 +20,27 @@ namespace ViewShowingConcept.Ios.Views
             ViewTag = ViewType.ToString();
         }
 
+
+		private static CustomerDetailView _instance = null;
+
+		public static CustomerDetailView Instance
+		{
+			get { return getInstance (); }
+		}
+			
         public override void ShowViewModel()
         {
             ViewModel.ShowViewModel();
         }
+			
+		private static CustomerDetailView getInstance ()
+		{
+			if (_instance == null)
+				_instance = new CustomerDetailView ();
+			
+			return _instance;
+		}
+
 
         public override void DidReceiveMemoryWarning()
         {

@@ -28,7 +28,7 @@ namespace ViewShowingConcept.Core.ViewModels.Base
 			}
 		}
 			
-		public static BaseViewModel getBaseInstance()
+		private static BaseViewModel getBaseInstance()
 		{
 			if (_baseinstance == null)
 				_baseinstance = new BaseViewModel ();

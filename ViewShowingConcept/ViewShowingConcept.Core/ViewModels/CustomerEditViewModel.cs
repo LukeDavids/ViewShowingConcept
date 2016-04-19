@@ -17,7 +17,6 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private string _stringParam;
-		public static int _isInstance;
 
 		private static CustomerEditViewModel _instance = null;	
 
@@ -35,18 +34,16 @@ namespace ViewShowingConcept.Core.ViewModels
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }
         }
-
-
+			
 		public static CustomerEditViewModel Instance
 		{
 			get { return getInstance();}
 		}
 			
-		public static CustomerEditViewModel getInstance()
+		private static CustomerEditViewModel getInstance()
 		{
-			if (_instance == null) {
+			if (_instance == null) 
 				_instance = new CustomerEditViewModel ();
-			}
 
 			return _instance;
 		}

@@ -19,7 +19,22 @@ namespace ViewShowingConcept.Ios.Views
             ViewType = ViewType.CustomerEdit;
             ViewTag = ViewType.ToString();
         }
+			
+		private static CustomerEditView _instance = null;
 
+		public static CustomerEditView Instance
+		{
+			get { return getInstance (); }
+		}
+			
+		private static CustomerEditView getInstance()
+		{
+			if (_instance == null)
+				_instance = new CustomerEditView();
+
+			return _instance;
+		}
+			
         public override void ShowViewModel()
         {
             ViewModel.ShowViewModel();

@@ -39,7 +39,7 @@ namespace ViewShowingConcept.Core.ViewModels
 
         private MvxCommand<Customer> _showCustomerCommand;
 
-		public static CustomerListViewModel getInstance()
+		private static CustomerListViewModel getInstance()
 		{
 			if (_instance == null)
 				_instance = new CustomerListViewModel ();

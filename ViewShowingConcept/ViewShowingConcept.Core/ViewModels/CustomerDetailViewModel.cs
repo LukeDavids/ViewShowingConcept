@@ -31,7 +31,7 @@ namespace ViewShowingConcept.Core.ViewModels
 			}
 		}
 			
-		public static CustomerDetailViewModel getInstance()
+		private static CustomerDetailViewModel getInstance()
 		{
 			if (_instance == null)
 				_instance = new CustomerDetailViewModel();

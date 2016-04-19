@@ -36,7 +36,7 @@ namespace ViewShowingConcept.Core.ViewModels
             //StringPassedAsParameter = "nothing yet!";
         }
 			
-		public static DummyTab3ViewModel getInstance()
+		private static DummyTab3ViewModel getInstance()
 		{
 			if (_instance == null)
 				_instance = new DummyTab3ViewModel ();

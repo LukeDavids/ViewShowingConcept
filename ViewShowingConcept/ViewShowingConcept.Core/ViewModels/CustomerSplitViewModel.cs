@@ -31,7 +31,7 @@ namespace ViewShowingConcept.Core.ViewModels
             }
         }
 			
-		public static CustomerSplitViewModel getInstance()
+		private static CustomerSplitViewModel getInstance()
 		{
 			if (_instance == null)
 				_instance = new CustomerSplitViewModel ();
