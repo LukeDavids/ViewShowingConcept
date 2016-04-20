@@ -14,14 +14,14 @@ ViewShowingConcept.Android.Views.CustomerSplitView, ViewShowingConcept.Android;v
 ViewShowingConcept.Android.Views.CustomerSplitView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.CustomerSplitView
 ViewShowingConcept.Android.Views.CustomerSplitView;viewshowingconcept.android.views.CustomerSplitView
 viewshowingconcept.android.views.CustomerSplitView;viewshowingconcept.android.views.CustomerSplitView
+ViewShowingConcept.Android.Views.DummyTab3View, ViewShowingConcept.Android;viewshowingconcept.android.views.DummyTab3View
+ViewShowingConcept.Android.Views.DummyTab3View, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.DummyTab3View
+ViewShowingConcept.Android.Views.DummyTab3View;viewshowingconcept.android.views.DummyTab3View
+viewshowingconcept.android.views.DummyTab3View;viewshowingconcept.android.views.DummyTab3View
 ViewShowingConcept.Android.Views.TabbedView, ViewShowingConcept.Android;viewshowingconcept.android.views.TabbedView
 ViewShowingConcept.Android.Views.TabbedView, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.TabbedView
 ViewShowingConcept.Android.Views.TabbedView;viewshowingconcept.android.views.TabbedView
 viewshowingconcept.android.views.TabbedView;viewshowingconcept.android.views.TabbedView
-ViewShowingConcept.Android.Views.CustomFragmentPagerAdapter, ViewShowingConcept.Android;md526fb486d3b0c921a0e660941ddf082b7.CustomFragmentPagerAdapter
-ViewShowingConcept.Android.Views.CustomFragmentPagerAdapter, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md526fb486d3b0c921a0e660941ddf082b7.CustomFragmentPagerAdapter
-ViewShowingConcept.Android.Views.CustomFragmentPagerAdapter;md526fb486d3b0c921a0e660941ddf082b7.CustomFragmentPagerAdapter
-viewshowingconcept.android.views.CustomFragmentPagerAdapter;md526fb486d3b0c921a0e660941ddf082b7.CustomFragmentPagerAdapter
 ViewShowingConcept.Android.Views.DummyTab2View, ViewShowingConcept.Android;viewshowingconcept.android.views.DummyTab2View
 ViewShowingConcept.Android.Views.DummyTab2View, ViewShowingConcept.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;viewshowingconcept.android.views.DummyTab2View
 ViewShowingConcept.Android.Views.DummyTab2View;viewshowingconcept.android.views.DummyTab2View

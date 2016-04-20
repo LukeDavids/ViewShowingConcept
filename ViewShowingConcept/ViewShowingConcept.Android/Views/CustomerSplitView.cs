@@ -17,7 +17,7 @@ namespace ViewShowingConcept.Android.Views
     [Register("viewshowingconcept.android.views.CustomerSplitView")]
     public class CustomerSplitView : BaseView<CustomerSplitViewModel>
     {
-
+        bool IsViewCreated { get; set; }
         public CustomerSplitView()
         {
             ViewType = ViewType.CustomerSplit;
@@ -34,25 +34,8 @@ namespace ViewShowingConcept.Android.Views
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState) {
-            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, ""); 
-
-        }
-
-        public override bool UserVisibleHint
-        {
-            get
-            {
-                return base.UserVisibleHint;
-            }
-
-            set
-            {
-                base.UserVisibleHint = value;
-                if (value) {
-                    TabbedView.tabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#990000")); // testing to see if I am able to change things in tabs dynamically 
-                    
-                }
-            }
+            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, "");
+            IsViewCreated = true;
         }
     }
 }

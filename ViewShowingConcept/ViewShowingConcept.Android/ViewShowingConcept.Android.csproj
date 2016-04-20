@@ -145,6 +145,7 @@
     <Compile Include="Views\CustomerDetailView.cs" />
     <Compile Include="Views\ContainerView\ContainerView.cs" />
     <Compile Include="Views\CustomerSplitView.cs" />
+    <Compile Include="Views\DummyTab3View.cs" />
     <Compile Include="Views\TabbedView.cs" />
     <Compile Include="Views\DummyTab2View.cs" />
     <Compile Include="Views\DummyTab1View.cs" />
@@ -188,6 +189,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\CustomerTabView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\DummyTab3View.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

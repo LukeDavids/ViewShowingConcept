@@ -30,7 +30,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetupContentFrames();
             Mvx.RegisterSingleton(() => this);
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
-            
+            //ShowViewEvent = new ShowViewEvent(ViewType.DummyTab2View, FullScreenTabs, "");
+
         }
 
         private void SetupContentFrames()
@@ -137,6 +138,11 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 .To<ContainerViewModel>(vm => vm.ShowViewEvent)
                 .Apply();
         }
-        
+
+        public override void OnBackPressed()
+        {
+            base.OnBackPressed();
+        }
+
     }
 }

@@ -5,6 +5,7 @@ using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
 using static ViewShowingConcept.Core.Enums.ViewType;
+using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Core.ViewModels.Container
 {
@@ -14,6 +15,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         {
             RegisterViewModels();
             Mvx.RegisterSingleton(() => this);
+            InitialiseBackStacks();
         }
 
         public Dictionary<ViewType, BaseViewModel> ViewModels { get; set; }
@@ -29,7 +31,10 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             }
         }
 
-        public Stack<ViewType> CustomBackStack { get; set; }
+        public Stack<ShowViewEvent> CustomersBackStack { get; set; }
+        public Stack<ShowViewEvent> DummyTab1BackStack { get; set; }
+        public Stack<ShowViewEvent> DummyTab2BackStack { get; set; }
+        public Stack<ShowViewEvent> DummyTab3BackStack { get; set; }
 
         private void RegisterViewModels()
         {
@@ -56,6 +61,25 @@ namespace ViewShowingConcept.Core.ViewModels.Container
                 {DummyTab2View, Mvx.Resolve<DummyTab2ViewModel>()},
                 {DummyTab3View, Mvx.Resolve<DummyTab3ViewModel>()}
             };
+        }
+
+        private void InitialiseBackStacks()
+        {
+            CustomersBackStack = new Stack<ShowViewEvent>();
+            DummyTab1BackStack = new Stack<ShowViewEvent>();
+            DummyTab2BackStack = new Stack<ShowViewEvent>();
+            DummyTab3BackStack = new Stack<ShowViewEvent>();
+
+            CustomersBackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
+
+            DummyTab1BackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
+            DummyTab1BackStack.Push(new ShowViewEvent(DummyTab1View, FullScreenTabs, ""));
+
+            DummyTab2BackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
+            DummyTab2BackStack.Push(new ShowViewEvent(DummyTab2View, FullScreenTabs, ""));
+
+            DummyTab3BackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
+            DummyTab3BackStack.Push(new ShowViewEvent(DummyTab3View, FullScreenTabs, ""));
         }
     }
 }
