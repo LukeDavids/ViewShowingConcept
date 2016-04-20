@@ -1,4 +1,8 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using MvvmCross.Core.ViewModels;
+using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.Services;
 using ViewShowingConcept.Core.ViewModels.Base;

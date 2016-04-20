@@ -14,7 +14,7 @@ namespace ViewShowingConcept.Core.ViewModels
 
         public DummyTab1ViewModel Tab1 { get; } = Mvx.Resolve<DummyTab1ViewModel>();
         public DummyTab2ViewModel Tab2 { get; } = Mvx.Resolve<DummyTab2ViewModel>();
-        public CustomerListViewModel Tab3 { get; } = Mvx.Resolve<CustomerListViewModel>();
+        public CustomerSplitViewModel Tab3 { get; } = Mvx.Resolve<CustomerSplitViewModel>();
         public DummyTab3ViewModel Tab4 { get; } = Mvx.Resolve<DummyTab3ViewModel>();
 
         private ITab[] _tabs;

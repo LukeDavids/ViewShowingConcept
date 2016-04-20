@@ -12,12 +12,14 @@ namespace ViewShowingConcept.Ios.Views
     [Register("TabbedView")]
     public class TabbedView : BaseView<TabbedViewModel>
     {
+        private static int _instance = 0;
         private int _createdSoFar = 0;
         private UITabBarController _tabBar;
         public TabbedView()
         {
             ViewType = ViewType.TabbedView;
             ViewTag = ViewType.ToString();
+            _instance++;
         }
 
         public override void DidReceiveMemoryWarning()
@@ -95,6 +97,7 @@ namespace ViewShowingConcept.Ios.Views
             nint index = _tabBar.SelectedIndex;
             if (index > 0)
                 _tabBar.SelectedIndex = index - 1;
+            _tabBar.SelectedViewController = _tabBar.ViewControllers[_tabBar.SelectedIndex];
         }
 
         private void RightToLeft()
@@ -102,6 +105,16 @@ namespace ViewShowingConcept.Ios.Views
             nint index = _tabBar.SelectedIndex;
             if (index < _tabBar.TabBar.Items.Length - 1)
                 _tabBar.SelectedIndex = index + 1;
+            _tabBar.SelectedViewController = _tabBar.ViewControllers[_tabBar.SelectedIndex];
+        }
+
+        public bool UpdateDetail(UIViewController vc)
+        {
+            var nav=(_tabBar.ViewControllers[2]);
+            var nav1=nav.SplitViewController;
+            var nav2 = nav.ChildViewControllers[0];
+            //nav1.ShowDetailViewController(vc,null);
+            return ((CustomerSplitView)nav2).UpdateDetail(vc);
         }
     }
 }

@@ -13,26 +13,8 @@ using static ViewShowingConcept.Core.Enums.ViewFrame;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
-    public class CustomerListViewModel : BaseViewModel , ITab
+    public class CustomerListViewModel : BaseViewModel 
     {
-        public IMvxViewModel Page => this;
-        private string _name = "Customers";
-        public string Name
-        {
-            get { return _name; }
-            set { _name = value; RaisePropertyChanged(() => Name); }
-        }
-        private string _image;
-        public string Image
-        {
-            get { return _image; }
-            set { _image = value; RaisePropertyChanged(() => Image); }
-        }
-        public void AlertViewModel()
-        {
-            ShowView(ViewType.CustomerList, ViewFrame.FullScreenTabs);
-        }
-
         public CustomerListViewModel() 
         {
         }
@@ -52,8 +34,7 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         private MvxCommand<Customer> _showCustomerCommand;
-
-        public ICommand ShowCustomerCommand
+        public IMvxCommand ShowCustomerCommand
         {
             get
             {
@@ -63,9 +44,6 @@ namespace ViewShowingConcept.Core.ViewModels
                         new MvxCommand<Customer>(item => { ShowView(CustomerView, Detail, item.Id); });
             }
         }
-
-
-        public ContainerViewModel ContainerViewModel2 { get; set; }
 
         private string _stringParam;
         public string StringPassedAsParameter

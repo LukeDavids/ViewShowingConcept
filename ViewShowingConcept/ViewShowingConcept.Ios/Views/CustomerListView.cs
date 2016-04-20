@@ -11,15 +11,17 @@ using MvvmCross.iOS.Views;
 using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels;
+using ViewShowingConcept.Ios.Interfaces;
 using ViewShowingConcept.Ios.Views.Base;
 using ViewShowingConcept.Ios.Views.ViewTemplates;
+using MvvmCross.Core.Views;
 
 namespace ViewShowingConcept.Ios.Views
 {
     [Register("CustomerListView")]
     public class CustomerListView : BaseView<CustomerListViewModel>
     {
-        private UISplitViewController _splitView = new UISplitViewController();
+        
         public CustomerListView()
         {
             ViewType = ViewType.CustomerList;
@@ -28,8 +30,9 @@ namespace ViewShowingConcept.Ios.Views
 
         public CustomerListView(IntPtr handle) : base(handle)
         {
-            
+
         }
+        
 
         public override void DidReceiveMemoryWarning()
         {
@@ -37,13 +40,6 @@ namespace ViewShowingConcept.Ios.Views
             base.DidReceiveMemoryWarning();
 
             // Release any cached data, images, etc that aren't in use.
-        }
-
-        public override void ViewDidAppear(bool animated)
-        {
-            base.ViewDidAppear(animated);
-
-            ViewModel.AlertViewModel();
         }
 
         public override void ViewDidLoad()
@@ -54,63 +50,26 @@ namespace ViewShowingConcept.Ios.Views
 
             // Perform any additional setup after loading the view
 
-            if (DeviceIsIPhone())
-            {
-                var label = new UILabel(new RectangleF(10, 50, 150, 60));
-                View.Add(label);
+            var label = new UILabel(new RectangleF(10, 50, 150, 60));
+            View.Add(label);
 
-                var tableView = new UITableView(new RectangleF(10, 120, 300, 400), UITableViewStyle.Plain);
+            var tableView = new UITableView(new RectangleF(10, 120, 300, 400), UITableViewStyle.Plain);
 
-                var source = new MvxStandardTableViewSource(tableView, "TitleText CustomerName");
+            var source = new MvxStandardTableViewSource(tableView, "TitleText CustomerName");
 
-                var set = this.CreateBindingSet<CustomerListView, CustomerListViewModel>();
-                set.Bind(source).To(vm => vm.CustomerList);
-                set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ShowCustomerCommand);
-                set.Bind(label).To(vm => vm.CustomerList.Count);
-                set.Apply();
+            var set = this.CreateBindingSet<CustomerListView, CustomerListViewModel>();
+            set.Bind(source).To(vm => vm.CustomerList);
+            set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ShowCustomerCommand);
+            set.Bind(label).To(vm => vm.CustomerList.Count);
+            set.Apply();
 
-                tableView.Source = source;
+            tableView.Source = source;
 
-                View.Add(tableView);
+            View.Add(tableView);
 
-                tableView.ReloadData();
-            }
-            else
-            {
-               
-                var controller = new UIViewController();
-                controller.View = new UniversalView();
-                var label = new UILabel(new RectangleF(10, 50, 150, 60));
-                controller.View.Add(label);
-
-                var master = new UITableViewController();
-                var source = new MvxStandardTableViewSource(master.TableView, "TitleText CustomerName");
-                master.TableView.Source = source;
-                _splitView.ViewControllers = new UIViewController[]
-                {
-                    master,
-                    controller 
-                };
-
-                var newCon = new CustomerView();
-                UpdateDetail(newCon);
-                var set = this.CreateBindingSet<CustomerListView, CustomerListViewModel>();
-                set.Bind(source).To(vm => vm.CustomerList);
-                set.Bind(source).For(s => s.SelectionChangedCommand).To(vm => vm.ShowCustomerCommand);
-                set.Bind(label).To(vm => vm.CustomerList.Count);
-                set.Apply();
-
-                AddChildViewController(_splitView);
-                _splitView.View.Frame = this.View.Frame;
-                View.AddSubview(_splitView.View);
-                _splitView.DidMoveToParentViewController(this);
-            }
-            
+            tableView.ReloadData();
         }
 
-        public void UpdateDetail(UIViewController vc)
-        {
-            _splitView.ShowDetailViewController(vc,null);
-        }
     }
+
 }

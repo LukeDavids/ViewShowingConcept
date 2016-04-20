@@ -83,7 +83,7 @@ namespace ViewShowingConcept.Ios.Views.Container
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditView{  });
             Mvx.LazyConstructAndRegisterSingleton(() => new CustomerView {});
             Mvx.LazyConstructAndRegisterSingleton(() => new TabbedView { });
-            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListView { });
+            Mvx.LazyConstructAndRegisterSingleton(() => new CustomerSplitView { });
 
             Views = new Dictionary<ViewType, IIosView>
             {
@@ -109,8 +109,8 @@ namespace ViewShowingConcept.Ios.Views.Container
 
             if (showViewEvent.ViewFrame == ViewFrame.Detail)
             {
-                (Mvx.Resolve<CustomerListView>()).UpdateDetail(viewController);
-                return;
+                if((Views[ViewType.TabbedView] as TabbedView).UpdateDetail(viewController))
+                    return;
             }
 
             if (viewController != null)
