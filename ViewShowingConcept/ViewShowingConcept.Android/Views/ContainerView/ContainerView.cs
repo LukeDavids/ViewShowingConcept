@@ -5,7 +5,6 @@ using Android.OS;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
-using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Container;
@@ -20,6 +19,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
     {
         public Dictionary<ViewType, IAndroidView> Views { get; set; }
         public Dictionary<ViewFrame, int> ViewFrames { get; set; }
+        private ViewType CurrentFragment { get; set; }
+        public ViewType PreviousFragment { get; set; }
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -30,7 +31,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             SetupContentFrames();
             Mvx.RegisterSingleton(() => this);
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
-            //ShowViewEvent = new ShowViewEvent(ViewType.DummyTab2View, FullScreenTabs, "");
 
         }
 
@@ -81,18 +81,34 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             var viewFragment = view.Fragment;
             var viewTag = view.ViewTag;
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
-
+            
             try
             {
                 view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
                 fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
                 view.Fragment.SetMenuVisibility(true);
+
+                if (!CurrentFragment.Equals(view.ViewType) && !view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList))
+                {
+                    fragmentTransaction.AddToBackStack(viewTag);
+                }
+
+                PreviousFragment = CurrentFragment;
+                CurrentFragment = view.ViewType;
             }
             catch (System.Exception e)
             {
                 view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
                 AddFragments(showViewEvent);
                 view.Fragment.SetMenuVisibility(true);
+
+                if (!CurrentFragment.Equals(view.ViewType) && !view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList))
+                {
+                    fragmentTransaction.AddToBackStack(viewTag);
+                }
+
+                PreviousFragment = CurrentFragment;
+                CurrentFragment = view.ViewType;
             }
 
             fragmentTransaction.Commit();
@@ -100,7 +116,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
 
         public void FlushFragments()
         {
-            var fragmentTransaction =SupportFragmentManager.BeginTransaction();
+            var fragmentTransaction = SupportFragmentManager.BeginTransaction();
 
             foreach (var view in Views.Where(baseView => baseView.Value != null))
             {
@@ -109,14 +125,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
 
             fragmentTransaction.Commit();
         }
-
-        //public void HideFragments()
-        //{
-        //    foreach (var view in Views)
-        //    {
-        //        view.Value.Fragment.SetMenuVisibility(false);
-        //    }
-        //}
 
         public void AddFragments(ShowViewEvent showViewEvent)
         {
@@ -141,8 +149,9 @@ namespace ViewShowingConcept.Android.Views.ContainerView
 
         public override void OnBackPressed()
         {
+            CurrentFragment = PreviousFragment;
+
             base.OnBackPressed();
         }
-
     }
 }

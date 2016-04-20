@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Android.App;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
@@ -8,21 +9,24 @@ using Android.Views;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
 using ViewShowingConcept.Android.Views.Base;
-using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Core.Enums;
+using ViewShowingConcept.Core.ViewModels;
+using FragmentManager = Android.Support.V4.App.FragmentManager;
 
 namespace ViewShowingConcept.Android.Views
 {
     [Register("viewshowingconcept.android.views.TabbedView")]
     public class TabbedView : BaseView<TabbedViewModel>
     {
-        public CoordinatorLayout _coordinatorLayout;
-        private List<MvxFragmentPagerAdapter.FragmentInfo> _fragments;
-        public static ViewPager _viewPager;
-        public static TabLayout tabLayout;
+        public CoordinatorLayout CoordinatorLayout { get; set; }
+        private static FragmentManager StaticFragmentManager { get; set; }
+        public static ViewPager ViewPager { get; set; }
+        public static TabLayout TabLayout { get; set; }
+        public static Tabs CurrentTab { get; set; }
 
         public TabbedView()
         {
+            CurrentTab = Tabs.CustomersTab;
             ViewType = ViewType.TabbedView;
             ViewTag = ViewType.ToString();
         }
@@ -30,19 +34,62 @@ namespace ViewShowingConcept.Android.Views
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ViewType = ViewType.TabbedView;
-            base.OnCreate(savedInstanceState);
+            OnCreate(savedInstanceState);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             return this.BindingInflate(Resource.Layout.TabbedView, null);
         }
 
         public override void OnViewCreated(View view, Bundle savedInstanceState)
         {
-            _coordinatorLayout = view.FindViewById<CoordinatorLayout>(Resource.Id.main_content);
-            _viewPager = view.FindViewById<ViewPager>(Resource.Id.viewpager);
+            CoordinatorLayout = view.FindViewById<CoordinatorLayout>(Resource.Id.main_content);
+            ViewPager = view.FindViewById<ViewPager>(Resource.Id.viewpager);
+            List<MvxFragmentPagerAdapter.FragmentInfo> _fragments;
+            StaticFragmentManager = FragmentManager;
+            _fragments = CreateTabs();
 
-            if (_viewPager != null)
+            ViewPager.PageSelected += (object sender, ViewPager.PageSelectedEventArgs e) =>
             {
-                _fragments = new List<MvxFragmentPagerAdapter.FragmentInfo>
+                switch (e.Position)
+                {
+                    case 0:
+                        CurrentTab = Tabs.CustomersTab;
+                        break;
+                    case 1:
+                        CurrentTab = Tabs.Dummy1Tab;
+                        ContainerView.PreviousFragment = ViewType.None;
+                        FragmentManager.PopBackStack(null, FragmentManager.PopBackStackInclusive);
+                        break;
+                    case 2:
+                        CurrentTab = Tabs.Dummy2Tab;
+                        ContainerView.PreviousFragment = ViewType.None;
+                        FragmentManager.PopBackStack(null, FragmentManager.PopBackStackInclusive);
+                        break;
+                    case 3:
+                        CurrentTab = Tabs.Dummy3Tab;
+                        ContainerView.PreviousFragment = ViewType.None;
+                        FragmentManager.PopBackStack(null, FragmentManager.PopBackStackInclusive);
+                        break;
+                    default:
+                        CurrentTab = Tabs.CustomersTab;
+                        ContainerView.PreviousFragment = ViewType.None;
+                        FragmentManager.PopBackStack(null, FragmentManager.PopBackStackInclusive);
+                        break;
+                }
+            };
+
+            TabLayout = view.FindViewById<TabLayout>(Resource.Id.tabs);
+            TabLayout.SetTabTextColors(Color.Gray, Color.Black);
+            TabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#BA77FF"));
+            ViewPager.OffscreenPageLimit = _fragments.Count;
+            TabLayout.SetupWithViewPager(ViewPager);
+            Activity.SetTitle(Resource.String.CustomerView);
+        }
+
+        public static List<MvxFragmentPagerAdapter.FragmentInfo> CreateTabs()
+        {
+            if (ViewPager != null)
+            {
+                List<MvxFragmentPagerAdapter.FragmentInfo> _fragments = new List<MvxFragmentPagerAdapter.FragmentInfo>
                 {
                     new MvxFragmentPagerAdapter.FragmentInfo("Customers", typeof (CustomerSplitView),
                         typeof (CustomerSplitViewModel)),
@@ -53,15 +100,11 @@ namespace ViewShowingConcept.Android.Views
                     new MvxFragmentPagerAdapter.FragmentInfo("Dummy Tab 3", typeof (DummyTab3View),
                         typeof (DummyTab3ViewModel))
                 };
-                _viewPager.Adapter = new MvxFragmentPagerAdapter(Context, FragmentManager, _fragments);
-            }
+                ViewPager.Adapter = new MvxFragmentPagerAdapter(Application.Context, StaticFragmentManager, _fragments);
 
-            tabLayout = view.FindViewById<TabLayout>(Resource.Id.tabs);
-            tabLayout.SetTabTextColors(Color.Gray, Color.Black);
-            tabLayout.SetSelectedTabIndicatorColor(Color.ParseColor("#BA77FF"));
-            _viewPager.OffscreenPageLimit = _fragments.Count;
-            tabLayout.SetupWithViewPager(_viewPager);
-            Activity.SetTitle(Resource.String.CustomerView);
+                return _fragments;
+            }
+            return null;
         }
     }
 }

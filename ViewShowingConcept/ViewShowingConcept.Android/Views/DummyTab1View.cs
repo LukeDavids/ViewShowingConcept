@@ -21,7 +21,7 @@ namespace ViewShowingConcept.Android.Views
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ViewType = ViewType.DummyTab1View;
-
+            
             base.OnCreate(savedInstanceState);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
             return this.BindingInflate(Resource.Layout.DummyTab1View, null);

@@ -31,10 +31,10 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             }
         }
 
-        public Stack<ShowViewEvent> CustomersBackStack { get; set; }
-        public Stack<ShowViewEvent> DummyTab1BackStack { get; set; }
-        public Stack<ShowViewEvent> DummyTab2BackStack { get; set; }
-        public Stack<ShowViewEvent> DummyTab3BackStack { get; set; }
+        public static Stack<ShowViewEvent> CustomersBackStack { get; set; }
+        public static Stack<ShowViewEvent> DummyTab1BackStack { get; set; }
+        public static Stack<ShowViewEvent> DummyTab2BackStack { get; set; }
+        public static Stack<ShowViewEvent> DummyTab3BackStack { get; set; }
 
         private void RegisterViewModels()
         {
@@ -70,16 +70,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             DummyTab2BackStack = new Stack<ShowViewEvent>();
             DummyTab3BackStack = new Stack<ShowViewEvent>();
 
-            CustomersBackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
-
-            DummyTab1BackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
-            DummyTab1BackStack.Push(new ShowViewEvent(DummyTab1View, FullScreenTabs, ""));
-
-            DummyTab2BackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
-            DummyTab2BackStack.Push(new ShowViewEvent(DummyTab2View, FullScreenTabs, ""));
-
-            DummyTab3BackStack.Push(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
-            DummyTab3BackStack.Push(new ShowViewEvent(DummyTab3View, FullScreenTabs, ""));
+            CustomersBackStack.Push(new ShowViewEvent(CustomerList, HalfScreenTop, ""));
         }
     }
 }
