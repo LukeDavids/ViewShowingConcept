@@ -3,13 +3,46 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MvvmCross.Plugins.Messenger;
 
 namespace ViewShowingConcept.Core.Models
 {
     public class Customer
     {
-        public Customer() {
-        }
+		private readonly MvxSubscriptionToken _token;
+		private double _lat;
+		private double _lng;
+
+		public Customer() {
+		}
+
+		Customer(ILocationService service, IMvxMessenger messenger) {
+
+			_token = messenger.Subscribe<LocationMessage> (OnLocationMessage);
+		}
+
+		private void OnLocationMessage(LocationMessage locationMessage)
+		{
+			Lat = locationMessage.Lat;
+			Lng = locationMessage.Lng;
+		}
+
+		public double Lat
+		{
+			get { return _lat; }  
+			set {
+				_lat = value;
+			}
+		}
+
+		public double Lng
+		{
+			get { return _lng; }
+			set {
+				_lng = value;
+			}
+		}
+
 
         private string _id;
         public string Id {

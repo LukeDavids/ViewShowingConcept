@@ -56,10 +56,14 @@
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\DummyTab3ViewModel.cs" />
     <Compile Include="ViewModels\TabbedViewModel.cs" />
+    <Compile Include="Services\Location\ILocationService.cs" />
+    <Compile Include="Services\Location\LocationService.cs" />
+    <Compile Include="Services\Location\LocationMessage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Managers\" />
     <Folder Include="ViewModels\ViewModelTemplates\" />
+    <Folder Include="Services\Location\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -78,6 +82,12 @@
     </Reference>
     <Reference Include="MvvmCross.Platform, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\packages\MvvmCross.Platform.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Location">
+      <HintPath>..\packages\MvvmCross.Plugin.Location.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Location.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.Messenger">
+      <HintPath>..\packages\MvvmCross.Plugin.Messenger.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.Messenger.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

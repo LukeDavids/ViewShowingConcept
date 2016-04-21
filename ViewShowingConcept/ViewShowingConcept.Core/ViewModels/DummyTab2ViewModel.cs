@@ -16,12 +16,6 @@ namespace ViewShowingConcept.Core.ViewModels
             get { return _name; }
             set { _name = value; RaisePropertyChanged(() => Name); }
         }
-			
-		private static DummyTab2ViewModel _instance = null;	
-		public static DummyTab2ViewModel Instance
-		{
-			get { return getInstance ();}
-		}
 
         private string _image;
         public string Image
@@ -36,14 +30,6 @@ namespace ViewShowingConcept.Core.ViewModels
         {
             ShowView(ViewType.DummyTab2View, ViewFrame.FullScreenTabs);
         }
-			
-		private static DummyTab2ViewModel getInstance()
-		{
-			if (_instance == null)
-				_instance = new DummyTab2ViewModel ();
-
-			return _instance;
-		}
 
         private string _stringParam;
 

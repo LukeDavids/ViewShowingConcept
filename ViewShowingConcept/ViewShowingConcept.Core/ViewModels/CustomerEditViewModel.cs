@@ -6,20 +6,54 @@ using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
 using static ViewShowingConcept.Core.Enums.ViewType;
 using static ViewShowingConcept.Core.Enums.ViewFrame;
+using MvvmCross.Plugins.Messenger;
+using MvvmCross.Plugins.Location;
+using ViewShowingConcept.Core;
 
 namespace ViewShowingConcept.Core.ViewModels
 {
     public class CustomerEditViewModel : BaseViewModel
     {
-        public CustomerEditViewModel()
+		private string _stringParam;
+		private readonly MvxSubscriptionToken _token;
+		private double _lat;
+		private double _lng;
+
+		public CustomerEditViewModel()
 		{
-            StringPassedAsParameter = "nothing yet!";
+
         }
 
-        private string _stringParam;
+		public CustomerEditViewModel(ILocationService service, IMvxMessenger messenger)
+		{
+			_token = messenger.Subscribe<LocationMessage> (OnLocationMessage);
 
-		private static CustomerEditViewModel _instance = null;	
+		}
 
+		private void OnLocationMessage(LocationMessage locationMessage)
+		{
+			Lat = locationMessage.Lat;
+			Lng = locationMessage.Lng;
+		}
+			
+		public double Lat
+		{
+			get { return _lat; }  
+			set {
+				_lat = value;
+				RaisePropertyChanged(() => Lat);
+			}
+		}
+			
+		public double Lng
+		{
+			get { return _lng; }
+			set {
+				_lng = value;
+				RaisePropertyChanged(() => Lng);
+			}
+		}
+			
         public string ButtonText => "Customer Details!!";
 
         public ICommand ShowDetailsCommand
@@ -34,19 +68,6 @@ namespace ViewShowingConcept.Core.ViewModels
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }
         }
-			
-		public static CustomerEditViewModel Instance
-		{
-			get { return getInstance();}
-		}
-			
-		private static CustomerEditViewModel getInstance()
-		{
-			if (_instance == null) 
-				_instance = new CustomerEditViewModel ();
-
-			return _instance;
-		}
 
         public override async Task Initialise(ShowViewEvent viewEvent)
         {

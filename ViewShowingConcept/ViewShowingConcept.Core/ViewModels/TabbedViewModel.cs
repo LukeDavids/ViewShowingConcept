@@ -25,12 +25,6 @@ namespace ViewShowingConcept.Core.ViewModels
         
         public int NumTabs => _tabs.Length;
 
-		private static TabbedViewModel _instance = null;
-		public static TabbedViewModel Instance
-		{
-			get{ return getInstance (); }
-		}
-
         public TabbedViewModel()
         {
             StringPassedAsParameter = "nothing yet!";
@@ -49,14 +43,6 @@ namespace ViewShowingConcept.Core.ViewModels
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }
         }
-			
-		private static TabbedViewModel getInstance()
-		{
-			if (_instance == null)
-				_instance = new TabbedViewModel ();
-
-			return _instance;
-		}
 
         public override async Task Initialise(ShowViewEvent viewEvent)
         {

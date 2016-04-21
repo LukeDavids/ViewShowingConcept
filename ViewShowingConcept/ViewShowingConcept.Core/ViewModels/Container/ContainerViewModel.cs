@@ -5,6 +5,8 @@ using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
 using static ViewShowingConcept.Core.Enums.ViewType;
+using ViewShowingConcept.Core.Interfaces;
+using MvvmCross.Plugins.Messenger;
 
 namespace ViewShowingConcept.Core.ViewModels.Container
 {
@@ -16,7 +18,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             RegisterViewModels();
             Mvx.RegisterSingleton(() => this);
         }
-
+			
         public Dictionary<ViewType, BaseViewModel> ViewModels { get; set; }
 
         private ShowViewEvent _showViewEvent;
@@ -35,20 +37,19 @@ namespace ViewShowingConcept.Core.ViewModels.Container
 
         private void RegisterViewModels()
         {
-			Mvx.LazyConstructAndRegisterSingleton(() => BaseViewModel.BaseInstance);
-			Mvx.LazyConstructAndRegisterSingleton(() => CustomerDetailViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => CustomerEditViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => CustomerListViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => CustomerViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => CustomerSplitViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => TabbedViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => DummyTab1ViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => DummyTab2ViewModel.Instance);
-			Mvx.LazyConstructAndRegisterSingleton(() => DummyTab3ViewModel.Instance);
+			Mvx.LazyConstructAndRegisterSingleton(() => new BaseViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new CustomerDetailViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new CustomerEditViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new CustomerListViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new CustomerViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new CustomerSplitViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new TabbedViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab1ViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab2ViewModel());
+			Mvx.LazyConstructAndRegisterSingleton(() => new DummyTab3ViewModel());
 
-            ViewModels = new Dictionary<ViewType, BaseViewModel>
-            {
-				
+			ViewModels = new Dictionary<ViewType, BaseViewModel>
+			{
 				{CustomerDetails, Mvx.Resolve<CustomerDetailViewModel>()},
                 {CustomerEdit, Mvx.Resolve<CustomerEditViewModel>()},
                 {CustomerList, Mvx.Resolve<CustomerListViewModel>()},

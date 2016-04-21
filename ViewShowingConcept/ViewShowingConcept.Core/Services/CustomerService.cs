@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViewShowingConcept.Core.Models;
+using MvvmCross.Plugins.Messenger;
 
 namespace ViewShowingConcept.Core.Services
 {
     public static class CustomerService
     {
+		
+
 
         public static List<Customer> getCustomerList() {
             Customer CustomerA = new Customer("001", "John", 35);

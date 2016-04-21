@@ -13,14 +13,6 @@ namespace ViewShowingConcept.Core.ViewModels
 
         private string _stringParam;
 
-		private static CustomerSplitViewModel _instance = null;	
-
-		public static CustomerSplitViewModel Instance {
-			get{
-				return getInstance ();
-			}
-		}
-
         public string StringPassedAsParameter
         {
             get { return _stringParam; }
@@ -30,14 +22,6 @@ namespace ViewShowingConcept.Core.ViewModels
                 RaisePropertyChanged(() => StringPassedAsParameter);
             }
         }
-			
-		private static CustomerSplitViewModel getInstance()
-		{
-			if (_instance == null)
-				_instance = new CustomerSplitViewModel ();
-
-			return _instance;
-		}
 
         public override async Task Initialise(ShowViewEvent viewEvent)
         {

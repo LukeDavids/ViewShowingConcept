@@ -17,28 +17,8 @@ namespace ViewShowingConcept.Core.ViewModels
 		{
             StringPassedAsParameter = "nothing yet!";
         }
-			
-		private static CustomerDetailViewModel _instance = null;
 
         public string ButtonText => "Edit Customer";
-
-
-
-		public static CustomerDetailViewModel Instance
-		{
-			get{
-				return getInstance();
-			}
-		}
-			
-		private static CustomerDetailViewModel getInstance()
-		{
-			if (_instance == null)
-				_instance = new CustomerDetailViewModel();
-
-			return _instance;
-		}
-
 
         public string StringPassedAsParameter
         {
