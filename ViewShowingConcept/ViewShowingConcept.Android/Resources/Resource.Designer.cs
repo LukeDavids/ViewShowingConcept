@@ -3683,6 +3683,9 @@ namespace ViewShowingConcept.Android
 			// aapt resource value: 0x7f07006f
 			public const int tab_content_frame = 2131165295;
 			
+			// aapt resource value: 0x7f070089
+			public const int tabcontent = 2131165321;
+			
 			// aapt resource value: 0x7f070088
 			public const int tabs = 2131165320;
 			
@@ -3724,9 +3727,6 @@ namespace ViewShowingConcept.Android
 			
 			// aapt resource value: 0x7f07000a
 			public const int view_offset_helper = 2131165194;
-			
-			// aapt resource value: 0x7f070089
-			public const int viewpager = 2131165321;
 			
 			// aapt resource value: 0x7f070023
 			public const int withText = 2131165219;
@@ -3950,16 +3950,19 @@ namespace ViewShowingConcept.Android
 			public const int select_dialog_singlechoice_material = 2130968632;
 			
 			// aapt resource value: 0x7f040039
-			public const int SplashScreen = 2130968633;
+			public const int SlidingTabStrip = 2130968633;
 			
 			// aapt resource value: 0x7f04003a
-			public const int subview_customeritem = 2130968634;
+			public const int SplashScreen = 2130968634;
 			
 			// aapt resource value: 0x7f04003b
-			public const int support_simple_spinner_dropdown_item = 2130968635;
+			public const int subview_customeritem = 2130968635;
 			
 			// aapt resource value: 0x7f04003c
-			public const int TabbedView = 2130968636;
+			public const int support_simple_spinner_dropdown_item = 2130968636;
+			
+			// aapt resource value: 0x7f04003d
+			public const int TabbedView = 2130968637;
 			
 			static Layout()
 			{

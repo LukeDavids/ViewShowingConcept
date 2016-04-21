@@ -2372,6 +2372,7 @@ containing a value of this type.
         public static final int submit_area=0x7f070067;
         public static final int tabMode=0x7f07000f;
         public static final int tab_content_frame=0x7f07006f;
+        public static final int tabcontent=0x7f070089;
         public static final int tabs=0x7f070088;
         public static final int text=0x7f070082;
         public static final int text2=0x7f070080;
@@ -2386,7 +2387,6 @@ containing a value of this type.
         public static final int useLogo=0x7f070016;
         public static final int view_frame=0x7f07006e;
         public static final int view_offset_helper=0x7f07000a;
-        public static final int viewpager=0x7f070089;
         public static final int withText=0x7f070023;
         public static final int wrap_content=0x7f070024;
     }
@@ -2456,10 +2456,11 @@ containing a value of this type.
         public static final int select_dialog_item_material=0x7f040036;
         public static final int select_dialog_multichoice_material=0x7f040037;
         public static final int select_dialog_singlechoice_material=0x7f040038;
-        public static final int splashscreen=0x7f040039;
-        public static final int subview_customeritem=0x7f04003a;
-        public static final int support_simple_spinner_dropdown_item=0x7f04003b;
-        public static final int tabbedview=0x7f04003c;
+        public static final int slidingtabstrip=0x7f040039;
+        public static final int splashscreen=0x7f04003a;
+        public static final int subview_customeritem=0x7f04003b;
+        public static final int support_simple_spinner_dropdown_item=0x7f04003c;
+        public static final int tabbedview=0x7f04003d;
     }
     public static final class mipmap {
         public static final int icon=0x7f030000;

@@ -1,7 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using Android.App;
+using Android.Content;
+using Android.Graphics;
 using Android.OS;
+using Android.Util;
+using Android.Views;
+using Android.Widget;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Platform;
@@ -11,6 +16,8 @@ using ViewShowingConcept.Core.ViewModels.Container;
 using IAndroidView = ViewShowingConcept.Android.Interfaces.IAndroidView;
 using static ViewShowingConcept.Core.Enums.ViewType;
 using static ViewShowingConcept.Core.Enums.ViewFrame;
+using System;
+using Android.Support.V4.View;
 
 namespace ViewShowingConcept.Android.Views.ContainerView
 {
@@ -39,7 +46,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             ViewFrames = new Dictionary<ViewFrame, int>
             {
                 [FullScreen]        = Resource.Id.content_frame,
-                [FullScreenTabs]    = Resource.Id.viewpager,
+                [FullScreenTabs]    = Resource.Id.tabcontent,
                 [HalfScreenTop]     = Resource.Id.list_frame,
                 [HalfScreenBottom]  = Resource.Id.view_frame,
                 [TabContents]       = Resource.Id.tab_content_frame
@@ -59,7 +66,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             }
         }
         
-        private void SetupViews()
+        public void SetupViews()
         {
             Views = new Dictionary<ViewType, IAndroidView>
             {
@@ -70,7 +77,8 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 {CustomerSplit,             new CustomerSplitView()},
                 {ViewType.TabbedView,       new TabbedView()},
                 {ViewType.DummyTab1View,    new DummyTab1View()},
-                {ViewType.DummyTab2View,    new DummyTab2View()}
+                {ViewType.DummyTab2View,    new DummyTab2View()},
+                {ViewType.DummyTab3View,    new DummyTab3View()}
             };
         }
 
@@ -81,7 +89,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             var viewFragment = view.Fragment;
             var viewTag = view.ViewTag;
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
-            
             try
             {
                 view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
@@ -154,4 +161,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             base.OnBackPressed();
         }
     }
+
+    
 }
