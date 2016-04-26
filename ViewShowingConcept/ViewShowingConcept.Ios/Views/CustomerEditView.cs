@@ -28,7 +28,8 @@ namespace ViewShowingConcept.Ios.Views
 
             // Perform any additional setup after loading the view
             var button = new UIButton(new RectangleF(10,100,140,15));
-            button.SetTitle("Show Detail", UIControlState.Normal);
+            button.SetTitle("Back", UIControlState.Normal);
+          
             var set = this.CreateBindingSet<CustomerEditView, CustomerEditViewModel>();
             View.Add(button);
             set.Bind(button).To(vm => vm.ShowDetailsCommand);

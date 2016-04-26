@@ -11,6 +11,7 @@ namespace ViewShowingConcept.Core.ViewModels
     public class DummyTab1ViewModel : BaseViewModel, ITab
     {
         public IMvxViewModel Page => this;
+        public ViewType ViewType => ViewType.DummyTab1View;
         private string _name = "Apple";
         public string Name
         {

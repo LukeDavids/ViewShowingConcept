@@ -34,6 +34,7 @@ namespace ViewShowingConcept.Core.ViewModels
         }
 
         public IMvxViewModel Page => this;
+        public ViewType ViewType => ViewType.CustomerSplit;
         private string _name = "Customers";
         public string Name
         {
@@ -46,10 +47,19 @@ namespace ViewShowingConcept.Core.ViewModels
             get { return _image; }
             set { _image = value; RaisePropertyChanged(() => Image); }
         }
+        private IMvxViewModel _master = Mvx.Resolve<CustomerListViewModel>();
+        public IMvxViewModel Master
+        {
+            get { return _master; }
+            set { _master = value; RaisePropertyChanged(() => Master); }
+        }
 
-        public IMvxViewModel Master { get; set; } = Mvx.Resolve<CustomerListViewModel>();
-
-        public IMvxViewModel Detail { get; set; } = Mvx.Resolve<CustomerViewModel>();
+        private IMvxViewModel _detail = Mvx.Resolve<CustomerViewModel>();
+        public IMvxViewModel Detail
+        {
+            get { return _detail; }
+            set { _detail = value; RaisePropertyChanged(() => Detail); }
+        }
 
         public void AlertViewModel()
         {

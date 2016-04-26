@@ -20,6 +20,11 @@ namespace ViewShowingConcept.Core.ViewModels.Base
             set { _isBusy = value; RaisePropertyChanged(() => IsBusy); }
         }
 
+        public void ShowView(ViewType viewType, ViewFrame viewFrame, string parameter, object[] args)
+        {
+            ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter, args);
+        }
+
         public void ShowView(ViewType viewType, ViewFrame viewFrame, string parameter)
         {
             ContainerViewModel.ShowViewEvent = new ShowViewEvent(viewType, viewFrame, parameter);
@@ -28,6 +33,21 @@ namespace ViewShowingConcept.Core.ViewModels.Base
         public void ShowView(ViewType viewType, ViewFrame viewFrame)
         {
             ShowView(viewType, viewFrame, "none");
+        }
+
+        public void ViewDidShow(ViewType viewType, ViewFrame viewFrame, string parameter, object[] args)
+        {
+            ContainerViewModel.ViewDidShowEvent = new ViewDidShowEvent(viewType, viewFrame, parameter, args);
+        }
+
+        public void ViewDidShow(ViewType viewType, ViewFrame viewFrame, string parameter)
+        {
+            ContainerViewModel.ViewDidShowEvent = new ViewDidShowEvent(viewType, viewFrame, parameter);
+        }
+
+        public void ViewDidShow(ViewType viewType, ViewFrame viewFrame)
+        {
+            ViewDidShow(viewType, viewFrame, "none");
         }
 
         public IMvxCommand InitialiseCommand => new MvxAsyncCommand<ShowViewEvent>(Initialise);

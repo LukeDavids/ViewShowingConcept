@@ -30,6 +30,16 @@ namespace ViewShowingConcept.Core.ViewModels.Container
                 RaisePropertyChanged(() => ShowViewEvent);
             }
         }
+        private ViewDidShowEvent _viewDidShowEvent;
+        public ViewDidShowEvent ViewDidShowEvent
+        {
+            get { return _viewDidShowEvent; }
+            set
+            {
+                _viewDidShowEvent = value;
+                RaisePropertyChanged(() => ViewDidShowEvent);
+            }
+        }
 
         public Stack<ShowViewEvent> CustomersBackStack { get; set; }
         public Stack<ShowViewEvent> DummyTab1BackStack { get; set; }

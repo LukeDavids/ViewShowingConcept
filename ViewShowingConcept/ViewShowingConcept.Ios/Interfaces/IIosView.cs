@@ -12,8 +12,7 @@ namespace ViewShowingConcept.Ios.Interfaces
         IMvxIosView Controller { get; }
         ViewType ViewType { get; }
         string ViewTag { get; set; }
-
-        void ShowViewModel();
+        int ChildNum { get; set; }
 
     }
 }

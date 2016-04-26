@@ -94,7 +94,9 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bindings\MasterDetailMasterBinding.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Interfaces\IIosNavigator.cs" />
     <Compile Include="Interfaces\IIosView.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

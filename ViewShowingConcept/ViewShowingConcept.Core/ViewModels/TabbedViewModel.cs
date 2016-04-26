@@ -2,6 +2,7 @@
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Core.Views;
 using MvvmCross.Platform;
+using MvvmCross.Platform.Core;
 using ViewShowingConcept.Core.Interfaces;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels.Base;
@@ -35,17 +36,28 @@ namespace ViewShowingConcept.Core.ViewModels
             get { return _tabImages; }
             set { _tabImages = value; RaisePropertyChanged(() => TabImages); }
         }
+
+        private int _numTabs;
+        public int NumTabs
+        {
+            get { return _numTabs;}
+            set {
+                _numTabs = Tabs.Length;
+                RaisePropertyChanged(() => NumTabs);
+            }
+        }
         
-        public int NumTabs => _tabs.Length;
 
 
         public TabbedViewModel()
         {
             StringPassedAsParameter = "nothing yet!";
+            
             _tabs = new ITab[]
             {
                 Tab1,Tab2,Tab3,Tab4
             };
+            NumTabs = Tabs.Length;
         }
 
         public string StringPassedAsParameter
@@ -62,11 +74,6 @@ namespace ViewShowingConcept.Core.ViewModels
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
         }
-
-        //Used to Init new ViewModel
-        public void ShowViewModel()
-        {
-            ShowViewModel<TabbedViewModel>(new {});
-        }
+        
     }
 }

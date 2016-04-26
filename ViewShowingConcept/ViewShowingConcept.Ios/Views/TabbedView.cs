@@ -1,25 +1,47 @@
 using System;
+using System.Collections.Generic;
 using UIKit;
 using Foundation;
+using MvvmCross.Binding.BindingContext;
 using MvvmCross.iOS.Views;
+using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Interfaces;
+using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels;
+using ViewShowingConcept.Core.ViewModels.Container;
+using ViewShowingConcept.Ios.Interfaces;
 using ViewShowingConcept.Ios.Views.Base;
 
 namespace ViewShowingConcept.Ios.Views
 {
     [Register("TabbedView")]
-    public class TabbedView : BaseView<TabbedViewModel>
+    public class TabbedView : BaseView<TabbedViewModel>, IUITabBarControllerDelegate, IIosNavigator
     {
-        private static int _instance = 0;
+        public Dictionary<ViewType, IIosView> Views { get; set; } = new Dictionary<ViewType, IIosView>();
+        public ViewType CurrentSelected { get; set; }
         private int _createdSoFar = 0;
         private UITabBarController _tabBar;
+        public int NumTabs { get; }
+
         public TabbedView()
         {
             ViewType = ViewType.TabbedView;
             ViewTag = ViewType.ToString();
-            _instance++;
+        }
+
+        public void UpdateView(ShowViewEvent showViewEvent)
+        {
+            if (Views.ContainsKey(showViewEvent.ViewType))
+            {
+                CurrentSelected = showViewEvent.ViewType;
+                var view = Views[showViewEvent.ViewType];
+                view.BaseViewModel.InitialiseCommand.Execute(showViewEvent);
+            }
+            else
+            {
+                ((IIosNavigator)Views[CurrentSelected]).UpdateView(showViewEvent);
+            }
         }
 
         public override void DidReceiveMemoryWarning()
@@ -36,9 +58,12 @@ namespace ViewShowingConcept.Ios.Views
 
             base.ViewDidLoad();
 
+            SetupBindings();
+
             // Perform any additional setup after loading the view
             
             _tabBar = new UITabBarController();
+            _tabBar.Delegate = this;
             SetTabs();
             //AddGestureRecognition();
 
@@ -48,6 +73,39 @@ namespace ViewShowingConcept.Ios.Views
             View.AddSubview(_tabBar.View);
             _tabBar.DidMoveToParentViewController(this);
             
+        }
+
+        private void SetTabs()
+        {
+            string[] images = ViewModel.TabImages;
+            //Please be true
+            var x = ViewModel.NumTabs == NumTabs;
+            UIViewController[] controllers = new UIViewController[ViewModel.NumTabs];
+            for (var i = 0; i < ViewModel.NumTabs; i++)
+            {
+                ITab tab = ViewModel.Tabs[i];
+                Views[tab.ViewType] = this.CreateViewControllerFor(tab.Page) as IIosView;
+                tab.Image = i < images.Length ? images[i] : "";
+                controllers[i] = CreateTabFor(tab);
+            }
+            _tabBar.ViewControllers = controllers;
+
+            
+        }
+        private UIViewController CreateTabFor(ITab tab)
+        {
+            var screen = Views[tab.ViewType].Controller as UIViewController;
+            SetTitleAndTabBarItem(tab.Name, tab.Image, screen);
+            return screen;
+        }
+
+        private void SetTitleAndTabBarItem(string title, string imageName, UIViewController screen)
+        {
+            screen.Title = title;
+            var image = UIImage.FromBundle("Images/Tabs/" + imageName + ".png");
+            screen.TabBarItem = new UITabBarItem(title, image, _createdSoFar);
+            ((IIosView)screen).ChildNum = _createdSoFar;
+            _createdSoFar++;
         }
 
         private void AddGestureRecognition()
@@ -61,36 +119,6 @@ namespace ViewShowingConcept.Ios.Views
             UISwipeGestureRecognizer rightToLeft = new UISwipeGestureRecognizer(rAction);
             rightToLeft.Direction = UISwipeGestureRecognizerDirection.Left;
             _tabBar.TabBar.AddGestureRecognizer(rightToLeft);
-        }
-
-        private void SetTabs()
-        {
-            string[] images = ViewModel.TabImages;
-            
-            UIViewController[] controllers = new UIViewController[ViewModel.NumTabs];
-            for (var i = 0; i < ViewModel.NumTabs; i++)
-            {
-                ITab tab = ViewModel.Tabs[i];
-                tab.Image = i< images.Length ? images[i] : "";
-                controllers[i] = CreateTabFor(tab);
-            }
-            _tabBar.ViewControllers = controllers;
-        }
-        private UIViewController CreateTabFor(ITab tab)
-        {
-            var controller = new UINavigationController();
-            var screen = this.CreateViewControllerFor(tab.Page) as UIViewController;
-            SetTitleAndTabBarItem(tab.Name, tab.Image, screen);
-            controller.PushViewController(screen, false);
-            return controller;
-        }
-
-        private void SetTitleAndTabBarItem(string title, string imageName, UIViewController screen)
-        {
-            screen.Title = title;
-            var image = UIImage.FromBundle("Images/Tabs/" + imageName + ".png");
-            screen.TabBarItem = new UITabBarItem(title, image, _createdSoFar);
-            _createdSoFar++;
         }
         private void LeftToRight()
         {
@@ -108,13 +136,11 @@ namespace ViewShowingConcept.Ios.Views
             _tabBar.SelectedViewController = _tabBar.ViewControllers[_tabBar.SelectedIndex];
         }
 
-        public bool UpdateDetail(UIViewController vc)
+        private void SetupBindings()
         {
-            var nav=(_tabBar.ViewControllers[2]);
-            var nav1=nav.SplitViewController;
-            var nav2 = nav.ChildViewControllers[0];
-            //nav1.ShowDetailViewController(vc,null);
-            return ((CustomerSplitView)nav2).UpdateDetail(vc);
+            var set = this.CreateBindingSet<TabbedView, TabbedViewModel>();
+            set.Bind(this).For(v => v.NumTabs).To(vm => vm.NumTabs);
+            set.Apply();
         }
     }
 }

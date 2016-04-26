@@ -34,18 +34,15 @@ namespace ViewShowingConcept.Core.ViewModels
             }
         }
 
-        public ICommand ShowTabbedCommand
+        public IMvxCommand ShowTabbedCommand
             => new MvxCommand(() => ShowView(TabbedView, FullScreen, DateTime.UtcNow.ToString()));
+
+        public IMvxCommand ShowEditCommand
+            => new MvxCommand(() => ShowView(CustomerEdit, Modal, DateTime.UtcNow.ToString()));
 
         public override async Task Initialise(ShowViewEvent viewEvent)
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
-        }
-
-        //Used to Init new ViewModel
-        public void ShowViewModel()
-        {
-            ShowViewModel<CustomerDetailViewModel>(new {});
         }
     }
 }

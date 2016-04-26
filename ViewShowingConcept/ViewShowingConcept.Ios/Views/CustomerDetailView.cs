@@ -36,13 +36,20 @@ namespace ViewShowingConcept.Ios.Views
             base.ViewDidLoad();
 
             // Perform any additional setup after loading the view
-            var button = new UIButton(new RectangleF(10, 100, 140, 15));
+            var button = new UIButton(new RectangleF(10, 100, 140, 20));
             button.SetTitle("Show Tabs", UIControlState.Normal);
             button.SetTitleColor(UIColor.Black, UIControlState.Normal);
-           
-            var set = this.CreateBindingSet<CustomerDetailView, CustomerDetailViewModel>();
+
+            var editButton = new UIButton(new RectangleF(10, 130, 140, 20));
+            editButton.SetTitle("Edit", UIControlState.Normal);
+            editButton.SetTitleColor(UIColor.Black, UIControlState.Normal);
+
             View.Add(button);
+            View.Add(editButton);
+
+            var set = this.CreateBindingSet<CustomerDetailView, CustomerDetailViewModel>();
             set.Bind(button).To(vm => vm.ShowTabbedCommand);
+            set.Bind(editButton).To(vm => vm.ShowEditCommand);
             set.Apply();
             
         }

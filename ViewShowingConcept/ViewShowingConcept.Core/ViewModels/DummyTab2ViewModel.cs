@@ -10,6 +10,7 @@ namespace ViewShowingConcept.Core.ViewModels
     public class DummyTab2ViewModel : BaseViewModel, ITab
     {
         public IMvxViewModel Page => this;
+        public ViewType ViewType => ViewType.DummyTab2View;
         private string _name = "Breaks";
         public string Name
         {
@@ -24,7 +25,7 @@ namespace ViewShowingConcept.Core.ViewModels
             set { _image = value; RaisePropertyChanged(() => Image); }
         }
         public DummyTab2ViewModel() {
-            //StringPassedAsParameter = "nothing yet!";
+            StringPassedAsParameter = "nothing yet!";
         }
         public void AlertViewModel()
         {

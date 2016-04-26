@@ -8,5 +8,7 @@
         HalfScreenBottom,
         FullScreenTabs,
         Detail,
+        Modal,
+        DismissModal,
     }
 }

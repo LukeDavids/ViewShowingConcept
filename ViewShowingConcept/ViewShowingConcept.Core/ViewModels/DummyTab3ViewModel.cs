@@ -10,6 +10,7 @@ namespace ViewShowingConcept.Core.ViewModels
     public class DummyTab3ViewModel : BaseViewModel, ITab
     {
         public IMvxViewModel Page => this;
+        public ViewType ViewType => ViewType.DummyTab3View;
         private string _name = "Piggy";
         public string Name
         {

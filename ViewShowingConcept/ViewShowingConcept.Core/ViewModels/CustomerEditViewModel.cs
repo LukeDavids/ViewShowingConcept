@@ -21,7 +21,7 @@ namespace ViewShowingConcept.Core.ViewModels
         public string ButtonText => "Customer Details!!";
 
         public ICommand ShowDetailsCommand
-            => new MvxCommand(() => ShowView(CustomerDetails, FullScreen, DateTime.UtcNow.ToString()));
+            => new MvxCommand(() => ShowView(CustomerDetails, DismissModal, "dismiss"));
 
         public string StringPassedAsParameter
         {
@@ -36,12 +36,6 @@ namespace ViewShowingConcept.Core.ViewModels
         public override async Task Initialise(ShowViewEvent viewEvent)
         {
             await Task.Run(() => StringPassedAsParameter = viewEvent.Parameter);
-        }
-
-        //Used to Init new ViewModel
-        public void ShowViewModel()
-        {
-            ShowViewModel<CustomerEditViewModel>(new {});
         }
     }
 }

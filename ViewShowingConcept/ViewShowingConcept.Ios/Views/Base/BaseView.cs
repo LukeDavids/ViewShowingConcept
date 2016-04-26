@@ -18,6 +18,7 @@ namespace ViewShowingConcept.Ios.Views.Base
         public IMvxIosView Controller => this;
         public ViewType ViewType { get; set; }
         public string ViewTag { get; set; }
+        public int ChildNum { get; set; }
         protected BaseView()
         {
             ViewModel = Mvx.Resolve<TViewModel>();
@@ -27,8 +28,6 @@ namespace ViewShowingConcept.Ios.Views.Base
         {
             ViewModel = Mvx.Resolve<TViewModel>();
         } 
-
-        public virtual void ShowViewModel() { throw new NotImplementedException(); }
 
         public static bool DeviceIsIPhone()
         {
