@@ -40,7 +40,6 @@
     <Compile Include="Enums\ViewFrame.cs" />
     <Compile Include="Enums\ViewType.cs" />
     <Compile Include="Interfaces\IMasterDetail.cs" />
-    <Compile Include="Interfaces\ISubView.cs" />
     <Compile Include="Interfaces\ITab.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\ShowViewEvent.cs" />
@@ -71,9 +70,6 @@
     <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Core.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="MvvmCross.Droid.FullFragging">
-      <HintPath>..\packages\MvvmCross.Droid.FullFragging.4.1.1\lib\MonoAndroid\MvvmCross.Droid.FullFragging.dll</HintPath>
     </Reference>
     <Reference Include="MvvmCross.Localization, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmCross.Binding.4.1.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
