@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using ViewShowingConcept.Windows.Views;
+using ViewShowingConcept.Windows.Views.Container;
 
 namespace ViewShowingConcept.Windows
 {
@@ -77,7 +79,7 @@ namespace ViewShowingConcept.Windows
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    //rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    //rootFrame.Navigate(typeof(CustomerDetailView), e.Arguments);
                     var setup = new Setup(rootFrame);
                     setup.Initialize();
 

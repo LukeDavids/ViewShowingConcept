@@ -26,6 +26,9 @@ namespace ViewShowingConcept.Core.Models
         public string Parameter { get; set; }
         public object[] Args { get;  set; }
 
-
+        public override string ToString()
+        {
+            return Parameter;
+        }
     }
 }
