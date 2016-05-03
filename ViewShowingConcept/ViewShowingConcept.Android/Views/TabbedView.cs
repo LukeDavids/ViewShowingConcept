@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Android.App;
 using Android.Content;
 using Android.Graphics;
@@ -15,6 +16,7 @@ using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
 using ViewShowingConcept.Core.ViewModels;
+using ViewShowingConcept.Core.ViewModels.Container;
 using FragmentManager = Android.Support.V4.App.FragmentManager;
 
 namespace ViewShowingConcept.Android.Views
@@ -59,23 +61,37 @@ namespace ViewShowingConcept.Android.Views
                 {
                     case 0:
                         ContainerView.SetupViews();
-                        ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
                         CurrentTab = Tabs.CustomersTab;
+                        if (ContainerViewModel.CustomersBackStack.Count == 0)
+                            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
+                        else {
+                            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
+                            ContainerView.ShowViewEvent = ContainerViewModel.CustomersBackStack.Last();
+                        }
                         break;
                     case 1:
                         ContainerView.SetupViews();
-                        ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.DummyTab1View, ViewFrame.FullScreenTabs, "");
                         CurrentTab = Tabs.Dummy1Tab;
+                        if (ContainerViewModel.DummyTab1BackStack.Count == 0)
+                            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.DummyTab1View, ViewFrame.FullScreenTabs, "");
+                        else
+                            ContainerView.ShowViewEvent = ContainerViewModel.DummyTab1BackStack.Last();
                         break;
                     case 2:
                         ContainerView.SetupViews();
-                        ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.DummyTab2View, ViewFrame.FullScreenTabs, "");
                         CurrentTab = Tabs.Dummy2Tab;
+                        if (ContainerViewModel.DummyTab2BackStack.Count == 0)
+                            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.DummyTab2View, ViewFrame.FullScreenTabs, "");
+                        else
+                            ContainerView.ShowViewEvent = ContainerViewModel.DummyTab2BackStack.Last();
                         break;
                     case 3:
                         ContainerView.SetupViews();
-                        ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.DummyTab3View, ViewFrame.FullScreenTabs, "");
                         CurrentTab = Tabs.Dummy3Tab;
+                        if (ContainerViewModel.DummyTab3BackStack.Count == 0)
+                            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.DummyTab3View, ViewFrame.FullScreenTabs, "");
+                        else
+                            ContainerView.ShowViewEvent = ContainerViewModel.DummyTab3BackStack.Last();
                         break;
                 }
             };

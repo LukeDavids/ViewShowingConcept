@@ -95,13 +95,25 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
                 view.Fragment.SetMenuVisibility(true);
 
-                if (!CurrentFragment.Equals(view.ViewType) && !view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList))
+                if (!view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList) && !view.ViewType.Equals(ViewType.CustomerSplit))
                 {
-                    fragmentTransaction.AddToBackStack(viewTag);
+                    switch (TabbedView.CurrentTab)
+                    {
+                        case Tabs.CustomersTab:
+                            ContainerViewModel.CustomersBackStack.Push(showViewEvent);
+                            break;
+                        case Tabs.Dummy1Tab:
+                            ContainerViewModel.DummyTab1BackStack.Push(showViewEvent);
+                            break;
+                        case Tabs.Dummy2Tab:
+                            ContainerViewModel.DummyTab2BackStack.Push(showViewEvent);
+                            break;
+                        case Tabs.Dummy3Tab:
+                            ContainerViewModel.DummyTab3BackStack.Push(showViewEvent);
+                            break;
+                    }
                 }
 
-                PreviousFragment = CurrentFragment;
-                CurrentFragment = view.ViewType;
             }
             catch (System.Exception e)
             {
@@ -109,10 +121,25 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 AddFragments(showViewEvent);
                 view.Fragment.SetMenuVisibility(true);
 
-                if (!CurrentFragment.Equals(view.ViewType) && !view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList))
+                if (!CurrentFragment.Equals(view.ViewType) && !view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList) && !view.ViewType.Equals(ViewType.CustomerSplit))
                 {
-                    fragmentTransaction.AddToBackStack(viewTag);
+                    switch (TabbedView.CurrentTab)
+                    {
+                        case Tabs.CustomersTab:
+                            ContainerViewModel.CustomersBackStack.Push(showViewEvent);
+                            break;
+                        case Tabs.Dummy1Tab:
+                            ContainerViewModel.DummyTab1BackStack.Push(showViewEvent);
+                            break;
+                        case Tabs.Dummy2Tab:
+                            ContainerViewModel.DummyTab2BackStack.Push(showViewEvent);
+                            break;
+                        case Tabs.Dummy3Tab:
+                            ContainerViewModel.DummyTab3BackStack.Push(showViewEvent);
+                            break;
+                    }
                 }
+                
 
                 PreviousFragment = CurrentFragment;
                 CurrentFragment = view.ViewType;
@@ -125,7 +152,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
         {
             var fragmentTransaction = SupportFragmentManager.BeginTransaction();
 
-            foreach (var view in Views.Where(baseView => baseView.Value != null))
+            foreach (var view in Views.Where(baseView => baseView.Value != null && !baseView.Value.ViewTag.Equals(ViewType.TabbedView.ToString())))
             {
                 fragmentTransaction.Remove(view.Value.Fragment);
             }
@@ -156,9 +183,37 @@ namespace ViewShowingConcept.Android.Views.ContainerView
 
         public override void OnBackPressed()
         {
-            CurrentFragment = PreviousFragment;
+            FlushFragments();
+            try
+            {
+                switch (TabbedView.CurrentTab)
+                {
+                    case Tabs.CustomersTab:
+                        ContainerViewModel.CustomersBackStack.Pop();
+                        SetupViews();
+                        if(ContainerViewModel.CustomersBackStack.Last().ViewType == ViewType.CustomerList)
+                            ShowView(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
+                        ShowView(ContainerViewModel.CustomersBackStack.Last());
+                        break;
+                    case Tabs.Dummy1Tab:
+                        ContainerViewModel.DummyTab1BackStack.Pop();
+                        ShowView(ContainerViewModel.DummyTab1BackStack.Last());
+                        break;
+                    case Tabs.Dummy2Tab:
+                        ContainerViewModel.DummyTab2BackStack.Pop();
+                        ShowView(ContainerViewModel.DummyTab2BackStack.Last());
+                        break;
+                    case Tabs.Dummy3Tab:
+                        ContainerViewModel.DummyTab3BackStack.Pop();
+                        ShowView(ContainerViewModel.DummyTab3BackStack.Last());
+                        break;
+                }
+            }
+            catch (Exception e) {
+                base.OnBackPressed();
+            }
 
-            base.OnBackPressed();
+            CurrentFragment = PreviousFragment;
         }
     }
 
