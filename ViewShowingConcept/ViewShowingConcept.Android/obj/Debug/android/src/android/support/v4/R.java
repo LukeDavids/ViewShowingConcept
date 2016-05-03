@@ -2372,7 +2372,7 @@ containing a value of this type.
         public static int submit_area=0x7f070067;
         public static int tabMode=0x7f07000f;
         public static int tab_content_frame=0x7f07006f;
-        public static int tabcontent=0x7f07008a;
+        public static int tabcontent=0x7f070089;
         public static int tabs=0x7f070088;
         public static int text=0x7f070082;
         public static int text2=0x7f070080;
@@ -2387,7 +2387,6 @@ containing a value of this type.
         public static int useLogo=0x7f070016;
         public static int view_frame=0x7f07006e;
         public static int view_offset_helper=0x7f07000a;
-        public static int viewpager=0x7f070089;
         public static int withText=0x7f070023;
         public static int wrap_content=0x7f070024;
     }

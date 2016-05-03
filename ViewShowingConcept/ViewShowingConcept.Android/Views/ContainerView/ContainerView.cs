@@ -48,7 +48,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 [FullScreen]        = Resource.Id.content_frame,
                 [FullScreenTabs]    = Resource.Id.tabcontent,
                 [HalfScreenTop]     = Resource.Id.list_frame,
-                [HalfScreenBottom]  = Resource.Id.view_frame,
+                [Detail]            = Resource.Id.view_frame,
                 [TabContents]       = Resource.Id.tab_content_frame
             };
             //Add more so we can replace different areas of the screen
@@ -95,7 +95,7 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 fragmentTransaction.Replace(viewFrame, viewFragment, viewTag);
                 view.Fragment.SetMenuVisibility(true);
 
-                if (!view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList) && !view.ViewType.Equals(ViewType.CustomerSplit))
+                if (!CurrentFragment.Equals(view.ViewType) && !view.ViewType.Equals(ViewType.TabbedView) && !view.ViewType.Equals(ViewType.CustomerList) && !view.ViewType.Equals(ViewType.CustomerSplit))
                 {
                     switch (TabbedView.CurrentTab)
                     {
