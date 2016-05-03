@@ -38,6 +38,7 @@
     <Compile Include="Config\CurrentSession.cs" />
     <Compile Include="Enums\BuildPlatform.cs" />
     <Compile Include="Enums\ViewFrame.cs" />
+    <Compile Include="Enums\Tabs.cs" />
     <Compile Include="Enums\ViewType.cs" />
     <Compile Include="Interfaces\IMasterDetail.cs" />
     <Compile Include="Interfaces\ISubView.cs" />

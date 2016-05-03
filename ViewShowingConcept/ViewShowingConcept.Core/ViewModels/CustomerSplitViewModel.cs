@@ -25,6 +25,7 @@ namespace ViewShowingConcept.Core.ViewModels
             {
                 _stringParam = value;
                 RaisePropertyChanged(() => StringPassedAsParameter);
+                
             }
         }
 
