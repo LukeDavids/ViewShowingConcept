@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
@@ -12,6 +13,8 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Support.V4;
+using MvvmCross.Platform;
+using Onsight.Android.Services;
 using ViewShowingConcept.Android.Views.Base;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
@@ -27,6 +30,7 @@ namespace ViewShowingConcept.Android.Views
 
         TabLayout TabLayout;
         public static Tabs CurrentTab { get; set; }
+        public ScreenOrientation RequestedOrientation { get; private set; }
 
         public TabbedView()
         {
@@ -39,7 +43,6 @@ namespace ViewShowingConcept.Android.Views
             ViewType = ViewType.TabbedView;
             OnCreate(savedInstanceState);
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-            
             return this.BindingInflate(Resource.Layout.TabbedView, null);
         }
 
@@ -62,12 +65,15 @@ namespace ViewShowingConcept.Android.Views
                     case 0:
                         ContainerView.SetupViews();
                         CurrentTab = Tabs.CustomersTab;
-                        if (ContainerViewModel.CustomersBackStack.Count == 0)
-                            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
-                        else {
-                            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
+                        if (DeviceUtilsService.IsTabletDevice(Context))
+                            if (ContainerViewModel.CustomersBackStack.Count == 0)
+                                ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
+                            else {
+                                ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
+                                ContainerView.ShowViewEvent = ContainerViewModel.CustomersBackStack.Last();
+                            }
+                        else
                             ContainerView.ShowViewEvent = ContainerViewModel.CustomersBackStack.Last();
-                        }
                         break;
                     case 1:
                         ContainerView.SetupViews();
@@ -97,7 +103,10 @@ namespace ViewShowingConcept.Android.Views
             };
 
             //Set initial tab
-            ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
+            if (DeviceUtilsService.IsTabletDevice(Context))
+                ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerSplit, ViewFrame.FullScreenTabs, "");
+            else
+                ContainerView.ShowViewEvent = new ShowViewEvent(ViewType.CustomerList, ViewFrame.FullScreenTabs, "");
 
             base.OnViewCreated(view, savedInstanceState);
         }

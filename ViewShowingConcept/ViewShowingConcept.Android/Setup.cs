@@ -8,8 +8,10 @@ using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 using MvvmCross.Platform.Platform;
+using Onsight.Android.Services;
 using ViewShowingConcept.Android.Interfaces;
 using ViewShowingConcept.Android.Views;
+using ViewShowingConcept.Core;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.ViewModels;
 using ViewShowingConcept.Core.ViewModels.Container;
@@ -24,6 +26,7 @@ namespace ViewShowingConcept.Android
 
         protected override IMvxApplication CreateApp()
         {
+            setFormFactor();
             return new Core.App();
         }
 
@@ -37,6 +40,10 @@ namespace ViewShowingConcept.Android
             var customPresenter = new CustomPresenter();
             Mvx.RegisterSingleton<ICustomPresenter>(customPresenter);
             return customPresenter;
+        }
+
+        private void setFormFactor() {
+            App.Tablet = DeviceUtilsService.IsTabletDevice(ApplicationContext);
         }
     }
 }

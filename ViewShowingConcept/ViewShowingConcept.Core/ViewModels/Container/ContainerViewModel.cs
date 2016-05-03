@@ -76,12 +76,12 @@ namespace ViewShowingConcept.Core.ViewModels.Container
         private void InitialiseBackStacks()
         {
             CustomersBackStack = new Stack<ShowViewEvent>();
-            CustomersBackStack.Push(new ShowViewEvent(ViewType.CustomerList, ViewFrame.HalfScreenTop, ""));
+            //CustomersBackStack.Push(new ShowViewEvent(ViewType.CustomerList, ViewFrame.FullScreenTabs, ""));
             DummyTab1BackStack = new Stack<ShowViewEvent>();
             DummyTab2BackStack = new Stack<ShowViewEvent>();
             DummyTab3BackStack = new Stack<ShowViewEvent>();
 
-            CustomersBackStack.Push(new ShowViewEvent(CustomerList, HalfScreenTop, ""));
+            CustomersBackStack.Push(new ShowViewEvent(CustomerList, FullScreenTabs, ""));
         }
     }
 }

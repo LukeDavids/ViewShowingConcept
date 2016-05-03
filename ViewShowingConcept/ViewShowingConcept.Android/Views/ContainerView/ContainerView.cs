@@ -17,7 +17,9 @@ using IAndroidView = ViewShowingConcept.Android.Interfaces.IAndroidView;
 using static ViewShowingConcept.Core.Enums.ViewType;
 using static ViewShowingConcept.Core.Enums.ViewFrame;
 using System;
+using Android.Content.PM;
 using Android.Support.V4.View;
+using Onsight.Android.Services;
 
 namespace ViewShowingConcept.Android.Views.ContainerView
 {
@@ -26,18 +28,27 @@ namespace ViewShowingConcept.Android.Views.ContainerView
     {
         public Dictionary<ViewType, IAndroidView> Views { get; set; }
         public Dictionary<ViewFrame, int> ViewFrames { get; set; }
+        public Dictionary<FormFactor, int> FormFactors { get; set; }
         private ViewType CurrentFragment { get; set; }
         public ViewType PreviousFragment { get; set; }
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            if (DeviceUtilsService.IsTabletDevice(ApplicationContext))
+            {
+                RequestedOrientation = ScreenOrientation.SensorLandscape;
+            }
+            else {
+                RequestedOrientation = ScreenOrientation.Portrait;
+            }
             SetupViews();
             SetupBindings();
             SetContentView(Resource.Layout.ContainerView);
             SetupContentFrames();
             Mvx.RegisterSingleton(() => this);
             ShowViewEvent = new ShowViewEvent(ViewType.TabbedView, FullScreen, "");
+
 
         }
 
@@ -53,19 +64,6 @@ namespace ViewShowingConcept.Android.Views.ContainerView
             };
             //Add more so we can replace different areas of the screen
         }
-
-        private ShowViewEvent _showViewEvent;
-        public ShowViewEvent ShowViewEvent
-        {
-            get { return _showViewEvent; }
-            set
-            {
-                _showViewEvent = value;
-                if(value != null)
-                ShowView(_showViewEvent);
-            }
-        }
-        
         public void SetupViews()
         {
             Views = new Dictionary<ViewType, IAndroidView>
@@ -80,6 +78,18 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                 {ViewType.DummyTab2View,    new DummyTab2View()},
                 {ViewType.DummyTab3View,    new DummyTab3View()}
             };
+        }
+
+        private ShowViewEvent _showViewEvent;
+        public ShowViewEvent ShowViewEvent
+        {
+            get { return _showViewEvent; }
+            set
+            {
+                _showViewEvent = value;
+                if(value != null)
+                ShowView(_showViewEvent);
+            }
         }
 
         public void ShowView(ShowViewEvent showViewEvent)
@@ -191,9 +201,16 @@ namespace ViewShowingConcept.Android.Views.ContainerView
                     case Tabs.CustomersTab:
                         ContainerViewModel.CustomersBackStack.Pop();
                         SetupViews();
-                        if(ContainerViewModel.CustomersBackStack.Last().ViewType == ViewType.CustomerList)
-                            ShowView(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
-                        ShowView(ContainerViewModel.CustomersBackStack.Last());
+                        if (ContainerViewModel.CustomersBackStack.Last().ViewType == ViewType.CustomerList)
+                        {
+                            if (DeviceUtilsService.IsTabletDevice(ApplicationContext))
+                            {
+                                ShowView(new ShowViewEvent(CustomerSplit, FullScreenTabs, ""));
+                            }
+                            else {
+                                ShowView(ContainerViewModel.CustomersBackStack.Last());
+                            }
+                        }
                         break;
                     case Tabs.Dummy1Tab:
                         ContainerViewModel.DummyTab1BackStack.Pop();

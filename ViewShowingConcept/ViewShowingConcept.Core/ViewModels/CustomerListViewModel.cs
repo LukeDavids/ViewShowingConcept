@@ -41,7 +41,12 @@ namespace ViewShowingConcept.Core.ViewModels
                 return
                     _showCustomerCommand =
                         _showCustomerCommand ??
-                        new MvxCommand<Customer>(item => { ShowView(CustomerView, Detail, item.Id); });
+                        new MvxCommand<Customer>(item => {
+                            if (App.Tablet) // Take a look at DeviceUtilsService as well as the setup class's "setFormFactor" method in the Android project to check how this is set
+                                ShowView(CustomerView, Detail, item.Id); 
+                            else
+                                ShowView(CustomerView, FullScreenTabs, item.Id);
+                        });
             }
         }
 
