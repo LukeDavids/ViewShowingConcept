@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using MvvmCross.Platform;
 using MvvmCross.WindowsUWP.Views;
 using ViewShowingConcept.Core.Enums;
 using ViewShowingConcept.Core.Models;
@@ -34,6 +35,17 @@ namespace ViewShowingConcept.Windows.Views.Container
         {
             this.InitializeComponent();
         }
+        
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+        }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+        }
+
+       
     }
 }

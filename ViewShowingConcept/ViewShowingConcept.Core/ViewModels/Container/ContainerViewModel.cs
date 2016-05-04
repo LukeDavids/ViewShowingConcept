@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Windows.Input;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using ViewShowingConcept.Core.Enums;
@@ -38,6 +39,13 @@ namespace ViewShowingConcept.Core.ViewModels.Container
             {
                 _viewDidShowEvent = value;
                 RaisePropertyChanged(() => ViewDidShowEvent);
+            }
+        }
+        public ICommand ShowCommand
+        {
+            get
+            {
+                return new MvxCommand(() => ShowViewModel<CustomerDetailViewModel>());
             }
         }
 
