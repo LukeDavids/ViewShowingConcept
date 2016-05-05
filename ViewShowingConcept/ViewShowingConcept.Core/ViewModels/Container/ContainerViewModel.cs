@@ -41,6 +41,7 @@ namespace ViewShowingConcept.Core.ViewModels.Container
                 RaisePropertyChanged(() => ViewDidShowEvent);
             }
         }
+
         public ICommand ShowCommand
         {
             get

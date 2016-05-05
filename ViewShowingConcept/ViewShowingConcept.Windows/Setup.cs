@@ -7,6 +7,7 @@ using Windows.UI.Xaml.Controls;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using MvvmCross.WindowsUWP.Platform;
+using MvvmCross.WindowsUWP.Views;
 using ViewShowingConcept.Core.Enums;
 
 namespace ViewShowingConcept.Windows
@@ -21,6 +22,12 @@ namespace ViewShowingConcept.Windows
         protected override IMvxApplication CreateApp()
         {
             return new Core.App();
+        }
+        
+
+        protected override IMvxWindowsViewPresenter CreateViewPresenter(IMvxWindowsFrame rootFrame)
+        {
+            return new WindowsPresenter(rootFrame);
         }
     }
 }

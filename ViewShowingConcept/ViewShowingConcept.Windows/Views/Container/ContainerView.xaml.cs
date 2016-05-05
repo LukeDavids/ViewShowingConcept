@@ -21,16 +21,6 @@ namespace ViewShowingConcept.Windows.Views.Container
 
         public Dictionary<ViewType, IWindowsView> Views { get; } = new Dictionary<ViewType, IWindowsView>();
 
-        private ShowViewEvent _showViewEvent;
-        public ShowViewEvent ShowViewEvent
-        {
-            get { return _showViewEvent; }
-            set
-            {
-                _showViewEvent = value;
-            }
-        }
-
         public ContainerView()
         {
             this.InitializeComponent();
